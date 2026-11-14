@@ -62,7 +62,7 @@ used as openly published data, credited and linked, until confirmed.
 |---|---|
 | Methane ledger flux ranges | Bartlett et al. (1988), JGR 93, 1571; Bartlett et al. (1990), JGR 95, 16773; Harriss and Sebacher (1981); Ward et al. (2020), Front. Earth Sci. 8:573357; GWP100 from IPCC AR6 WG1 Table 7.15; context: Saunois et al. (2025), ESSD 17, 1873 (docs/10 D-103) |
 | Limpopo flood replay | NASA SVS 5661 (NISAR GCOV over the Limpopo and Incomati, Jan 2026), for the event and its dates |
-| The project's mark | Own work, CC BY 4.0 (docs/BRAND.md) |
+| The project's mark | Own work, CC BY 4.0 |
 | Challenge image | NASA/JPL-Caltech, PIA26672 ("NISAR's View of Mount Rainier"), via NASA Space Apps |
 
 ## Software
