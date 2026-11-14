@@ -1,0 +1,1164 @@
+{
+  "_note": "Bounding boxes are approximate and provisional until the NISAR coverage check (task P-02). Gauge ids are unknown until Q-6 in docs/10 is answered.",
+  "sites": [
+    {
+      "id": "atchafalaya",
+      "name": "Atchafalaya Basin",
+      "country": "US",
+      "bbox": [
+        -91.78,
+        30.17,
+        -91.62,
+        30.31
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "Mar-Jun spring high water",
+      "gauge": {
+        "source": "usgs",
+        "id": "07381515",
+        "name": "Atchafalaya River at Butte La Rose, LA",
+        "source_name": "USGS NWIS"
+      },
+      "synthetic_seed": 11,
+      "iso3": "USA",
+      "thresholds": {
+        "ow_hh_db": -16.0,
+        "ow_hv_db": -22.0,
+        "fv_hh_db": -5.0,
+        "fv_ratio_db": 7.0,
+        "margin_db": 1.0,
+        "max_spread_db": 3.0
+      },
+      "calibration": {
+        "open_water": {
+          "applied": false,
+          "held_out_before": 0.539,
+          "held_out_after": 0.744,
+          "in_effect": {
+            "ow_hh_db": -16.0,
+            "ow_hv_db": -22.0
+          },
+          "rejected": "at search edge: ow_hh_db, ow_hv_db",
+          "rejected_code": "search_edge",
+          "label_sources": [
+            "OPERA DSWx-HLS optical water"
+          ]
+        },
+        "flooded_veg": {
+          "applied": false,
+          "held_out_before": 0.567,
+          "held_out_after": 0.779,
+          "in_effect": {
+            "fv_hh_db": -5.0,
+            "fv_ratio_db": 7.0
+          },
+          "gauge_r_before": 0.917,
+          "gauge_r_after": 0.424,
+          "rejected": "lowers gauge r from 0.92 to 0.42",
+          "rejected_code": "gauge_timing",
+          "label_sources": [
+            "USFWS National Wetlands Inventory"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sylhet",
+      "name": "Sylhet haor and Ratargul swamp forest",
+      "country": "BD",
+      "bbox": [
+        91.84,
+        24.92,
+        92.0,
+        25.06
+      ],
+      "zoom": 12,
+      "language": "bn",
+      "flood_season": "Jun-Oct monsoon",
+      "gauge": {
+        "source": "csv",
+        "id": "SW267",
+        "name": "Surma at Sylhet (SW267)",
+        "source_name": "BWDB FFWC (mPWD)"
+      },
+      "synthetic_seed": 23,
+      "iso3": "BGD",
+      "thresholds": {
+        "ow_hh_db": -9.75,
+        "ow_hv_db": -16.5,
+        "fv_hh_db": -4.5,
+        "fv_ratio_db": 4.25,
+        "margin_db": 1.0,
+        "max_spread_db": 3.0
+      },
+      "calibration": {
+        "open_water": {
+          "applied": true,
+          "held_out_before": 0.608,
+          "held_out_after": 0.79,
+          "in_effect": {
+            "ow_hh_db": -9.75,
+            "ow_hv_db": -16.5
+          },
+          "gauge_r_before": 0.742,
+          "gauge_r_after": 0.929,
+          "label_sources": [
+            "OPERA DSWx-HLS optical water"
+          ]
+        },
+        "flooded_veg": {
+          "applied": true,
+          "held_out_before": 0.506,
+          "held_out_after": 0.776,
+          "in_effect": {
+            "fv_hh_db": -4.5,
+            "fv_ratio_db": 4.25
+          },
+          "gauge_r_before": 0.742,
+          "gauge_r_after": 0.778,
+          "label_sources": [
+            "OpenStreetMap swamp-forest and forest polygons"
+          ]
+        }
+      }
+    },
+    {
+      "id": "janauaca",
+      "name": "Lago Janauacá várzea",
+      "country": "BR",
+      "bbox": [
+        -60.36,
+        -3.5,
+        -60.2,
+        -3.36
+      ],
+      "zoom": 12,
+      "language": "pt",
+      "flood_season": "Feb-Jul rising water, June peak",
+      "gauge": {
+        "source": "ana",
+        "id": "14100000",
+        "name": "Rio Solimões at Manacapuru",
+        "source_name": "ANA Hidro-Telemetria"
+      },
+      "synthetic_seed": 37,
+      "iso3": "BRA",
+      "thresholds": {
+        "ow_hh_db": -11.25,
+        "ow_hv_db": -19.25,
+        "fv_hh_db": -5.0,
+        "fv_ratio_db": 7.0,
+        "margin_db": 1.0,
+        "max_spread_db": 3.0
+      },
+      "calibration": {
+        "open_water": {
+          "applied": true,
+          "held_out_before": 0.573,
+          "held_out_after": 0.893,
+          "in_effect": {
+            "ow_hh_db": -11.25,
+            "ow_hv_db": -19.25
+          },
+          "gauge_r_before": 0.701,
+          "gauge_r_after": 1.0,
+          "label_sources": [
+            "LBA-ECO LC-07 Amazon wetland map",
+            "OPERA DSWx-HLS optical water"
+          ]
+        },
+        "flooded_veg": {
+          "applied": false,
+          "held_out_before": 0.523,
+          "held_out_after": 0.56,
+          "in_effect": {
+            "fv_hh_db": -5.0,
+            "fv_ratio_db": 7.0
+          },
+          "label_sources": [
+            "LBA-ECO LC-07 Amazon wetland map"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tonle_sap",
+      "name": "Tonlé Sap flooded forest (Prek Toal)",
+      "country": "KH",
+      "bbox": [
+        103.55,
+        13.1,
+        103.71,
+        13.24
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "Jun-Oct rising lake, Sep-Oct peak",
+      "iso3": "KHM"
+    },
+    {
+      "id": "sundarbans",
+      "name": "Sundarbans mangrove forest",
+      "country": "BD",
+      "bbox": [
+        89.45,
+        21.85,
+        89.61,
+        21.99
+      ],
+      "zoom": 12,
+      "language": "bn",
+      "flood_season": "Twice-daily tides, monsoon Jun-Sep",
+      "iso3": "BGD"
+    },
+    {
+      "id": "everglades",
+      "name": "Big Cypress swamp, Everglades",
+      "country": "US",
+      "bbox": [
+        -81.2,
+        25.93,
+        -81.04,
+        26.07
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "Jun-Oct wet season",
+      "iso3": "USA",
+      "thresholds": {
+        "ow_hh_db": -16.0,
+        "ow_hv_db": -22.0,
+        "fv_hh_db": -5.0,
+        "fv_ratio_db": 7.0,
+        "margin_db": 1.0,
+        "max_spread_db": 3.0
+      },
+      "calibration": {
+        "open_water": {
+          "applied": false,
+          "held_out_before": 0.5,
+          "held_out_after": 0.5,
+          "in_effect": {
+            "ow_hh_db": -16.0,
+            "ow_hv_db": -22.0
+          },
+          "label_sources": [
+            "OPERA DSWx-HLS optical water"
+          ]
+        },
+        "flooded_veg": {
+          "applied": false,
+          "held_out_before": 0.139,
+          "held_out_after": 0.442,
+          "in_effect": {
+            "fv_hh_db": -5.0,
+            "fv_ratio_db": 7.0
+          },
+          "label_sources": [
+            "USFWS National Wetlands Inventory"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cuvette_centrale",
+      "name": "Likouala swamp forest, Cuvette Centrale",
+      "country": "CG",
+      "bbox": [
+        17.4,
+        1.3,
+        17.56,
+        1.44
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "Rising Aug-Nov, peak Oct-Nov",
+      "iso3": "COG"
+    },
+    {
+      "id": "okavango",
+      "name": "Okavango Delta permanent swamp",
+      "country": "BW",
+      "bbox": [
+        22.8,
+        -19.4,
+        22.96,
+        -19.26
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "Flood pulse arrives Jun-Aug",
+      "iso3": "BWA"
+    },
+    {
+      "id": "pacaya_samiria",
+      "name": "Pacaya-Samiria flooded forest",
+      "country": "PE",
+      "bbox": [
+        -74.6,
+        -5.3,
+        -74.44,
+        -5.16
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "Falling water Jun-Oct after the May peak",
+      "iso3": "PER"
+    },
+    {
+      "id": "mamiraua",
+      "name": "Mamirauá várzea",
+      "country": "BR",
+      "bbox": [
+        -65.0,
+        -3.0,
+        -64.84,
+        -2.86
+      ],
+      "zoom": 12,
+      "language": "pt",
+      "flood_season": "Falling water Jun-Oct after the June peak",
+      "iso3": "BRA",
+      "gauge": {
+        "source": "ana",
+        "id": "12351000",
+        "name": "Rio Solimões at Fonte Boa",
+        "source_name": "ANA Hidro-Telemetria"
+      }
+    },
+    {
+      "id": "pantanal",
+      "name": "Rio Paraguai floodplain, Pantanal",
+      "country": "BR",
+      "bbox": [
+        -57.7,
+        -18.4,
+        -57.54,
+        -18.26
+      ],
+      "zoom": 12,
+      "language": "pt",
+      "flood_season": "Falling water Jun-Oct after the May-Jun peak",
+      "iso3": "BRA",
+      "gauge": {
+        "source": "ana",
+        "id": "66825000",
+        "name": "Rio Paraguai at Ladário",
+        "source_name": "ANA Hidro-Telemetria"
+      }
+    },
+    {
+      "id": "hot_s12p88_w62p62",
+      "name": "Rondônia, Brazil (12.88°S, 62.62°W)",
+      "country": "BR",
+      "bbox": [
+        -62.705,
+        -12.945,
+        -62.545,
+        -12.805
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 1,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n1p12_w61p62",
+      "name": "Roraima, Brazil (1.12°N, 61.62°W)",
+      "country": "BR",
+      "bbox": [
+        -61.705,
+        1.055,
+        -61.545,
+        1.195
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 2,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s4p12_w70p12",
+      "name": "Loreto, Peru (4.12°S, 70.12°W)",
+      "country": "PE",
+      "bbox": [
+        -70.205,
+        -4.195,
+        -70.045,
+        -4.055
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 3,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s0p62_w50p62",
+      "name": "Pará, Brazil (0.62°S, 50.62°W)",
+      "country": "BR",
+      "bbox": [
+        -50.705,
+        -0.695,
+        -50.545,
+        -0.555
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 4,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s8p38_w74p38",
+      "name": "Ucayali, Peru (8.38°S, 74.38°W)",
+      "country": "PE",
+      "bbox": [
+        -74.455,
+        -8.445,
+        -74.295,
+        -8.305
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 5,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s0p62_e109p62",
+      "name": "Kubu Raya, Indonesia (0.62°S, 109.62°E)",
+      "country": "ID",
+      "bbox": [
+        109.545,
+        -0.695,
+        109.705,
+        -0.555
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 6,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s6p62_e139p38",
+      "name": "Mappi, Indonesia (6.62°S, 139.38°E)",
+      "country": "ID",
+      "bbox": [
+        139.295,
+        -6.695,
+        139.455,
+        -6.555
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 7,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s5p38_w63p12",
+      "name": "Amazonas, Brazil (5.38°S, 63.12°W)",
+      "country": "BR",
+      "bbox": [
+        -63.205,
+        -5.445,
+        -63.045,
+        -5.305
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 8,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n2p62_e112p38",
+      "name": "Selangau, Malaysia (2.62°N, 112.38°E)",
+      "country": "MY",
+      "bbox": [
+        112.295,
+        2.555,
+        112.455,
+        2.695
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 9,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s9p62_w50p12",
+      "name": "Tocantins, Brazil (9.62°S, 50.12°W)",
+      "country": "BR",
+      "bbox": [
+        -50.205,
+        -9.695,
+        -50.045,
+        -9.555
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 10,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s1p88_e114p88",
+      "name": "South Barito, Indonesia (1.88°S, 114.88°E)",
+      "country": "ID",
+      "bbox": [
+        114.795,
+        -1.945,
+        114.955,
+        -1.805
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 11,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s1p62_e18p62",
+      "name": "Mai-Ndombe, Democratic Republic of the Congo (1.62°S, 18.62°E)",
+      "country": "CD",
+      "bbox": [
+        18.545,
+        -1.695,
+        18.705,
+        -1.555
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 12,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n5p38_e13p62",
+      "name": "Lom-et-Djérem, Cameroon (5.38°N, 13.62°E)",
+      "country": "CM",
+      "bbox": [
+        13.545,
+        5.305,
+        13.705,
+        5.445
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 13,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n0p88_e114p88",
+      "name": "Mahakam Ulu, Indonesia (0.88°N, 114.88°E)",
+      "country": "ID",
+      "bbox": [
+        114.795,
+        0.805,
+        114.955,
+        0.945
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 14,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s3p38_e139p12",
+      "name": "Sarmi, Indonesia (3.38°S, 139.12°E)",
+      "country": "ID",
+      "bbox": [
+        139.045,
+        -3.445,
+        139.205,
+        -3.305
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 15,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n3p38_e117p12",
+      "name": "Tana Tidung, Indonesia (3.38°N, 117.12°E)",
+      "country": "ID",
+      "bbox": [
+        117.045,
+        3.305,
+        117.205,
+        3.445
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 16,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n2p12_e22p12",
+      "name": "Mongala, Democratic Republic of the Congo (2.12°N, 22.12°E)",
+      "country": "CD",
+      "bbox": [
+        22.045,
+        2.055,
+        22.205,
+        2.195
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 17,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n2p62_w66p88",
+      "name": "Municipio Autónomo Maroa, Venezuela (2.62°N, 66.88°W)",
+      "country": "VE",
+      "bbox": [
+        -66.955,
+        2.555,
+        -66.795,
+        2.695
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 18,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s8p38_e142p12",
+      "name": "South Fly District, Papua New Guinea (8.38°S, 142.12°E)",
+      "country": "PG",
+      "bbox": [
+        142.045,
+        -8.445,
+        142.205,
+        -8.305
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 19,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s12p38_w53p38",
+      "name": "Mato Grosso, Brazil (12.38°S, 53.38°W)",
+      "country": "BR",
+      "bbox": [
+        -53.455,
+        -12.445,
+        -53.295,
+        -12.305
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 20,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s4p38_e142p12",
+      "name": "Ambunti District, Papua New Guinea (4.38°S, 142.12°E)",
+      "country": "PG",
+      "bbox": [
+        142.045,
+        -4.445,
+        142.205,
+        -4.305
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 21,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s13p12_w68p12",
+      "name": "Provincia Abel Iturralde, Bolivia (13.12°S, 68.12°W)",
+      "country": "BO",
+      "bbox": [
+        -68.205,
+        -13.195,
+        -68.045,
+        -13.055
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 22,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n27p38_e97p38",
+      "name": "Putao District, Myanmar (27.38°N, 97.38°E)",
+      "country": "MM",
+      "bbox": [
+        97.295,
+        27.305,
+        97.455,
+        27.445
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 23,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_n0p12_e28p88",
+      "name": "Lubero, Democratic Republic of the Congo (0.12°N, 28.88°E)",
+      "country": "CD",
+      "bbox": [
+        28.795,
+        0.055,
+        28.955,
+        0.195
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 24,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "hot_s26p38_w49p12",
+      "name": "Santa Catarina, Brazil (26.38°S, 49.12°W)",
+      "country": "BR",
+      "bbox": [
+        -49.205,
+        -26.445,
+        -49.045,
+        -26.305
+      ],
+      "zoom": 12,
+      "language": "en",
+      "flood_season": "unknown (picked from the global grid)",
+      "hotspot": {
+        "rank": 25,
+        "source": "global bivariate amber corner, D-056"
+      }
+    },
+    {
+      "id": "thunder_bay_36",
+      "name": "Thunder Bay 36 fire, Ontario",
+      "country": "CA",
+      "bbox": [
+        -89.6,
+        50.05,
+        -88.8,
+        50.95
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: boreal fire, July 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Thunder Bay 36",
+        "before": "2026-07-12",
+        "reported_ha": 318813,
+        "reported_source": "Ontario Forest Fires via Turtle Island News, 24 Jul 2026 (verify)",
+        "modis_doy": [
+          194,
+          207
+        ]
+      }
+    },
+    {
+      "id": "bald_range",
+      "name": "Bald Range fire, Okanagan, British Columbia",
+      "country": "CA",
+      "bbox": [
+        -120.15,
+        49.42,
+        -119.55,
+        49.78
+      ],
+      "zoom": 11,
+      "language": "en",
+      "flood_season": "not a flood site: dry-forest wildfire, August 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Bald Range",
+        "before": "2026-08-07",
+        "reported_ha": 9500,
+        "reported_source": "BC Wildfire Service via Wikipedia 2026 Canadian wildfires (95 km² on 8 Aug) (verify)",
+        "viirs_first_detection": "2026-08-08",
+        "reference": "VNP64A1"
+      }
+    },
+    {
+      "id": "little_giant",
+      "name": "Little Giant fire, Chelan County, Washington",
+      "country": "US",
+      "bbox": [
+        -120.87,
+        47.81,
+        -120.31,
+        48.1
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: conifer forest wildfire, July-October 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Little Giant",
+        "before": "2026-07-16",
+        "reported_ha": 69975,
+        "reported_source": "Wikipedia, 2026 United States wildfires (InciWeb/NIFC figures) (verify)",
+        "viirs_first_detection": "2026-07-17",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "sinlahekin",
+      "name": "Sinlahekin fire, Okanogan County, Washington",
+      "country": "US",
+      "bbox": [
+        -119.94,
+        48.59,
+        -119.47,
+        48.92
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: forest and shrub wildfire, July-October 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Sinlahekin",
+        "before": "2026-07-26",
+        "reported_ha": 67181,
+        "reported_source": "Wikipedia, 2026 United States wildfires (InciWeb/NIFC figures) (verify)",
+        "viirs_first_detection": "2026-07-27",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "kaiser_canyon",
+      "name": "Kaiser Canyon fire near Nespelem, Washington",
+      "country": "US",
+      "bbox": [
+        -119.31,
+        48.08,
+        -118.72,
+        48.36
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: pine forest and grass wildfire, July-September 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Kaiser Canyon",
+        "before": "2026-07-16",
+        "reported_ha": 55965,
+        "reported_source": "Wikipedia, 2026 United States wildfires (InciWeb/NIFC figures) (verify)",
+        "viirs_first_detection": "2026-07-17",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "tartar",
+      "name": "Tartar fire, Washington County, Idaho",
+      "country": "US",
+      "bbox": [
+        -117.33,
+        44.24,
+        -116.89,
+        44.7
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: forest and rangeland wildfire, July-September 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Tartar",
+        "before": "2026-07-24",
+        "reported_ha": 63951,
+        "reported_source": "Wikipedia, 2026 United States wildfires (InciWeb/NIFC figures) (verify)",
+        "viirs_first_detection": "2026-07-25",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "crosswhite",
+      "name": "Crosswhite fire, central Oregon",
+      "country": "US",
+      "bbox": [
+        -120.89,
+        44.33,
+        -120.19,
+        44.94
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: juniper, pine and grass wildfire, July-October 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Crosswhite (Rowe Creek Complex)",
+        "before": "2026-07-15",
+        "reported_ha": 143690,
+        "reported_source": "Wikipedia, 2026 United States wildfires (InciWeb/NIFC figures) (verify)",
+        "viirs_first_detection": "2026-07-16",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "saumos",
+      "name": "Saumos fire, Gironde, France",
+      "country": "FR",
+      "bbox": [
+        -1.22,
+        44.72,
+        -0.83,
+        44.99
+      ],
+      "zoom": 11,
+      "language": "en",
+      "flood_season": "not a flood site: maritime pine forest wildfire, July 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Saumos",
+        "before": "2026-07-22",
+        "reported_ha": 34600,
+        "reported_source": "Copernicus EMS EMSR899 burnt-area mapping, via EU Space Programme 'A summer of fire' (verify)",
+        "viirs_first_detection": "2026-07-23",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "arcachon",
+      "name": "Arcachon Bay fire, Gironde, France",
+      "country": "FR",
+      "bbox": [
+        -1.21,
+        44.33,
+        -0.76,
+        44.7
+      ],
+      "zoom": 11,
+      "language": "en",
+      "flood_season": "not a flood site: maritime pine forest wildfire, July 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Arcachon Bay",
+        "before": "2026-07-23",
+        "reported_ha": null,
+        "reported_source": "Copernicus EMS EMSR902; no burnt area published (verify)",
+        "viirs_first_detection": "2026-07-24",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "fontainebleau",
+      "name": "Fontainebleau forest fire, France",
+      "country": "FR",
+      "bbox": [
+        2.47,
+        48.32,
+        2.71,
+        48.48
+      ],
+      "zoom": 11,
+      "language": "en",
+      "flood_season": "not a flood site: temperate forest wildfire, July 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Fontainebleau",
+        "before": "2026-07-08",
+        "reported_ha": null,
+        "reported_source": "Copernicus EMS EMSR894, from 12 Jul 2026; VIIRS saw heat from 9 Jul (verify)",
+        "viirs_first_detection": "2026-07-09",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "almorox",
+      "name": "Almorox and Villa del Prado fire, Madrid and Avila, Spain",
+      "country": "ES",
+      "bbox": [
+        -4.83,
+        40.27,
+        -4.16,
+        40.52
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: pine and oak woodland wildfire, July 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Almorox / Villa del Prado",
+        "before": "2026-07-22",
+        "reported_ha": null,
+        "reported_source": "Copernicus EMS EMSR900; press areas for the Avila fire (42,000-50,000 ha) disagree (verify)",
+        "viirs_first_detection": "2026-07-23",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "huelva",
+      "name": "Niebla fire, Huelva, Spain",
+      "country": "ES",
+      "bbox": [
+        -6.72,
+        37.4,
+        -6.26,
+        37.64
+      ],
+      "zoom": 11,
+      "language": "en",
+      "flood_season": "not a flood site: pine and eucalyptus wildfire, August 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Niebla (Huelva)",
+        "before": "2026-08-01",
+        "reported_ha": null,
+        "reported_source": "Press reports give 31,000-44,000 ha (verify)",
+        "viirs_first_detection": "2026-08-02",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "pear_lake",
+      "name": "Pear Lake fire near Clinton, British Columbia",
+      "country": "CA",
+      "bbox": [
+        -121.95,
+        50.88,
+        -121.27,
+        51.45
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: dry interior forest wildfire, July-August 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Pear Lake",
+        "before": "2026-07-28",
+        "reported_ha": null,
+        "reported_source": "BC Wildfire Service via Wikipedia, 2026 Canadian wildfires; size not reported (verify)",
+        "viirs_first_detection": "2026-07-29",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "pulang_pisau",
+      "name": "Peat forest fires, Pulang Pisau, Central Kalimantan, Indonesia",
+      "country": "ID",
+      "bbox": [
+        113.75,
+        -2.39,
+        114.49,
+        -1.93
+      ],
+      "zoom": 10,
+      "language": "en",
+      "flood_season": "not a flood site: tropical peat swamp forest fires, July-October 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "Pulang Pisau peat fires",
+        "before": "2026-07-28",
+        "reported_ha": null,
+        "reported_source": "Sipongi (KLHK) provincial totals only; no fire-level area (verify)",
+        "viirs_first_detection": "2026-07-29",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "greece_attica",
+      "name": "West Attica fire, Greece",
+      "country": "GR",
+      "bbox": [
+        23.26,
+        37.99,
+        23.6,
+        38.17
+      ],
+      "zoom": 11,
+      "language": "en",
+      "flood_season": "not a flood site: Aleppo pine forest wildfire, July 2026",
+      "kind": "fire",
+      "fire": {
+        "name": "West Attica",
+        "before": "2026-07-29",
+        "reported_ha": null,
+        "reported_source": "Press reports of fires near Athens in late July 2026; size not confirmed (verify)",
+        "viirs_first_detection": "2026-07-30",
+        "located_from": "NASA VIIRS NOAA-20 375 m active fire (FIRMS via GIBS), 98 % extent"
+      }
+    },
+    {
+      "id": "limpopo_2026",
+      "name": "Limpopo flood at Chókwè, Mozambique",
+      "country": "MZ",
+      "bbox": [
+        32.92,
+        -24.61,
+        33.08,
+        -24.47
+      ],
+      "zoom": 12,
+      "language": "pt",
+      "flood_season": "Flood of January 2026 after December-January rains (NASA SVS 5661)",
+      "iso3": "MOZ"
+    }
+  ]
+}

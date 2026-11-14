@@ -1,0 +1,29 @@
+{
+  "about": "NISAR GCOV granules dropped by the pipeline after visual and statistical QA (docs/10 D-112). Match: the file name starts with `prefix`. Each entry must say what is wrong and how it was found.",
+  "granules": [
+    {
+      "prefix": "NISAR_L2_PR_GCOV_023_060_A_175_",
+      "date": "2026-06-18",
+      "reason": "along-track streaks; rivers and lakes missing",
+      "evidence": "Track 60 ascending, frame 175. HH over JRC permanent water (>=80 % occurrence) reads -4 dB, like forest, against -17 dB on later passes; correlation with the water map 0.0 (later passes 0.92) and with the site's other passes 0.0. Seen at hot_s5p38_w63p12, here_s5p42_w62p74 and belt cells 381_0467, 428_0483. Cause in the provisional product not known (verify)."
+    },
+    {
+      "prefix": "NISAR_L2_PR_GCOV_024_060_A_175_",
+      "date": "2026-06-30",
+      "reason": "smeared bright swaths; rivers and lakes missing",
+      "evidence": "As cycle 023: HH over permanent water -3 dB; correlation with the water map -0.1 and with later passes 0.0. Cause not known (verify)."
+    },
+    {
+      "prefix": "NISAR_L2_PR_GCOV_025_060_A_175_",
+      "date": "2026-07-12",
+      "reason": "along-track streaks and a missing block; rivers and lakes missing",
+      "evidence": "As cycle 023: HH over permanent water -4 dB; correlation with the water map 0.0 and with later passes 0.0. Cause not known (verify)."
+    },
+    {
+      "prefix": "NISAR_L2_PR_GCOV_026_060_A_175_",
+      "date": "2026-07-24",
+      "reason": "washed-out image with a bright diagonal band; rivers and lakes missing",
+      "evidence": "As cycle 023: HH over permanent water -5 dB; correlation with the water map -0.1 and with later passes 0.0. Cause not known (verify)."
+    }
+  ]
+}

@@ -1,0 +1,419 @@
+{
+ "schema_version": 14,
+ "default_site": "sylhet",
+ "sites": [
+  {
+   "id": "atchafalaya",
+   "name": "Atchafalaya Basin",
+   "country": "US",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "atchafalaya/summary.json",
+   "bounds": [
+    -91.78,
+    30.17,
+    -91.62,
+    30.31
+   ]
+  },
+  {
+   "id": "bald_range",
+   "name": "Bald Range fire, Okanagan, British Columbia",
+   "country": "CA",
+   "synthetic": false,
+   "kind": "fire",
+   "path": "bald_range/summary.json",
+   "bounds": [
+    -120.15,
+    49.42,
+    -119.55,
+    49.78
+   ]
+  },
+  {
+   "id": "cuvette_centrale",
+   "name": "Likouala swamp forest, Cuvette Centrale",
+   "country": "CG",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "cuvette_centrale/summary.json",
+   "bounds": [
+    17.4,
+    1.3,
+    17.56,
+    1.44
+   ]
+  },
+  {
+   "id": "everglades",
+   "name": "Big Cypress swamp, Everglades",
+   "country": "US",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "everglades/summary.json",
+   "bounds": [
+    -81.2,
+    25.93,
+    -81.04,
+    26.07
+   ]
+  },
+  {
+   "id": "here_n13p20_e99p78",
+   "name": "Analysed here: 13.20°N, 99.78°E",
+   "country": null,
+   "synthetic": false,
+   "kind": "flood",
+   "path": "here_n13p20_e99p78/summary.json",
+   "bounds": [
+    99.7015,
+    13.1337,
+    99.8615,
+    13.2737
+   ]
+  },
+  {
+   "id": "here_n44p92_w79p72",
+   "name": "Analysed here: 44.92°N, 79.72°W",
+   "country": null,
+   "synthetic": false,
+   "kind": "flood",
+   "path": "here_n44p92_w79p72/summary.json",
+   "bounds": [
+    -79.7997,
+    44.855,
+    -79.6397,
+    44.995
+   ]
+  },
+  {
+   "id": "here_n46p48_w92p13",
+   "name": "Analysed here: 46.48°N, 92.13°W",
+   "country": null,
+   "synthetic": false,
+   "kind": "flood",
+   "path": "here_n46p48_w92p13/summary.json",
+   "bounds": [
+    -92.2123,
+    46.4092,
+    -92.0523,
+    46.5492
+   ]
+  },
+  {
+   "id": "here_s2p89_w64p80",
+   "name": "Analysed here: 2.89°S, 64.80°W",
+   "country": null,
+   "synthetic": false,
+   "kind": "flood",
+   "path": "here_s2p89_w64p80/summary.json",
+   "bounds": [
+    -64.884,
+    -2.9649,
+    -64.724,
+    -2.8249
+   ]
+  },
+  {
+   "id": "here_s5p42_w62p74",
+   "name": "Analysed here: 5.42°S, 62.74°W",
+   "country": null,
+   "synthetic": false,
+   "kind": "flood",
+   "path": "here_s5p42_w62p74/summary.json",
+   "bounds": [
+    -62.8236,
+    -5.4917,
+    -62.6636,
+    -5.3517
+   ]
+  },
+  {
+   "id": "hot_n1p12_w61p62",
+   "name": "Roraima, Brazil (1.12°N, 61.62°W)",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_n1p12_w61p62/summary.json",
+   "bounds": [
+    -61.705,
+    1.055,
+    -61.545,
+    1.195
+   ]
+  },
+  {
+   "id": "hot_n2p62_e112p38",
+   "name": "Selangau, Malaysia (2.62°N, 112.38°E)",
+   "country": "MY",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_n2p62_e112p38/summary.json",
+   "bounds": [
+    112.295,
+    2.555,
+    112.455,
+    2.695
+   ]
+  },
+  {
+   "id": "hot_s0p62_e109p62",
+   "name": "Kubu Raya, Indonesia (0.62°S, 109.62°E)",
+   "country": "ID",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s0p62_e109p62/summary.json",
+   "bounds": [
+    109.545,
+    -0.695,
+    109.705,
+    -0.555
+   ]
+  },
+  {
+   "id": "hot_s0p62_w50p62",
+   "name": "Pará, Brazil (0.62°S, 50.62°W)",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s0p62_w50p62/summary.json",
+   "bounds": [
+    -50.705,
+    -0.695,
+    -50.545,
+    -0.555
+   ]
+  },
+  {
+   "id": "hot_s12p88_w62p62",
+   "name": "Rondônia, Brazil (12.88°S, 62.62°W)",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s12p88_w62p62/summary.json",
+   "bounds": [
+    -62.705,
+    -12.945,
+    -62.545,
+    -12.805
+   ]
+  },
+  {
+   "id": "hot_s4p12_w70p12",
+   "name": "Loreto, Peru (4.12°S, 70.12°W)",
+   "country": "PE",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s4p12_w70p12/summary.json",
+   "bounds": [
+    -70.205,
+    -4.195,
+    -70.045,
+    -4.055
+   ]
+  },
+  {
+   "id": "hot_s5p38_w63p12",
+   "name": "Amazonas, Brazil (5.38°S, 63.12°W)",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s5p38_w63p12/summary.json",
+   "bounds": [
+    -63.205,
+    -5.445,
+    -63.045,
+    -5.305
+   ]
+  },
+  {
+   "id": "hot_s6p62_e139p38",
+   "name": "Mappi, Indonesia (6.62°S, 139.38°E)",
+   "country": "ID",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s6p62_e139p38/summary.json",
+   "bounds": [
+    139.295,
+    -6.695,
+    139.455,
+    -6.555
+   ]
+  },
+  {
+   "id": "hot_s8p38_w74p38",
+   "name": "Ucayali, Peru (8.38°S, 74.38°W)",
+   "country": "PE",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s8p38_w74p38/summary.json",
+   "bounds": [
+    -74.455,
+    -8.445,
+    -74.295,
+    -8.305
+   ]
+  },
+  {
+   "id": "hot_s9p62_w50p12",
+   "name": "Tocantins, Brazil (9.62°S, 50.12°W)",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "hot_s9p62_w50p12/summary.json",
+   "bounds": [
+    -50.205,
+    -9.695,
+    -50.045,
+    -9.555
+   ]
+  },
+  {
+   "id": "janauaca",
+   "name": "Lago Janauacá várzea",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "janauaca/summary.json",
+   "bounds": [
+    -60.36,
+    -3.5,
+    -60.2,
+    -3.36
+   ]
+  },
+  {
+   "id": "limpopo_2026",
+   "name": "Limpopo flood at Chókwè, Mozambique",
+   "country": "MZ",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "limpopo_2026/summary.json",
+   "bounds": [
+    32.92,
+    -24.61,
+    33.08,
+    -24.47
+   ]
+  },
+  {
+   "id": "mamiraua",
+   "name": "Mamirauá várzea",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "mamiraua/summary.json",
+   "bounds": [
+    -65.0,
+    -3.0,
+    -64.84,
+    -2.86
+   ]
+  },
+  {
+   "id": "okavango",
+   "name": "Okavango Delta permanent swamp",
+   "country": "BW",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "okavango/summary.json",
+   "bounds": [
+    22.8,
+    -19.4,
+    22.96,
+    -19.26
+   ]
+  },
+  {
+   "id": "pacaya_samiria",
+   "name": "Pacaya-Samiria flooded forest",
+   "country": "PE",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "pacaya_samiria/summary.json",
+   "bounds": [
+    -74.6,
+    -5.3,
+    -74.44,
+    -5.16
+   ]
+  },
+  {
+   "id": "pantanal",
+   "name": "Rio Paraguai floodplain, Pantanal",
+   "country": "BR",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "pantanal/summary.json",
+   "bounds": [
+    -57.7,
+    -18.4,
+    -57.54,
+    -18.26
+   ]
+  },
+  {
+   "id": "sundarbans",
+   "name": "Sundarbans mangrove forest",
+   "country": "BD",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "sundarbans/summary.json",
+   "bounds": [
+    89.45,
+    21.85,
+    89.61,
+    21.99
+   ]
+  },
+  {
+   "id": "sylhet",
+   "name": "Sylhet haor and Ratargul swamp forest",
+   "country": "BD",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "sylhet/summary.json",
+   "bounds": [
+    91.84,
+    24.92,
+    92.0,
+    25.06
+   ]
+  },
+  {
+   "id": "thunder_bay_36",
+   "name": "Thunder Bay 36 fire, Ontario",
+   "country": "CA",
+   "synthetic": false,
+   "kind": "fire",
+   "path": "thunder_bay_36/summary.json",
+   "bounds": [
+    -89.6,
+    50.05,
+    -88.8,
+    50.95
+   ]
+  },
+  {
+   "id": "tonle_sap",
+   "name": "Tonlé Sap flooded forest (Prek Toal)",
+   "country": "KH",
+   "synthetic": false,
+   "kind": "flood",
+   "path": "tonle_sap/summary.json",
+   "bounds": [
+    103.55,
+    13.1,
+    103.71,
+    13.24
+   ]
+  }
+ ],
+ "global": "global/global.json",
+ "gibs": "gibs.json",
+ "events": "events.json",
+ "belt": "belt/index.json",
+ "motion": "motion/index.json",
+ "ice": "ice/index.json",
+ "glaciers": "glaciers/index.json"
+}

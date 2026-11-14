@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Under the Canopy: what NISAR's radar sees through. Flood water hidden under forest, forest burned under smoke, and ground that moved, mapped from real NASA-ISRO NISAR data and checked against independent measurements.">
+  <meta name="color-scheme" content="dark">
+  <title>Under the Canopy</title>
+  <link rel="icon" href="media/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/landing.css">
+  <script type="module" src="src/landing.js"></script>
+</head>
+<body>
+  <!-- Icons: one stroke weight, one 24 px grid, used across the page. -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-flood" viewBox="0 0 24 24"><path d="M12 3l5.5 7.5h-11z"/><path d="M12 10.5V16"/><path d="M3 19.5c2-1.3 3.6 1.3 5.6 0s3.6-1.3 5.6 0 3.6 1.3 5.6 0"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3c.8 3.4 5 5.2 5 10a5 5 0 0 1-10 0c0-2.4 1.3-3.9 2.4-5 .3 1.6 1 2.6 2 3.1-.1-3-.9-5.5.6-8.1z"/></symbol>
+    <symbol id="i-quake" viewBox="0 0 24 24"><path d="M3 9h7l2-3 2 3h7"/><path d="M3 15h7l2 3 2-3h7"/><path d="M12 3v18"/></symbol>
+    <symbol id="i-sink" viewBox="0 0 24 24"><path d="M12 3v10"/><path d="M8 9.5l4 4 4-4"/><path d="M3 17h18"/><path d="M6 21h12"/></symbol>
+    <symbol id="i-glacier" viewBox="0 0 24 24"><path d="M2.5 20l6.5-12 4 6 2.5-3.5 6 9.5z"/><path d="M7 11l2 1.5 1.6-1.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.7 2.7L16 9.8"/></symbol>
+    <symbol id="i-later" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9 16h-18z"/><path d="M12 10v4"/><path d="M12 17.2v.3"/></symbol>
+    <symbol id="i-satellite" viewBox="0 0 24 24"><path d="M9 9l6 6"/><rect x="8.5" y="8.5" width="7" height="7" rx="1.5" transform="rotate(45 12 12)"/><path d="M3 7l4-4 3 3-4 4zM21 17l-4 4-3-3 4-4z"/><path d="M17.5 3.5a3 3 0 0 1 3 3"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12c2.2-5 4.5-5 6.7 0s4.5 5 6.7 0 4.4-4.2 6.6-1"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6.5l6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></symbol>
+    <symbol id="i-boat" viewBox="0 0 24 24"><path d="M3 15h18l-2.5 5h-13z"/><path d="M12 3.5V15"/><path d="M12 4.5l6 8h-6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-5.5h4V20"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M7.5 15l3.5-4 3 2.5 5-6.5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.3-3 7.6-7 9.5-4-1.9-7-5.2-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.6 14.4A4.5 4.5 0 0 1 21 19"/></symbol>
+    <symbol id="i-open" viewBox="0 0 24 24"><path d="M4 7.5l8-4 8 4-8 4z"/><path d="M4 7.5v9l8 4 8-4v-9"/><path d="M12 11.5v9"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-3 3.2-3 14.8 0 18M12 3c3 3.2 3 14.8 0 18"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path class="fill" d="M8 5.5v13l10.5-6.5z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8.5 5.5v13M15.5 5.5v13"/></symbol>
+    <symbol id="i-sound-on" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+    <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></symbol>
+    <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.4-5.5"/><path d="M4.5 4v4h4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13.5 6.5L19 12l-5.5 5.5"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6.5 13.5L12 19l5.5-5.5"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#hero" data-i18n="landing.skip">Skip the film</a>
+
+  <header class="lp-nav" id="nav" data-over="film">
+    <a class="lp-brand" href="landing.html">
+      <svg class="brand-mark" width="28" height="28" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 13.2C5.6 6.2 14.4 6.2 16.6 13.2" stroke="#7FA894" stroke-width="2.6"/><path d="M10 13.2V26" stroke="currentColor" stroke-width="2.8"/><path d="M10 26H28.5" stroke="#56B4E9" stroke-width="2.8"/><path d="M27.45 5.63Q25.24 5.30 24.17 3.34M26.44 8.83Q23.18 8.25 21.52 5.39" stroke="#E69F00" stroke-width="1.8"/><path d="M22.15 9.73L12.6 23.4" stroke="#E69F00" stroke-width="2"/><circle cx="12.4" cy="23.7" r="2" fill="#E69F00"/></svg>
+      <span data-i18n="app.title">Under the Canopy</span>
+    </a>
+    <nav class="lp-links" data-i18n-aria="landing.nav_label" aria-label="Sections">
+      <a href="#problem" data-i18n="landing.nav_problem">The problem</a>
+      <a href="#changes" data-i18n="landing.nav_changes">What it sees</a>
+      <a href="#evidence" data-i18n="landing.nav_evidence">Evidence</a>
+      <a href="#app" data-i18n="landing.nav_app">The app</a>
+      <a href="#priorities" data-i18n="landing.nav_priorities">Priorities</a>
+      <a href="#scales" data-i18n="landing.nav_scales">Two scales</a>
+      <a href="#who" data-i18n="landing.nav_who">Who it's for</a>
+      <a href="#colab" data-i18n="landing.nav_colab">Notebooks</a>
+      <a href="#team" data-i18n="landing.nav_team">Team</a>
+      <a href="play.html" data-i18n="landing.nav_play">Play</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="index.html" data-i18n="landing.cta_open">Open the map</a>
+  </header>
+
+  <main>
+    <!-- 0 · The opening film (src/film.js, rendered by tools/film/render.mjs) -->
+    <section class="film" id="film" aria-labelledby="film-title">
+      <h2 id="film-title" class="sr-only" data-i18n="landing.film_title">Opening film</h2>
+      <video id="film-video" class="film-video" muted playsinline controls preload="metadata" poster="media/intro-en.jpg" aria-describedby="film-text-title">
+        <source src="media/intro-en.mp4" type="video/mp4">
+      </video>
+      <div class="film-ui" id="film-ui" hidden>
+        <div class="film-progress" aria-hidden="true"><i id="film-bar"></i></div>
+        <div class="film-buttons">
+          <button type="button" class="film-btn" id="film-play"><svg class="ico" aria-hidden="true"><use href="#i-pause"/></svg><span data-i18n="landing.film_pause">Pause</span></button>
+          <button type="button" class="film-btn" id="film-sound"><svg class="ico" aria-hidden="true"><use href="#i-sound-off"/></svg><span data-i18n="landing.film_sound_on">Sound on</span></button>
+        </div>
+        <a class="film-skip" href="#hero" data-i18n="landing.film_skip">Skip the film</a>
+      </div>
+      <a class="film-cue" id="film-cue" href="#hero"><span data-i18n="landing.film_scroll">Scroll to explore</span><svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></a>
+    </section>
+
+    <!-- 1 · Hero: the camera / other radar / NISAR reveal on the real Sylhet pass -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="landing.eyebrow">NASA Space Apps 2026 · Dancing with the SARs</span></p>
+        <h1 id="hero-title" data-i18n="landing.hero_title">The flood is under the trees. Only one kind of radar can see it.</h1>
+        <p class="lede" data-i18n="landing.hero_lede">Cameras see clouds. Most radar sees leaves. NISAR's L-band radar, with a 24 cm wavelength, reaches the ground under forest, smoke and night. Under the Canopy maps what it finds: flood water hidden in forests, forest burned beneath the smoke, and ground that moved. Every number is checked against an independent measurement.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="index.html?site=sylhet&amp;compare=cband" data-i18n="landing.cta_hero">See the hidden flood</a>
+          <a class="btn btn-ghost" href="#problem" data-i18n="landing.cta_why">Why this exists</a>
+        </div>
+        <p class="real-chip"><span class="real-dot" aria-hidden="true"></span><span data-i18n="landing.real_chip">Built from real NISAR data (provisional release, June to October 2026)</span></p>
+      </div>
+      <figure class="reveal" id="reveal">
+        <div class="reveal-tabs" role="tablist" data-i18n-aria="landing.reveal_label" aria-label="Three ways of seeing the same place">
+          <button type="button" role="tab" data-layer="photo" aria-selected="false"><span class="tab-name" data-i18n="landing.reveal_photo">Camera</span><span class="tab-wl" data-i18n="landing.reveal_photo_wl">light · 0.5 µm</span></button>
+          <button type="button" role="tab" data-layer="cband" aria-selected="false"><span class="tab-name" data-i18n="landing.reveal_cband">C-band radar</span><span class="tab-wl" data-i18n="landing.reveal_cband_wl">5.6 cm wave</span></button>
+          <button type="button" role="tab" data-layer="nisar" aria-selected="true"><span class="tab-name" data-i18n="landing.reveal_nisar">NISAR L-band</span><span class="tab-wl" data-i18n="landing.reveal_nisar_wl">24 cm wave</span></button>
+        </div>
+        <div class="reveal-stage">
+          <img data-layer="photo" src="data/sylhet/optical.png" alt="" width="256" height="247">
+          <img data-layer="cband" src="data/sylhet/passes/p01_cband.png" alt="" width="256" height="247">
+          <img class="on" data-layer="nisar" src="data/sylhet/passes/p01_class.png" alt="" width="256" height="247">
+          <div class="reveal-readout" aria-live="polite">
+            <strong class="readout-num" id="readout-num">26.4 km²</strong>
+            <span id="readout-text" data-i18n="landing.readout_nisar">of water under the trees, 11.0 km² of it missed by C-band</span>
+          </div>
+        </div>
+        <figcaption>
+          <span data-i18n="landing.reveal_caption">Sylhet haor and Ratargul swamp forest, Bangladesh. NISAR pass of 23 June 2026; Sentinel-1 C-band radar of 21 June; photo from space of 16 July (99 % cloud).</span>
+          <span class="legend"><i class="sw sw-hidden"></i><span data-i18n="legend.hidden_flood">Hidden flood (water under vegetation)</span> <i class="sw sw-water"></i><span data-i18n="legend.open_water">Open water</span></span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <div class="film-text-row">
+      <details class="film-text">
+        <summary id="film-text-title" data-i18n="landing.film_text">Read the opening film as text</summary>
+        <ol>
+          <li><span data-i18n="film.cold_where">Gowainghat, Sylhet, Bangladesh · 17 June 2022</span>: <span data-i18n="film.cold_quote">“The ground floor of my house has been inundated with shoulder-high water.”</span> <span data-i18n="film.cold_who">A doctor, speaking to Prothom Alo. His family had moved upstairs. The phones were down.</span></li>
+          <li data-i18n="landing.film_text_toll">7.2 million people were caught by those floods in north-east Bangladesh (IFRC). Warnings came late, or not at all.</li>
+          <li><span data-i18n="film.blind_title">That week's flood map came from radar that stops at the leaves.</span> <span data-i18n="film.blind_forest">Gowainghat is home to Ratargul, a swamp forest that stands in water for months each year. Under its trees, the water stays off the map.</span></li>
+          <li><span data-i18n="film.hook_launch">In July 2025, NASA and ISRO launched NISAR.</span> <span data-i18n="film.hook_every">Every 12 days, its long-wave radar maps nearly all of Earth's land and ice, through cloud, day and night.</span></li>
+          <li><span data-i18n="film.camera_title">A camera sees clouds.</span> <span data-i18n="film.cband_title">Most satellite radar stops at the leaves.</span> <span data-i18n="film.nisar_title">NISAR's long-wave radar reaches the water underneath.</span></li>
+          <li data-i18n="film.physics_title">Its 24 cm waves pass the leaves, bounce off the water and the trunks, and come back bright.</li>
+          <li data-i18n="landing.film_text_people">About 320,000 people live within 1 km of this hidden water at Sylhet.</li>
+          <li><span data-i18n="film.season_title">It counts the days, too.</span> <span data-i18n="landing.film_text_season">Some places stayed under water for 108 days.</span></li>
+          <li><span data-i18n="film.card_title">One picture for the village.</span> <span data-i18n="film.card_not">Not a warning: the maps arrive days after each pass.</span></li>
+          <li><span data-i18n="film.places_limpopo_title">Limpopo, Mozambique, January 2026</span>: <span data-i18n="film.places_limpopo">Clouds hid the flood from cameras. NISAR's radar mapped it. More than 600,000 people were displaced (NASA).</span></li>
+          <li><span data-i18n="film.fire_title">It sees through smoke, too.</span> <span data-i18n="landing.film_text_fire">2,033 km² of forest burned at Ontario's Thunder Bay 36 fire, mapped pass by pass.</span></li>
+          <li><span data-i18n="film.ground_title">And ground that moved.</span> <span data-i18n="landing.film_text_ground">Up to about 70 cm west in Venezuela's earthquake; up to about 30 cm a year of sinking in Mexico City.</span></li>
+          <li data-i18n="landing.film_text_ice">And ice that flows: Sermeq Kujalleq in Greenland moves up to about 36 m a day.</li>
+          <li><span data-i18n="film.proof_title">Every result is checked against an independent measurement.</span> <span data-i18n="film.limits_title">And where it cannot see, it says so.</span></li>
+          <li data-i18n="landing.film_text_aud">Who it is for: relief teams, communities and local offices, radar and water scientists, climate and methane modellers, students and teachers, planners, funders and press.</li>
+          <li data-i18n="landing.film_text_next">Next: every flooded forest on Earth, faster repeats with other L-band radars, wetland methane, two-week outlooks, farms and wetland loss, and every classroom.</li>
+        </ol>
+      </details>
+    </div>
+
+    <!-- 2 · The challenge, and the changes this answers with -->
+    <section class="challenge" id="challenge" aria-labelledby="challenge-title">
+      <div class="wrap challenge-grid">
+        <div>
+          <h2 id="challenge-title" data-i18n="landing.ch_title">Built for Dancing with the SARs</h2>
+          <blockquote class="challenge-quote">
+            <p data-i18n="landing.challenge_quote">"Earth's surface is an endless dance of natural processes and human activities, but these changes are often difficult to visualize, understand, and communicate. From wetland loss to forest wildfires, earthquakes, farming activities, glacier movement, and more, Earth is in a constant waltz of surface changes. Your challenge is to build an interactive application that uses radar remote sensing data from the NASA-ISRO Synthetic Aperture Radar (NISAR) mission to track and visualize one or more types of surface change at locations around the world."</p>
+            <cite data-i18n="landing.challenge_cite">NASA Space Apps Challenge 2026</cite>
+          </blockquote>
+        </div>
+        <div class="coverage-wrap">
+          <p class="coverage-title" data-i18n="landing.cov_title">The surface changes it names, and ours</p>
+          <ul class="coverage">
+            <li class="on"><svg class="ico big" aria-hidden="true"><use href="#i-flood"/></svg><b data-i18n="landing.cov_flood">Wetland floods</b><span data-num="flood-sites" data-i18n="landing.cov_flood_how">Tracked at 26 places</span><svg class="ico state" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li class="on"><svg class="ico big" aria-hidden="true"><use href="#i-fire"/></svg><b data-i18n="landing.cov_fire">Forest wildfires</b><span data-i18n="landing.cov_fire_how">Ontario's largest fire</span><svg class="ico state" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li class="on"><svg class="ico big" aria-hidden="true"><use href="#i-quake"/></svg><b data-i18n="landing.cov_quake">Earthquakes</b><span data-i18n="landing.cov_quake_how">Venezuela, magnitude 7.5</span><svg class="ico state" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li class="on"><svg class="ico big" aria-hidden="true"><use href="#i-sink"/></svg><b data-i18n="landing.cov_sink">Sinking ground</b><span data-i18n="landing.cov_sink_how">Mexico City</span><svg class="ico state" aria-hidden="true"><use href="#i-check"/></svg></li>
+            <li class="on"><svg class="ico big" aria-hidden="true"><use href="#i-glacier"/></svg><b data-i18n="landing.cov_glacier">Glaciers</b><span data-num="glacier-sites" data-i18n="landing.cov_glacier_how">28 glaciers; speeds from ITS_LIVE, NISAR tested</span><svg class="ico state" aria-hidden="true"><use href="#i-check"/></svg></li>
+          </ul>
+        </div>
+        <!-- The challenge's own image (NASA/JPL-Caltech PIA26672), whole and at its own proportions,
+             from the full-resolution original; a reading key beside it, and a loupe over it. -->
+        <figure class="challenge-figure">
+          <div class="cf-frame" id="cf-frame">
+            <img src="media/dancing-with-the-sars-1600.jpg" srcset="media/dancing-with-the-sars-900.jpg 900w, media/dancing-with-the-sars-1600.jpg 1600w" sizes="(max-width: 980px) 92vw, 60vw" width="1600" height="1222" loading="lazy" decoding="async"
+              data-i18n-alt="landing.ch_img_alt" alt="NISAR radar image of Mount Rainier, Washington, 10 November 2025: glaciers and ridges in purple and blue, forest in yellow-green.">
+            <span class="cf-lens" aria-hidden="true"></span>
+          </div>
+          <figcaption class="cf-key">
+            <p class="cf-kicker" data-i18n="landing.ch_img_kicker">The challenge's image</p>
+            <h3 data-i18n="landing.ch_img_title">Mount Rainier, through the clouds</h3>
+            <p class="cf-lede" data-i18n="landing.ch_img_caption">NISAR's L-band radar saw the mountain on 10 November 2025, a cloudy day that hid it from cameras.</p>
+            <ul class="cf-legend">
+              <li><i style="background:#7a3fd1"></i><span data-i18n="landing.ch_key_ice">Purple and blue: the mountain's glaciers and ridges</span></li>
+              <li><i style="background:#c9d84a"></i><span data-i18n="landing.ch_key_veg">Yellow-green: forests and wetlands, where leaves scatter the radar</span></li>
+              <li><i style="background:#141c6e"></i><span data-i18n="landing.ch_key_smooth">Dark blue: smooth surfaces, such as lakes and bare clearings</span></li>
+              <li><i style="background:#b77ee0;border-radius:2px"></i><span data-i18n="landing.ch_key_cut">Purple squares near the base: likely thinned forest, their right angles made by people</span></li>
+            </ul>
+            <p class="cf-hint" data-i18n="landing.ch_img_hint">Move over the image to look closer.</p>
+            <p class="challenge-credit" data-i18n="landing.ch_img_credit">NASA/JPL-Caltech (PIA26672), via NASA Space Apps</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 3 · Why: one picture that changes as you scroll -->
+    <!-- 2b · One hidden flood, two scales (D-103 to D-107): the village and the planet, with every
+         number read from the data by landing.js; the HTML's figures are placeholders until then. -->
+    <section class="scales" id="scales" aria-labelledby="scales-title">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="landing.sc_eyebrow">One finding, two scales</p>
+        <h2 id="scales-title" data-i18n="landing.sc_title">Water hidden under trees is missing from a village's flood map and from the planet's methane budget</h2>
+        <p class="lede" data-i18n="landing.sc_lede">NISAR is the first mission that can see it every 12 days. We turn that into a card a village can use and a ledger the planet can count.</p>
+        <div class="scales-grid">
+          <!-- The two scales, side by side: the village and the planet. -->
+          <article class="sc sc-village">
+            <div class="sc-visual" id="sc-vis-village" aria-hidden="true"><div class="sc-phone"><img src="data/sylhet/passes/p01_class.png" alt=""></div></div>
+            <div class="sc-body">
+              <p class="scale-kicker" data-i18n="landing.sc_village_k">For the village</p>
+              <p class="sc-fig"><span data-i18n="landing.sc_village_fig">320,000</span><small data-i18n="landing.sc_village_unit">people within 1 km of hidden water</small></p>
+              <h3 data-i18n="landing.sc_village_t">A flood card, in Bengali</h3>
+              <p data-i18n="landing.sc_village_d">After each pass, one picture: the villages the water reaches, the roads under it, and when NISAR comes back.</p>
+              <a class="sc-link" href="index.html?site=sylhet&amp;lang=bn"><span data-i18n="landing.sc_village_a">Make Sylhet's flood card</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="sc sc-planet">
+            <div class="sc-visual" id="sc-vis-planet" aria-hidden="true"></div>
+            <div class="sc-body">
+              <p class="scale-kicker" data-i18n="landing.sc_planet_k">For the planet</p>
+              <p class="sc-fig"><span data-i18n="landing.sc_planet_fig">2,410–6,370 t</span><small data-i18n="landing.sc_planet_unit">of methane this season (estimate)</small></p>
+              <h3 data-i18n="landing.sc_planet_t">A methane ledger</h3>
+              <p data-i18n="landing.sc_planet_d">From water under the trees in 26 flooded forests, at published rates. In amber: the part under water C-band radar did not show.</p>
+              <a class="sc-link" href="index.html?site=janauaca"><span data-i18n="landing.sc_planet_a">Open the ledger at Janauacá</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="sc sc-replay">
+            <div class="sc-visual sc-wipe" id="sc-vis-replay" aria-hidden="true">
+              <img class="sc-before" src="data/limpopo_2026/passes/p03_class.png" alt="">
+              <img class="sc-after" src="data/limpopo_2026/passes/p04_class.png" alt="">
+              <span class="sc-tag sc-tag-l" data-i18n="landing.sc_replay_before">5 Jan</span><span class="sc-tag sc-tag-r" data-i18n="landing.sc_replay_after">17 Jan</span>
+            </div>
+            <div class="sc-body">
+              <p class="scale-kicker" data-i18n="landing.sc_replay_k">A disaster, replayed</p>
+              <p class="sc-fig"><span data-i18n="landing.sc_replay_fig">26 → 72 km²</span><small data-i18n="landing.sc_replay_unit">of water in 12 days</small></p>
+              <h3 data-i18n="landing.sc_replay_t">Limpopo, January 2026</h3>
+              <p data-i18n="landing.sc_replay_d">Chókwè, Mozambique, under 96 % cloud. NASA's own example of NISAR flood mapping, from early mission data.</p>
+              <a class="sc-link" href="index.html?site=limpopo_2026&amp;lang=pt"><span data-i18n="landing.sc_replay_a">Replay the flood</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="sc sc-play">
+            <div class="sc-visual sc-game" id="sc-vis-play" aria-hidden="true"><img src="data/sylhet/optical.png" alt=""><div class="sc-grid"></div></div>
+            <div class="sc-body">
+              <p class="scale-kicker" data-i18n="landing.sc_play_k">For anyone</p>
+              <h3 data-i18n="landing.sc_play_t">Find the hidden water</h3>
+              <p data-i18n="landing.sc_play_d">See the place as a camera did, tap where water hides, and let L-band radar reveal it.</p>
+              <a class="sc-link sc-link-primary" href="play.html"><span data-i18n="landing.sc_play_a">Play</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="sc sc-waltz">
+            <div class="sc-visual" id="sc-vis-waltz" aria-hidden="true"></div>
+            <div class="sc-body">
+              <p class="scale-kicker" data-i18n="landing.sc_waltz_k">To listen to</p>
+              <h3 data-i18n="landing.sc_waltz_t">Earth's waltz</h3>
+              <p data-i18n="landing.sc_waltz_d">One bar per 12-day pass: the river in the bass, the hidden flood in the tune, a clash where C-band missed it.</p>
+              <a class="sc-link" href="index.html?site=sylhet"><span data-i18n="landing.sc_waltz_a">Hear Sylhet's season</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="problem" aria-labelledby="problem-title">
+      <div class="wrap">
+        <h2 id="problem-title" data-i18n="landing.pr_title">Why the water under the trees goes unmapped</h2>
+      </div>
+      <div class="wrap scrolly">
+        <figure class="scrolly-fig" id="sensors" data-step="all">
+          <svg viewBox="0 0 1200 620" role="img" aria-labelledby="sensors-title">
+            <title id="sensors-title" data-i18n="landing.pr_fig">A flooded forest seen by a camera, by most radar and by NISAR, with a village at its edge</title>
+            <defs>
+              <radialGradient id="glow"><stop offset="0" stop-color="#e69f00" stop-opacity=".95"/><stop offset="1" stop-color="#e69f00" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect x="0" y="520" width="1200" height="100" fill="#0f3a58"/>
+            <path d="M0 520 Q 30 515 60 520 T 120 520 T 180 520 T 240 520 T 300 520 T 360 520 T 420 520 T 480 520 T 540 520 T 600 520 T 660 520 T 720 520 T 780 520 T 840 520 T 900 520 T 960 520 T 1020 520" fill="none" stroke="#56b4e9" stroke-width="2" opacity=".7"/>
+            <path d="M1010 470 Q 1040 455 1080 452 L 1200 450 L 1200 620 L 1010 620 Q 1000 540 1010 470 Z" fill="#1d2b2f"/>
+            <g class="g-trees">
+              <g fill="#6b5442"><rect x="71" y="380" width="18" height="140"/><rect x="211" y="380" width="18" height="140"/><rect x="351" y="380" width="18" height="140"/><rect x="491" y="380" width="18" height="140"/><rect x="631" y="380" width="18" height="140"/><rect x="771" y="380" width="18" height="140"/><rect x="911" y="380" width="18" height="140"/></g>
+              <g fill="#2c5541"><ellipse cx="80" cy="330" rx="82" ry="60"/><ellipse cx="220" cy="330" rx="82" ry="60"/><ellipse cx="360" cy="330" rx="82" ry="60"/><ellipse cx="500" cy="330" rx="82" ry="60"/><ellipse cx="640" cy="330" rx="82" ry="60"/><ellipse cx="780" cy="330" rx="82" ry="60"/><ellipse cx="920" cy="330" rx="82" ry="60"/></g>
+              <g fill="#3f6b52"><ellipse cx="66" cy="312" rx="52" ry="36"/><ellipse cx="206" cy="312" rx="52" ry="36"/><ellipse cx="346" cy="312" rx="52" ry="36"/><ellipse cx="486" cy="312" rx="52" ry="36"/><ellipse cx="626" cy="312" rx="52" ry="36"/><ellipse cx="766" cy="312" rx="52" ry="36"/><ellipse cx="906" cy="312" rx="52" ry="36"/></g>
+            </g>
+            <g class="g-camera">
+              <g transform="translate(200 62)"><rect x="-44" y="-7" width="30" height="14" rx="2" fill="#3a5a6e"/><rect x="14" y="-7" width="30" height="14" rx="2" fill="#3a5a6e"/><rect x="-12" y="-11" width="24" height="22" rx="4" fill="#c9d4d0"/></g>
+              <path d="M200 84 V 150" stroke="#f2c14e" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+              <g fill="#cfd8d4" opacity=".92"><ellipse cx="160" cy="180" rx="70" ry="26"/><ellipse cx="225" cy="166" rx="60" ry="30"/><ellipse cx="270" cy="186" rx="64" ry="24"/><ellipse cx="110" cy="190" rx="44" ry="18"/></g>
+              <text x="200" y="30" text-anchor="middle" class="svg-label" data-i18n="landing.pr_lab_camera">Camera</text>
+            </g>
+            <g class="g-cband">
+              <g transform="translate(600 62)"><rect x="-44" y="-7" width="30" height="14" rx="2" fill="#3a5a6e"/><rect x="14" y="-7" width="30" height="14" rx="2" fill="#3a5a6e"/><rect x="-12" y="-11" width="24" height="22" rx="4" fill="#c9d4d0"/></g>
+              <path class="wave" id="ray-c" d="M600 96 L 640 266" stroke="#56b4e9" stroke-width="3" fill="none"/>
+              <g class="wave" id="scatter" stroke="#56b4e9" stroke-width="2.5" fill="none"><path d="M628 262 L 566 240"/><path d="M632 258 L 590 205"/><path d="M640 256 L 636 190"/><path d="M648 258 L 684 196"/><path d="M652 262 L 708 232"/></g>
+              <text x="600" y="30" text-anchor="middle" class="svg-label" data-i18n="landing.pr_lab_cband">Most radar, 5.6 cm</text>
+            </g>
+            <g class="g-lband">
+              <ellipse class="glow" cx="852" cy="524" rx="96" ry="26" fill="url(#glow)"/>
+              <g transform="translate(1000 62)"><rect x="-44" y="-7" width="30" height="14" rx="2" fill="#3a5a6e"/><rect x="14" y="-7" width="30" height="14" rx="2" fill="#3a5a6e"/><rect x="-12" y="-11" width="24" height="22" rx="4" fill="#c9d4d0"/></g>
+              <path class="wave" id="ray-l" d="M1000 96 L 850 520 L 911 500 L 1054 96" stroke="#e8eeea" stroke-width="3" fill="none"/>
+              <text x="1000" y="30" text-anchor="middle" class="svg-label" data-i18n="landing.pr_lab_nisar">NISAR, 24 cm</text>
+            </g>
+            <g class="g-people">
+              <g fill="#c9d4d0"><path d="M1060 452 l14 -12 l14 12 v14 h-28z"/><path d="M1104 448 l16 -14 l16 14 v18 h-32z"/><path d="M1150 450 l13 -11 l13 11 v15 h-26z"/></g>
+              <path d="M860 560 H 1150 M860 552 v16 M1150 552 v16" stroke="#e8eeea" stroke-width="2" fill="none"/>
+              <text x="1005" y="598" text-anchor="middle" class="svg-label" data-i18n="landing.pr_lab_km">within 1 km</text>
+            </g>
+          </svg>
+        </figure>
+        <ol class="scrolly-steps">
+          <li class="step" data-step="camera">
+            <h3 data-i18n="landing.pr1_t">Cameras see clouds</h3>
+            <p data-i18n="landing.pr1_d">In the monsoon, a clear view is rare. On 26 June, three days after NISAR's pass, no optical satellite had a clear view of Sylhet at all.</p>
+          </li>
+          <li class="step" data-step="cband">
+            <h3 data-i18n="landing.pr2_t">Most radar stops at the leaves</h3>
+            <p data-i18n="landing.pr2_d">Radar sees through cloud, but short 5.6 cm waves bounce off the canopy. The river shows up; the water under the trees does not.</p>
+          </li>
+          <li class="step" data-step="lband">
+            <h3 data-i18n="landing.pr3_t">NISAR's long waves reach the water</h3>
+            <p data-i18n="landing.pr3_d">Its 24 cm waves slip past the leaves, bounce off the water and then the trunks, and return bright. That double echo marks water under trees.</p>
+          </li>
+          <li class="step" data-step="people">
+            <h3 data-i18n="landing.pr4_t">And people live right beside it</h3>
+            <p><span data-i18n="landing.pr4_d">At Sylhet alone, about this many people live within 1 km of water hidden under the trees:</span> <b class="inline-stat" data-num="people">320,000</b></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4 · Three changes, each a real map, a number and its check -->
+    <section class="changes" id="changes" aria-labelledby="changes-title">
+      <div class="wrap">
+        <h2 id="changes-title" data-i18n="landing.chg_title">One radar, four changes it watches</h2>
+        <p class="lead" data-i18n="landing.chg_lead">The same physics and the same rule each time: a real map, one number, and what it was checked against.</p>
+      </div>
+
+      <article class="change wrap" aria-labelledby="chg1">
+        <figure class="change-fig">
+          <div class="map-frame"><img class="px" src="data/sylhet/hydroperiod.png" alt="" width="256" height="247" loading="lazy"></div>
+          <figcaption class="ramp-key"><span class="ramp ramp-days" aria-hidden="true"></span><span class="ramp-ends"><span data-i18n="landing.days_one">1 day</span><span data-num="season-days" data-i18n="landing.days_max">108 days flooded</span></span></figcaption>
+        </figure>
+        <div class="change-copy">
+          <p class="change-kind"><svg class="ico" aria-hidden="true"><use href="#i-flood"/></svg><span data-i18n="landing.chg1_kind">Floods under forest</span></p>
+          <h3 id="chg1" data-i18n="landing.chg1_t">Water under the trees</h3>
+          <p class="stat"><b data-num="flooded-any">137</b><span data-i18n="landing.unit_km2">km²</span></p>
+          <p class="stat-note" data-i18n="landing.chg1_d">flooded at least once this season at Sylhet, Bangladesh. The map counts the days each place stayed under water.</p>
+          <p class="checked"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="landing.chg1_check">Checked against river gauges and NASA's SWOT water heights</span></p>
+          <a class="btn btn-ghost" href="index.html?site=sylhet&amp;view=hydroperiod" data-i18n="landing.chg1_link">Open the flood map</a>
+        </div>
+      </article>
+
+      <article class="change wrap flip" aria-labelledby="chg2">
+        <figure class="change-fig narrow">
+          <div class="map-frame"><img class="px" src="data/thunder_bay_36/burn.png" alt="" width="512" height="906" loading="lazy"></div>
+          <figcaption class="ramp-key"><span class="ramp ramp-burn" aria-hidden="true"></span><span class="ramp-ends"><span data-num="burn-first">23 Jul</span><span data-num="burn-last">3 Oct</span></span><span class="ramp-cap" data-i18n="landing.burn_key">The date each patch first showed as burned</span></figcaption>
+        </figure>
+        <div class="change-copy">
+          <p class="change-kind"><svg class="ico" aria-hidden="true"><use href="#i-fire"/></svg><span data-i18n="landing.chg2_kind">Wildfire</span></p>
+          <h3 id="chg2" data-i18n="landing.chg2_t">Burned forest, through the smoke</h3>
+          <p class="stat"><b data-num="burned">2,033</b><span data-i18n="landing.unit_km2">km²</span></p>
+          <p class="stat-note" data-i18n="landing.chg2_d">of forest burned at Ontario's Thunder Bay 36 fire, found pass by pass whatever the smoke. When forest burns, the echo from its leaves fades while the trunks and the ground still answer.</p>
+          <p class="checked"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="landing.chg2_check">Checked against NASA's MODIS burned-area map</span></p>
+          <a class="btn btn-ghost" href="index.html?site=thunder_bay_36&amp;view=burn" data-i18n="landing.chg2_link">Open the fire map</a>
+        </div>
+      </article>
+
+      <article class="change wrap" aria-labelledby="chg3">
+        <figure class="change-fig ground-pair">
+          <div class="map-frame wide"><img src="media/map-quake.jpg" alt="" width="986" height="369" loading="lazy"><span class="map-tag" data-i18n="landing.map_quake">Venezuela, east–west motion</span></div>
+          <div class="map-frame squareish"><img src="media/map-sink.jpg" alt="" width="472" height="553" loading="lazy"><span class="map-tag" data-i18n="landing.map_sink">Mexico City, rise and fall a year</span></div>
+          <figcaption class="ground-key">
+            <p class="gk-title" data-i18n="landing.gk_title">Reading the colours</p>
+            <span class="ramp ramp-vik" aria-hidden="true"></span>
+            <span class="ramp-ends"><span data-i18n="landing.vik_lo">West, or sinking</span><span data-i18n="landing.vik_hi">East, or rising</span></span>
+            <ul class="gk-list">
+              <li><b data-i18n="landing.gk_quake_t">Venezuela</b><span data-i18n="landing.gk_quake">East–west motion in the earthquake of 24 June 2026; the colours run to ±80 cm.</span></li>
+              <li><b data-i18n="landing.gk_sink_t">Mexico City</b><span data-i18n="landing.gk_sink">Rise and fall a year, May to October 2026; the colours run to ±40 cm a year.</span></li>
+              <li><b data-i18n="landing.gk_grey_t">Grey relief</b><span data-i18n="landing.gk_grey">Not measured: the surface changed too much between passes for the radar's phase to hold.</span></li>
+            </ul>
+          </figcaption>
+        </figure>
+        <div class="change-copy">
+          <p class="change-kind"><svg class="ico" aria-hidden="true"><use href="#i-quake"/></svg><span data-i18n="landing.chg3_kind">Earthquake and sinking ground</span></p>
+          <h3 id="chg3" data-i18n="landing.chg3_t">Ground that moved</h3>
+          <div class="stat-pair">
+            <div><p class="stat"><b data-num="quake">70</b><span data-i18n="landing.unit_cm">cm</span></p><p class="stat-lab" data-i18n="landing.stat_quake">west, Venezuela's earthquake</p></div>
+            <div><p class="stat"><b data-num="sink">30</b><span data-i18n="landing.unit_cm_year">cm a year</span></p><p class="stat-lab" data-i18n="landing.stat_sink">sinking, Mexico City</p></div>
+          </div>
+          <p class="stat-note" data-i18n="landing.chg3_d">Up to about 70 cm west in Venezuela's earthquake of 24 June 2026, and up to about 30 cm a year of sinking in Mexico City, from the tiny shifts between radar passes.</p>
+          <p class="checked"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="landing.chg3_check">Checked against NASA JPL's own processing, the USGS fault model and GPS stations</span></p>
+          <a class="btn btn-ghost" href="index.html?mode=motion" data-i18n="landing.chg3_link">Open ground motion</a>
+        </div>
+      </article>
+
+      <article class="change wrap flip" aria-labelledby="chg4">
+        <figure class="change-fig">
+          <div class="map-frame" id="glacier-map"><span class="map-tag" data-i18n="landing.map_glacier">Sermeq Kujalleq, Greenland: speed of the ice</span></div>
+          <figcaption class="ramp-key"><span class="ramp" id="glacier-ramp" aria-hidden="true"></span><span class="ramp-ends"><span data-i18n="landing.ice_lo">Slow</span><span data-num="glacier-max" data-i18n="landing.ice_hi">13,000 m a year</span></span><span class="ramp-cap" data-i18n="landing.ice_key">Speed of the ice, NASA ITS_LIVE, over relief from the Copernicus DEM</span></figcaption>
+        </figure>
+        <div class="change-copy">
+          <p class="change-kind"><svg class="ico" aria-hidden="true"><use href="#i-glacier"/></svg><span data-i18n="landing.chg4_kind">Glaciers</span></p>
+          <h3 id="chg4" data-i18n="landing.chg4_t">Ice that flows</h3>
+          <div class="stat-pair">
+            <div><p class="stat"><b data-num="glacier-day">36</b><span data-i18n="landing.unit_m_day">m a day</span></p><p class="stat-lab" data-i18n="landing.stat_glacier">at the front of Greenland's fastest glacier</p></div>
+            <div><p class="stat"><b data-num="glacier-n">28</b><span data-i18n="landing.unit_glaciers">glaciers</span></p><p class="stat-lab" data-i18n="landing.stat_glaciers">in 15 countries, Greenland to Antarctica, 1985 to 2024</p></div>
+          </div>
+          <p class="stat-note" data-i18n="landing.chg4_d">How fast each glacier flows, how that changed over 40 years, and how many NISAR passes already cover it. The speeds are NASA's ITS_LIVE; NISAR's own ice tracking is tested beside them, with where it does not yet resolve slow ice.</p>
+          <p class="checked"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="landing.chg4_check">Checked against published measurements (Joughin et al. 2004 in Nature; Khazendar et al. 2019 in Nature Geoscience)</span></p>
+          <a class="btn btn-ghost" href="index.html?mode=ice" data-i18n="landing.chg4_link">Open the glaciers</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 5 · Evidence: three checks, drawn -->
+    <section class="evidence" id="evidence" aria-labelledby="evidence-title">
+      <div class="wrap">
+        <h2 id="evidence-title" data-i18n="landing.ev_title">Checked against the real world</h2>
+        <p class="lead" data-i18n="landing.ev_lead">A result only counts when something independent agrees with it. Three of the checks, drawn from the published data:</p>
+      </div>
+      <div class="wrap ev-grid">
+        <figure class="ev">
+          <figcaption><h3 data-i18n="landing.ev1_t">The flood map rises and falls with the river</h3><p class="ev-note" id="ev1-note" data-i18n="landing.ev1_note">Sylhet: river level against the flood area NISAR mapped, 7 passes, correlation 0.94.</p></figcaption>
+          <div class="chart" id="chart-river"></div>
+        </figure>
+        <figure class="ev">
+          <figcaption><h3 data-i18n="landing.ev2_t">Burned area lands close to NASA's own estimate</h3><p class="ev-note" id="ev2-note" data-i18n="landing.ev2_note">Thunder Bay 36: forest found burned by each radar pass, against NASA MODIS.</p></figcaption>
+          <div class="chart" id="chart-burn"></div>
+        </figure>
+        <figure class="ev">
+          <figcaption><h3 data-i18n="landing.ev3_t">Sinking speed agrees with a GPS station</h3><p class="ev-note" id="ev3-note" data-i18n="landing.ev3_note">Mexico City, station MMX1, over the same months.</p></figcaption>
+          <div class="chart" id="chart-gps"></div>
+        </figure>
+      </div>
+      <div class="wrap limits">
+        <h3 data-i18n="landing.lim_title">What we do not claim</h3>
+        <ul>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg><span data-i18n="landing.lim1">Burned forest can look like flooded forest to radar. After the fire, 92 % of the "flood" found there was inside the burn. The map flags it.</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg><span data-i18n="landing.lim2">Near Caracas airport our earthquake map and the USGS fault model disagree by about 41 cm. We show both.</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg><span data-i18n="landing.lim3">NISAR's data is a first, provisional release. Thresholds come from published studies and are not tuned for every place.</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg><span data-i18n="landing.lim4">No forecasts and no alerts. Demo data is always marked SYNTHETIC.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6 · Inside the app: the real screens, one question each -->
+    <section class="tour" id="app" aria-labelledby="tour-title">
+      <div class="wrap">
+        <h2 id="tour-title" data-i18n="landing.tour_title">Inside the app</h2>
+        <p class="lead" data-i18n="landing.tour_lead">Six views of the same map. Each answers one question.</p>
+      </div>
+      <div class="wrap tour-grid">
+        <div class="tour-tabs" role="tablist" data-i18n-aria="landing.tour_label" aria-label="Views of the app">
+          <button type="button" role="tab" id="tab-site" aria-controls="panel-site" aria-selected="true"><svg class="ico" aria-hidden="true"><use href="#i-flood"/></svg><b data-i18n="mode.site">Site</b><span data-i18n="landing.q_site">What is flooded here, and who is near it?</span></button>
+          <button type="button" role="tab" id="tab-world" aria-controls="panel-world" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><b data-i18n="mode.world">World</b><span data-i18n="landing.q_world">Where else could it be happening?</span></button>
+          <button type="button" role="tab" id="tab-evidence" aria-controls="panel-evidence" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b data-i18n="mode.evidence">Evidence</b><span data-i18n="landing.q_evidence">How do we know it is right?</span></button>
+          <button type="button" role="tab" id="tab-ground" aria-controls="panel-ground" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-quake"/></svg><b data-i18n="mode.motion">Ground</b><span data-i18n="landing.q_ground">Where did the ground move, and how far?</span></button>
+          <button type="button" role="tab" id="tab-story" aria-controls="panel-story" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><b data-i18n="mode.story">Story</b><span data-i18n="landing.q_story">Can a newcomer follow it in three minutes?</span></button>
+          <button type="button" role="tab" id="tab-tools" aria-controls="panel-tools" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg><b data-i18n="mode.tools">Thresholds</b><span data-i18n="landing.q_tools">Would a scientist draw the line in the same place?</span></button>
+        </div>
+        <div class="tour-panels">
+          <div role="tabpanel" id="panel-site" aria-labelledby="tab-site">
+            <figure class="shot"><img src="media/app-site.jpg" width="1440" height="900" loading="lazy" alt="" data-i18n-alt="landing.alt_site"></figure>
+            <ul class="feats"><li data-i18n="landing.f_site1">Swipe from Sentinel-1 radar to NISAR; a counter shows what the other radar missed.</li><li data-i18n="landing.f_site2">Every radar pass from June to October on one timeline.</li><li data-i18n="landing.f_site3">Who lives next to the water, flooded roads, and a search for villages.</li></ul>
+            <a class="btn btn-ghost" href="index.html?site=sylhet&amp;compare=cband" data-i18n="landing.open_view">Open this view</a>
+          </div>
+          <div role="tabpanel" id="panel-world" aria-labelledby="tab-world" hidden>
+            <figure class="shot"><img src="media/app-world.jpg" width="1440" height="810" loading="lazy" alt="" data-i18n-alt="landing.alt_world"></figure>
+            <ul class="feats"><li data-i18n="landing.f_world1">A screening map of the whole planet from 20 layers built on NASA data.</li><li data-i18n="landing.f_world2">Detailed maps across the flooded-forest belt, from real NISAR passes.</li><li data-i18n="landing.f_world3">Floods reported now, and when NISAR next passes overhead.</li></ul>
+            <a class="btn btn-ghost" href="index.html?mode=world" data-i18n="landing.open_view">Open this view</a>
+          </div>
+          <div role="tabpanel" id="panel-evidence" aria-labelledby="tab-evidence" hidden>
+            <figure class="shot"><img src="media/app-evidence.jpg" width="1440" height="810" loading="lazy" alt="" data-i18n-alt="landing.alt_evidence"></figure>
+            <ul class="feats"><li data-i18n="landing.f_ev1">Every radar pass of the season side by side, beside NASA's own maps of the same place.</li><li data-i18n="landing.f_ev2">Wet year or dry year, from NASA's GRACE and rainfall data.</li><li data-i18n="landing.f_ev3">Every map downloadable as CSV, GeoJSON or GeoTIFF.</li></ul>
+            <a class="btn btn-ghost" href="index.html?site=hot_s0p62_w50p62&amp;mode=evidence" data-i18n="landing.open_view">Open this view</a>
+          </div>
+          <div role="tabpanel" id="panel-ground" aria-labelledby="tab-ground" hidden>
+            <figure class="shot"><img src="media/app-ground.jpg" width="1440" height="810" loading="lazy" alt="" data-i18n-alt="landing.alt_ground"></figure>
+            <ul class="feats"><li data-i18n="landing.f_gr1">East-west and up-down motion, drawn in the browser, with its uncertainty.</li><li data-i18n="landing.f_gr2">Draw a line across the map and see the ground move along it.</li><li data-i18n="landing.f_gr3">Side by side with JPL's processing, the USGS fault model and GPS.</li></ul>
+            <a class="btn btn-ghost" href="index.html?mode=motion" data-i18n="landing.open_view">Open this view</a>
+          </div>
+          <div role="tabpanel" id="panel-story" aria-labelledby="tab-story" hidden>
+            <figure class="shot"><img src="media/app-story.jpg" width="1440" height="900" loading="lazy" alt="" data-i18n-alt="landing.alt_story"></figure>
+            <ul class="feats"><li data-i18n="landing.f_st1">A guided walk from the cloudy photo to the people and the river gauge.</li><li data-i18n="landing.f_st2">The season as sound: hear the gap between what each radar saw.</li><li data-i18n="landing.f_st3">In English, Bengali and Portuguese, the languages of the main sites.</li></ul>
+            <a class="btn btn-ghost" href="index.html?site=sylhet" data-i18n="landing.open_view">Open this view</a>
+          </div>
+          <div role="tabpanel" id="panel-tools" aria-labelledby="tab-tools" hidden>
+            <figure class="shot"><img src="media/app-tools.jpg" width="1440" height="900" loading="lazy" alt="" data-i18n-alt="landing.alt_tools"></figure>
+            <ul class="feats"><li data-i18n="landing.f_tl1">Move a threshold and watch the map reclassify, exactly as the pipeline does.</li><li data-i18n="landing.f_tl2">Every pixel plotted by what the radar measured, with the decision lines on top.</li><li data-i18n="landing.f_tl3">Mark places you know to test and calibrate the rules.</li></ul>
+            <a class="btn btn-ghost" href="index.html?site=sylhet&amp;mode=tools" data-i18n="landing.open_view">Open this view</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Where -->
+    <section class="where" id="where" aria-labelledby="where-title">
+      <div class="wrap">
+        <h2 id="where-title" data-i18n="landing.where_title">Where it works</h2>
+        <p class="lead" id="where-lead" data-i18n="landing.where_lead">26 flooded forests on four continents, a fire in Canada, an earthquake in Venezuela and a sinking city, over a screening map of the whole planet.</p>
+      </div>
+      <div class="wrap">
+        <figure class="world" id="world">
+          <img src="media/world.png" width="1440" height="512" alt="" loading="lazy">
+          <svg class="world-dots" id="world-dots" viewBox="0 0 1440 512" role="group" data-i18n-aria="landing.where_label" aria-label="Places in the app"></svg>
+          <div class="world-tip" id="world-tip" hidden></div>
+          <figcaption class="world-key">
+            <span><i class="dot-key flood"></i><span data-i18n="landing.key_flood">Water under trees</span></span>
+            <span><i class="dot-key fire"></i><span data-i18n="landing.key_fire">Burned forest</span></span>
+            <span><i class="dot-key ground"></i><span data-i18n="landing.key_ground">Ground motion</span></span>
+            <span><i class="area-key"></i><span data-i18n="landing.key_screen">Forests where floods can hide (screening)</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 8 · Who it is for -->
+    <section class="who" id="who" aria-labelledby="who-title">
+      <div class="wrap">
+        <h2 id="who-title" data-i18n="landing.who_title">Who it is for</h2>
+        <p class="lead" data-i18n="landing.who_lede">Six kinds of people bring six questions to the same map. Pick one to see why it fits them, and where to start.</p>
+        <div class="aud">
+          <div class="aud-tabs" role="tablist" data-i18n-aria="landing.who_title" aria-label="Who it is for">
+          <button type="button" role="tab" id="aud-tab-resp" aria-controls="aud-resp" aria-selected="true"><svg class="ico" aria-hidden="true"><use href="#i-boat"/></svg><span class="aud-name" data-i18n="landing.aud_resp">Disaster and relief teams</span><span class="aud-tag" data-i18n="landing.aud_resp_tag">Humanitarian, civil defence, NGOs</span></button>
+          <button type="button" role="tab" id="aud-tab-local" aria-controls="aud-local" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg><span class="aud-name" data-i18n="landing.aud_local">Communities and local offices</span><span class="aud-tag" data-i18n="landing.aud_local_tag">Residents, union councils, local groups</span></button>
+          <button type="button" role="tab" id="aud-tab-sci" aria-controls="aud-sci" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg><span class="aud-name" data-i18n="landing.aud_sci">Radar and water scientists</span><span class="aud-tag" data-i18n="landing.aud_sci_tag">SAR, hydrology and wetland researchers</span></button>
+          <button type="button" role="tab" id="aud-tab-climate" aria-controls="aud-climate" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span class="aud-name" data-i18n="landing.aud_climate">Climate and methane modellers</span><span class="aud-tag" data-i18n="landing.aud_climate_tag">Wetland emission and carbon teams</span></button>
+          <button type="button" role="tab" id="aud-tab-edu" aria-controls="aud-edu" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><span class="aud-name" data-i18n="landing.aud_edu">Students and teachers</span><span class="aud-tag" data-i18n="landing.aud_edu_tag">Classrooms, universities, clubs</span></button>
+          <button type="button" role="tab" id="aud-tab-plan" aria-controls="aud-plan" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg><span class="aud-name" data-i18n="landing.aud_plan">Planners, funders and press</span><span class="aud-tag" data-i18n="landing.aud_plan_tag">Agencies, donors, journalists</span></button>
+          </div>
+          <div class="aud-panel" role="tabpanel" id="aud-resp" aria-labelledby="aud-tab-resp">
+            <blockquote class="aud-q"><p data-i18n="landing.aud_resp_q">Which villages by the forest need boats or supplies this week?</p></blockquote>
+            <div class="aud-cols">
+              <div><p class="aud-h" data-i18n="landing.who_fits">Why it fits</p><ol class="aud-fits"><li><b data-i18n="landing.aud_resp_f1">Flood card</b><span data-i18n="landing.aud_resp_f1d">One picture per pass: the villages next to hidden water, the roads under it and the people within 1 km.</span></li><li><b data-i18n="landing.aud_resp_f2">Through cloud</b><span data-i18n="landing.aud_resp_f2d">L-band reaches under the canopy and through monsoon cloud when cameras see nothing: Sylhet&#x27;s photo was 99 % cloud.</span></li><li><b data-i18n="landing.aud_resp_f3">Honest timing</b><span data-i18n="landing.aud_resp_f3d">Every card says what it is not: maps arrive days after a pass, for planning relief, not a flash-flood warning.</span></li></ol></div>
+              <div><p class="aud-h" data-i18n="landing.who_uses">What they use</p><ul class="aud-print"><li class="on" data-i18n="landing.feat_map">Flood map</li><li class="on" data-i18n="landing.feat_card">Flood card</li><li class="" data-i18n="landing.feat_methane">Methane ledger</li><li class="" data-i18n="landing.feat_evidence">Evidence</li><li class="" data-i18n="landing.feat_sci">Scientist mode</li><li class="" data-i18n="landing.feat_colab">Colab notebooks</li><li class="" data-i18n="landing.feat_gis">GIS exports</li><li class="on" data-i18n="landing.feat_world">World map</li><li class="" data-i18n="landing.feat_story">Story, waltz, game</li><li class="on" data-i18n="landing.feat_lang">3 languages, offline</li></ul>
+                <a class="btn btn-primary aud-cta" href="index.html?site=sylhet&amp;lang=bn" data-i18n="landing.aud_resp_cta">Make Sylhet&#x27;s flood card</a></div>
+            </div>
+          </div>
+          <div class="aud-panel" role="tabpanel" id="aud-local" aria-labelledby="aud-tab-local" hidden>
+            <blockquote class="aud-q"><p data-i18n="landing.aud_local_q">Is the forest by my village flooded, and for how long?</p></blockquote>
+            <div class="aud-cols">
+              <div><p class="aud-h" data-i18n="landing.who_fits">Why it fits</p><ol class="aud-fits"><li><b data-i18n="landing.aud_local_f1">In their language</b><span data-i18n="landing.aud_local_f1d">The map, the flood card and the game in Bengali and Portuguese, the languages of the main sites.</span></li><li><b data-i18n="landing.aud_local_f2">This spot</b><span data-i18n="landing.aud_local_f2d">Tap any place: how many days it stayed flooded this season and what the radar measured there.</span></li><li><b data-i18n="landing.aud_local_f3">Local knowledge counts</b><span data-i18n="landing.aud_local_f3d">Mark places you know were flooded; they become checks on the map, never hidden training data.</span></li></ol></div>
+              <div><p class="aud-h" data-i18n="landing.who_uses">What they use</p><ul class="aud-print"><li class="on" data-i18n="landing.feat_map">Flood map</li><li class="on" data-i18n="landing.feat_card">Flood card</li><li class="" data-i18n="landing.feat_methane">Methane ledger</li><li class="" data-i18n="landing.feat_evidence">Evidence</li><li class="" data-i18n="landing.feat_sci">Scientist mode</li><li class="" data-i18n="landing.feat_colab">Colab notebooks</li><li class="" data-i18n="landing.feat_gis">GIS exports</li><li class="" data-i18n="landing.feat_world">World map</li><li class="on" data-i18n="landing.feat_story">Story, waltz, game</li><li class="on" data-i18n="landing.feat_lang">3 languages, offline</li></ul>
+                <a class="btn btn-primary aud-cta" href="index.html?site=sylhet&amp;lang=bn" data-i18n="landing.aud_local_cta">Open Sylhet in Bengali</a></div>
+            </div>
+          </div>
+          <div class="aud-panel" role="tabpanel" id="aud-sci" aria-labelledby="aud-tab-sci" hidden>
+            <blockquote class="aud-q"><p data-i18n="landing.aud_sci_q">Are the thresholds right, and can I reuse the data?</p></blockquote>
+            <div class="aud-cols">
+              <div><p class="aud-h" data-i18n="landing.who_fits">Why it fits</p><ol class="aud-fits"><li><b data-i18n="landing.aud_sci_f1">Scientist mode</b><span data-i18n="landing.aud_sci_f1d">Move any threshold and the map recomputes in the browser, bit for bit as the pipeline does.</span></li><li><b data-i18n="landing.aud_sci_f2">Checked apart from tuning</b><span data-i18n="landing.aud_sci_f2d">River gauges, NASA&#x27;s SWOT, JPL&#x27;s own processing, the USGS fault model and GPS stations.</span></li><li><b data-i18n="landing.aud_sci_f3">Open to the last byte</b><span data-i18n="landing.aud_sci_f3d">GeoTIFF, GeoJSON and CSV for every pass, Apache-2.0 code, every source cited.</span></li></ol></div>
+              <div><p class="aud-h" data-i18n="landing.who_uses">What they use</p><ul class="aud-print"><li class="on" data-i18n="landing.feat_map">Flood map</li><li class="" data-i18n="landing.feat_card">Flood card</li><li class="" data-i18n="landing.feat_methane">Methane ledger</li><li class="on" data-i18n="landing.feat_evidence">Evidence</li><li class="on" data-i18n="landing.feat_sci">Scientist mode</li><li class="on" data-i18n="landing.feat_colab">Colab notebooks</li><li class="on" data-i18n="landing.feat_gis">GIS exports</li><li class="" data-i18n="landing.feat_world">World map</li><li class="" data-i18n="landing.feat_story">Story, waltz, game</li><li class="" data-i18n="landing.feat_lang">3 languages, offline</li></ul>
+                <a class="btn btn-primary aud-cta" href="index.html?site=sylhet&amp;mode=tools" data-i18n="landing.aud_sci_cta">Adjust the thresholds</a></div>
+            </div>
+          </div>
+          <div class="aud-panel" role="tabpanel" id="aud-climate" aria-labelledby="aud-tab-climate" hidden>
+            <blockquote class="aud-q"><p data-i18n="landing.aud_climate_q">How much wetland is really flooded, and for how long?</p></blockquote>
+            <div class="aud-cols">
+              <div><p class="aud-h" data-i18n="landing.who_fits">Why it fits</p><ol class="aud-fits"><li><b data-i18n="landing.aud_climate_f1">Days flooded</b><span data-i18n="landing.aud_climate_f1d">Pass-by-pass inundation under forest, the input wetland methane models are least sure of.</span></li><li><b data-i18n="landing.aud_climate_f2">Methane ledger</b><span data-i18n="landing.aud_climate_f2d">Water under the trees × days × published emission rates, as a range, with what C-band missed.</span></li><li><b data-i18n="landing.aud_climate_f3">The flooded-forest belt</b><span data-i18n="landing.aud_climate_f3d">Forest, water, GRACE storage and WetCHARTs methane across the tropics, cell by cell.</span></li></ol></div>
+              <div><p class="aud-h" data-i18n="landing.who_uses">What they use</p><ul class="aud-print"><li class="on" data-i18n="landing.feat_map">Flood map</li><li class="" data-i18n="landing.feat_card">Flood card</li><li class="on" data-i18n="landing.feat_methane">Methane ledger</li><li class="on" data-i18n="landing.feat_evidence">Evidence</li><li class="" data-i18n="landing.feat_sci">Scientist mode</li><li class="on" data-i18n="landing.feat_colab">Colab notebooks</li><li class="" data-i18n="landing.feat_gis">GIS exports</li><li class="on" data-i18n="landing.feat_world">World map</li><li class="" data-i18n="landing.feat_story">Story, waltz, game</li><li class="" data-i18n="landing.feat_lang">3 languages, offline</li></ul>
+                <a class="btn btn-primary aud-cta" href="index.html?site=janauaca" data-i18n="landing.aud_climate_cta">Open the ledger at Janauacá</a></div>
+            </div>
+          </div>
+          <div class="aud-panel" role="tabpanel" id="aud-edu" aria-labelledby="aud-tab-edu" hidden>
+            <blockquote class="aud-q"><p data-i18n="landing.aud_edu_q">How can a satellite see water I cannot?</p></blockquote>
+            <div class="aud-cols">
+              <div><p class="aud-h" data-i18n="landing.who_fits">Why it fits</p><ol class="aud-fits"><li><b data-i18n="landing.aud_edu_f1">A notebook per place</b><span data-i18n="landing.aud_edu_f1d">Notebooks that teach from first principles with the real data inside: one click, nothing to install.</span></li><li><b data-i18n="landing.aud_edu_f2">Learn by missing it</b><span data-i18n="landing.aud_edu_f2d">A game: guess where water hides, then let NISAR show you.</span></li><li><b data-i18n="landing.aud_edu_f3">Story and sound</b><span data-i18n="landing.aud_edu_f3d">A three-minute guided story, and each season played as a waltz.</span></li></ol></div>
+              <div><p class="aud-h" data-i18n="landing.who_uses">What they use</p><ul class="aud-print"><li class="on" data-i18n="landing.feat_map">Flood map</li><li class="" data-i18n="landing.feat_card">Flood card</li><li class="" data-i18n="landing.feat_methane">Methane ledger</li><li class="" data-i18n="landing.feat_evidence">Evidence</li><li class="" data-i18n="landing.feat_sci">Scientist mode</li><li class="on" data-i18n="landing.feat_colab">Colab notebooks</li><li class="" data-i18n="landing.feat_gis">GIS exports</li><li class="" data-i18n="landing.feat_world">World map</li><li class="on" data-i18n="landing.feat_story">Story, waltz, game</li><li class="on" data-i18n="landing.feat_lang">3 languages, offline</li></ul>
+                <a class="btn btn-primary aud-cta" href="play.html" data-i18n="landing.aud_edu_cta">Play: find the hidden water</a></div>
+            </div>
+          </div>
+          <div class="aud-panel" role="tabpanel" id="aud-plan" aria-labelledby="aud-tab-plan" hidden>
+            <blockquote class="aud-q"><p data-i18n="landing.aud_plan_q">What would a radar record add to flood and fire response?</p></blockquote>
+            <div class="aud-cols">
+              <div><p class="aud-h" data-i18n="landing.who_fits">Why it fits</p><ol class="aud-fits"><li><b data-i18n="landing.aud_plan_f1">Four changes, one method</b><span data-i18n="landing.aud_plan_f1d">Floods, wildfire, ground motion and glaciers on one map, explained the same way.</span></li><li><b data-i18n="landing.aud_plan_f2">Evidence first</b><span data-i18n="landing.aud_plan_f2d">Each number shows what it was checked against, and its limits.</span></li><li><b data-i18n="landing.aud_plan_f3">Ready to show</b><span data-i18n="landing.aud_plan_f3d">A story mode, a film and print-ready cards, in three languages.</span></li></ol></div>
+              <div><p class="aud-h" data-i18n="landing.who_uses">What they use</p><ul class="aud-print"><li class="on" data-i18n="landing.feat_map">Flood map</li><li class="on" data-i18n="landing.feat_card">Flood card</li><li class="" data-i18n="landing.feat_methane">Methane ledger</li><li class="on" data-i18n="landing.feat_evidence">Evidence</li><li class="" data-i18n="landing.feat_sci">Scientist mode</li><li class="" data-i18n="landing.feat_colab">Colab notebooks</li><li class="" data-i18n="landing.feat_gis">GIS exports</li><li class="on" data-i18n="landing.feat_world">World map</li><li class="on" data-i18n="landing.feat_story">Story, waltz, game</li><li class="" data-i18n="landing.feat_lang">3 languages, offline</li></ul>
+                <a class="btn btn-primary aud-cta" href="index.html?site=sylhet" data-i18n="landing.aud_plan_cta">Open the map</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8b · The notebooks: Google Colab, one per place (D-098), drawn as a real notebook. -->
+    <section class="colab" id="colab" aria-labelledby="colab-title">
+      <div class="wrap colab-grid">
+        <div class="colab-copy">
+          <p class="eyebrow" data-i18n="landing.cl_eyebrow">Google Colab</p>
+          <h2 id="colab-title" data-i18n="landing.cl_title">Every place has its own notebook</h2>
+          <p class="lead" data-i18n="landing.cl_lede">One Google Colab notebook for each flooded forest, fire, earthquake and glacier. The data travels inside it, so it runs with one click: nothing to install, no GitHub, no keys.</p>
+          <ul class="colab-counts">
+            <li><b data-num="nb-water">27</b><span data-i18n="landing.cl_water">flooded forests</span></li>
+            <li><b data-num="nb-ice">28</b><span data-i18n="landing.cl_ice">glaciers</span></li>
+            <li><b data-num="nb-fire">2</b><span data-i18n="landing.cl_fire">fires</span></li>
+            <li><b data-num="nb-ground">2</b><span data-i18n="landing.cl_ground">ground motions</span></li>
+          </ul>
+          <ul class="colab-points">
+            <li data-i18n="landing.cl_p1">Taught from first principles: how radar sees through the forest, then the data, the map and its checks.</li>
+            <li data-i18n="landing.cl_p2">Every number is recomputed and checked against the app, line by line.</li>
+            <li data-i18n="landing.cl_p3">Ends with limits, references and a question to study next.</li>
+          </ul>
+          <div class="colab-cta">
+            <a class="btn btn-primary" id="colab-run" href="https://colab.research.google.com/drive/1lSSYUk26N6NFmsFQRZTQLYWFdfT2Kefy" target="_blank" rel="noopener noreferrer" data-i18n="landing.cl_run">Run Sylhet's notebook in Colab</a>
+            <a class="btn btn-ghost" id="colab-dl" href="https://drive.usercontent.google.com/download?id=1lSSYUk26N6NFmsFQRZTQLYWFdfT2Kefy&amp;export=download&amp;confirm=t" target="_blank" rel="noopener noreferrer" data-i18n="landing.cl_dl">Download the .ipynb</a>
+          </div>
+        </div>
+        <figure class="nb-window" aria-label="A notebook, as it opens in Google Colab">
+          <div class="nb-bar"><span class="nb-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nb-file" translate="no">sylhet.ipynb</span><span class="nb-runtime" data-i18n="landing.cl_runtime">Connected · Python 3</span></div>
+          <div class="nb-body">
+            <ol class="nb-toc" translate="no">
+              <li>0 · Setting up</li><li>1 · The place, and who looked when</li><li>2 · How radar sees through the forest</li><li>3 · What NISAR measured</li><li>4 · A first look</li><li class="on">5 · From echoes to a map</li><li>6 · L-band against C-band</li><li>7 · Through the season</li><li>8 · Terrain and history</li><li>9 · How sure are we?</li><li>10 · Can machine learning do better?</li><li>Limits · References</li>
+            </ol>
+            <div class="nb-cells">
+              <div class="nb-md" translate="no"><h3>5 · From echoes to a map</h3><p>Open water is dark in both polarisations; flooded forest is bright in HH, a double bounce off water and trunks.</p></div>
+              <div class="nb-code"><span class="nb-run" aria-hidden="true">[7]</span><pre translate="no"><code><span class="k">for</span> k, p <span class="k">in</span> enumerate(passes):
+    fv = area(cls[k] == FLOODED_VEG)
+    ow = area(cls[k] == OPEN_WATER)
+    <span class="k">assert</span> (fv, ow) == (p[<span class="s">"flooded_veg_km2"</span>],
+                       p[<span class="s">"open_water_km2"</span>])  <span class="c"># equal to the app</span></code></pre></div>
+              <div class="nb-out"><img src="data/sylhet/passes/p01_class.png" alt="" class="px"><pre translate="no"><code id="nb-out">p01  2026-06-23   26.389   100.381
+p02  2026-07-05   21.101    95.404
+p03  2026-07-17   24.312   100.922</code></pre></div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 9 · How it works: a real sequence -->
+    <section class="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title" data-i18n="landing.how_title">How it works</h2>
+      </div>
+      <ol class="wrap how-steps">
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-satellite"/></svg><h3 data-i18n="landing.how1">NASA data in</h3><p data-i18n="landing.how1_d">NISAR radar from the Alaska Satellite Facility, plus NASA's optical, lidar, water and rain records.</p></li>
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-wave"/></svg><h3 data-i18n="landing.how2">Physics, not a black box</h3><p data-i18n="landing.how2_d">Every pixel of every pass is sorted by published radar rules you can read and change.</p></li>
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-check"/></svg><h3 data-i18n="landing.how3">Checked independently</h3><p data-i18n="landing.how3_d">River gauges, NASA MODIS, JPL's processing and GPS stations, kept apart from the tuning.</p></li>
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-map"/></svg><h3 data-i18n="landing.how4">An open map out</h3><p data-i18n="landing.how4_d">Runs in any browser, even offline. No account, no fees, every file downloadable.</p></li>
+      </ol>
+    </section>
+
+    <!-- 10 · Priorities -->
+    <section class="priorities" id="priorities" aria-labelledby="pri-title">
+      <div class="wrap">
+        <h2 id="pri-title" data-i18n="landing.pri_title">What we hold to</h2>
+      </div>
+      <ul class="wrap pri-list">
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-shield"/></svg><h3 data-i18n="landing.pri1">Honest before impressive</h3><p data-i18n="landing.pri1_d">Limits are shown, uncertainty is drawn on the map, and every number traces back to a file.</p></li>
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-wave"/></svg><h3 data-i18n="landing.pri2">Physics only this radar has</h3><p data-i18n="landing.pri2_d">We chose the changes other satellites miss, so NISAR is the reason the app exists.</p></li>
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-people"/></svg><h3 data-i18n="landing.pri3">People beside the change</h3><p data-i18n="landing.pri3_d">Each map leads to who lives and travels next to the water, in the languages they speak.</p></li>
+        <li><svg class="ico big" aria-hidden="true"><use href="#i-open"/></svg><h3 data-i18n="landing.pri4">Open and light</h3><p data-i18n="landing.pri4_d">Free NASA data, open downloads, no accounts. It runs on a modest laptop, so a district office can use it.</p></li>
+      </ul>
+    </section>
+
+    <!-- 10b · The team. Two pictures, the way open-source projects and data storytellers credit
+         people: a relay across the architecture (who leads and who supports each stage, drawn
+         as a table so screen readers read it as one), then one card per person with
+         all-contributors-style badges, so every kind of work is credited, not only code.
+         Hovering a card dims the other rows (CSS :has, no script). Colours: Okabe–Ito. -->
+    <section class="team" id="team" aria-labelledby="team-title">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="landing.tm_eyebrow">The team</p>
+        <h2 id="team-title" data-i18n="landing.tm_title">Four people, one line from question to map</h2>
+        <p class="lead" data-i18n="landing.tm_lede">Each of us owns one stretch of the architecture and hands it to the next. Follow a colour to see whose hands a finding passed through.</p>
+
+        <figure class="tf-fig">
+          <div class="tf-wrap">
+            <table class="tf">
+              <colgroup><col class="tf-who-col"><col span="6"></colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="tf-corner"><span data-i18n="landing.tm_who">Team member</span></th>
+                  <th scope="col"><b>1</b><span data-i18n="landing.tm_st1">Research</span><small data-i18n="landing.tm_st1_d">physics, thresholds, checks</small></th>
+                  <th scope="col"><b>2</b><span data-i18n="landing.tm_st2">NASA data in</span><small data-i18n="landing.tm_st2_d">40+ datasets, sites</small></th>
+                  <th scope="col"><b>3</b><span data-i18n="landing.tm_st3">Pipeline</span><small data-i18n="landing.tm_st3_d">pipeline/</small></th>
+                  <th scope="col"><b>4</b><span data-i18n="landing.tm_st4">Data contract</span><small data-i18n="landing.tm_st4_d">web/data/</small></th>
+                  <th scope="col"><b>5</b><span data-i18n="landing.tm_st5">Map app</span><small data-i18n="landing.tm_st5_d">web/src/</small></th>
+                  <th scope="col"><b>6</b><span data-i18n="landing.tm_st6">Story</span><small data-i18n="landing.tm_st6_d">pages, film, languages</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-m="sakib" style="--m:#e69f00">
+                  <th scope="row"><span class="tm-av sm" aria-hidden="true">SK</span><span translate="no">Md Sakib Khandaker</span></th>
+                  <td><span class="bar l a"><span class="sr-only" data-i18n="landing.tm_lead">Leads</span></span></td>
+                  <td><span class="bar l z"><span class="sr-only" data-i18n="landing.tm_lead">Leads</span></span></td>
+                  <td><span class="bar s a z"><span class="sr-only" data-i18n="landing.tm_help">Supports</span></span></td>
+                  <td></td>
+                  <td></td>
+                  <td><span class="bar s a z"><span class="sr-only" data-i18n="landing.tm_help">Supports</span></span></td>
+                </tr>
+                <tr data-m="faiyaz" style="--m:#56b4e9">
+                  <th scope="row"><span class="tm-av sm" aria-hidden="true">FR</span><span translate="no">Faiyaz Ur Rahman</span></th>
+                  <td></td>
+                  <td><span class="bar s a z"><span class="sr-only" data-i18n="landing.tm_help">Supports</span></span></td>
+                  <td><span class="bar l a"><span class="sr-only" data-i18n="landing.tm_lead">Leads</span></span></td>
+                  <td><span class="bar l z"><span class="sr-only" data-i18n="landing.tm_lead">Leads</span></span></td>
+                  <td></td>
+                  <td><span class="bar s a z"><span class="sr-only" data-i18n="landing.tm_help">Supports</span></span></td>
+                </tr>
+                <tr data-m="mehadi" style="--m:#7fd1a8">
+                  <th scope="row"><span class="tm-av sm" aria-hidden="true">MH</span><span translate="no">Mohammad Mehadi Hasan</span></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span class="bar s a z"><span class="sr-only" data-i18n="landing.tm_help">Supports</span></span></td>
+                  <td><span class="bar l a z"><span class="sr-only" data-i18n="landing.tm_lead">Leads</span></span></td>
+                  <td></td>
+                </tr>
+                <tr data-m="fabiha" style="--m:#cc79a7">
+                  <th scope="row"><span class="tm-av sm" aria-hidden="true">FN</span><span translate="no">Fabiha Nusrat</span></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span class="bar s a z"><span class="sr-only" data-i18n="landing.tm_help">Supports</span></span></td>
+                  <td><span class="bar l a z"><span class="sr-only" data-i18n="landing.tm_lead">Leads</span></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <figcaption class="tf-cap">
+            <span class="tf-key"><i class="bar l a z" aria-hidden="true"></i><span data-i18n="landing.tm_lead">Leads</span></span>
+            <span class="tf-key"><i class="bar s a z" aria-hidden="true"></i><span data-i18n="landing.tm_help">Supports</span></span>
+            <span data-i18n="landing.tm_caption">Read it as a relay: research becomes a spec, the spec becomes data files, the files become a map, and the map becomes a story. Solid bars lead a stage; outlined bars support it.</span>
+          </figcaption>
+        </figure>
+
+        <ul class="tm-grid">
+          <li class="tm-card" data-m="sakib" style="--m:#e69f00">
+            <header><span class="tm-av" aria-hidden="true">SK</span><div><h3 translate="no">Md Sakib Khandaker</h3><p class="tm-role" data-i18n="landing.tm_sakib_role">Research and science lead</p></div></header>
+            <ul class="tm-did">
+              <li data-i18n="landing.tm_sakib_d1">The challenge, the radar physics and the published thresholds behind the flood rule</li>
+              <li data-i18n="landing.tm_sakib_d2">NASA data plan: more than 40 datasets, sites, river gauges and reference wetlands</li>
+              <li data-i18n="landing.tm_sakib_d3">Validation design, results, honest limits and every citation</li>
+            </ul>
+            <p class="tm-arch"><b data-i18n="landing.tm_arch_label">In the architecture</b><span data-i18n="landing.tm_sakib_arch">Every threshold in classify.py and every check in the Evidence view starts from this research.</span></p>
+            <ul class="tm-badges">
+              <li data-i18n="landing.tm_b_research">Research</li><li data-i18n="landing.tm_b_data">Data</li><li data-i18n="landing.tm_b_review">Science review</li><li data-i18n="landing.tm_b_docs">Citations</li>
+            </ul>
+          </li>
+          <li class="tm-card" data-m="faiyaz" style="--m:#56b4e9">
+            <header><span class="tm-av" aria-hidden="true">FR</span><div><h3 translate="no">Faiyaz Ur Rahman</h3><p class="tm-role" data-i18n="landing.tm_faiyaz_role">Data pipeline and backend</p></div></header>
+            <ul class="tm-did">
+              <li data-i18n="landing.tm_faiyaz_d1">Fetches and reads NISAR by HTTP range reads, then classifies every pixel</li>
+              <li data-i18n="landing.tm_faiyaz_d2">Burned forest, ground motion, ice and the 28-glacier atlas</li>
+              <li data-i18n="landing.tm_faiyaz_d3">The data contract, the published web/data, 59 notebooks and CI</li>
+            </ul>
+            <p class="tm-arch"><b data-i18n="landing.tm_arch_label">In the architecture</b><span data-i18n="landing.tm_faiyaz_arch">Turns the research into files: everything the browser reads comes out of pipeline/ through the data contract.</span></p>
+            <ul class="tm-badges">
+              <li data-i18n="landing.tm_b_data">Data</li><li data-i18n="landing.tm_b_code">Code</li><li data-i18n="landing.tm_b_tests">Tests</li><li data-i18n="landing.tm_b_notebooks">Notebooks</li><li data-i18n="landing.tm_b_infra">CI</li>
+            </ul>
+          </li>
+          <li class="tm-card" data-m="mehadi" style="--m:#7fd1a8">
+            <header><span class="tm-av" aria-hidden="true">MH</span><div><h3 translate="no">Mohammad Mehadi Hasan</h3><p class="tm-role" data-i18n="landing.tm_mehadi_role">Core frontend and maps</p></div></header>
+            <ul class="tm-did">
+              <li data-i18n="landing.tm_mehadi_d1">A hand-written map engine, the shared store and the data loader</li>
+              <li data-i18n="landing.tm_mehadi_d2">The Water, World, Fire, Ground, Ice, Evidence and Tools modes</li>
+              <li data-i18n="landing.tm_mehadi_d3">rules.js kept bit-for-bit with classify.py, with browser tests</li>
+            </ul>
+            <p class="tm-arch"><b data-i18n="landing.tm_arch_label">In the architecture</b><span data-i18n="landing.tm_mehadi_arch">Reads only web/data and draws it: this is where the data contract becomes something you can click.</span></p>
+            <ul class="tm-badges">
+              <li data-i18n="landing.tm_b_code">Code</li><li data-i18n="landing.tm_b_maps">Maps</li><li data-i18n="landing.tm_b_tests">Tests</li>
+            </ul>
+          </li>
+          <li class="tm-card" data-m="fabiha" style="--m:#cc79a7">
+            <header><span class="tm-av" aria-hidden="true">FN</span><div><h3 translate="no">Fabiha Nusrat</h3><p class="tm-role" data-i18n="landing.tm_fabiha_role">Experience, story and outreach</p></div></header>
+            <ul class="tm-did">
+              <li data-i18n="landing.tm_fabiha_d1">The landing page, guided story, sources page and the game</li>
+              <li data-i18n="landing.tm_fabiha_d2">The design system, the logo and the three languages</li>
+              <li data-i18n="landing.tm_fabiha_d3">The opening film, the 30-second pitch and its captions</li>
+            </ul>
+            <p class="tm-arch"><b data-i18n="landing.tm_arch_label">In the architecture</b><span data-i18n="landing.tm_fabiha_arch">The last stage: shapes how a first-time visitor, a judge or a village office meets the findings.</span></p>
+            <ul class="tm-badges">
+              <li data-i18n="landing.tm_b_design">Design</li><li data-i18n="landing.tm_b_story">Story</li><li data-i18n="landing.tm_b_video">Film</li><li data-i18n="landing.tm_b_lang">Translation</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="tm-note" data-i18n="landing.tm_note">The contribution badges follow the all-contributors convention used by open-source projects: every kind of work is credited, not only code.</p>
+      </div>
+    </section>
+
+    <!-- 11 · For judges -->
+    <section class="judges" aria-labelledby="judges-title">
+      <div class="wrap">
+        <h2 id="judges-title" data-i18n="landing.jd_title">For judges: where to look</h2>
+        <div class="table-wrap">
+          <table class="judge-table">
+            <tbody>
+              <tr><th scope="row" data-i18n="landing.jd1">Impact</th><td data-i18n="landing.jd1_d">Who lives next to hidden flood water, in the Site view</td><td><a href="index.html?site=sylhet" data-i18n="landing.jd_go">Open</a></td></tr>
+              <tr><th scope="row" data-i18n="landing.jd2">Creativity</th><td data-i18n="landing.jd2_d">The three-way reveal, the season as sound, thresholds you can move</td><td><a href="index.html?site=sylhet&amp;mode=tools" data-i18n="landing.jd_go">Open</a></td></tr>
+              <tr><th scope="row" data-i18n="landing.jd3">Validity</th><td data-i18n="landing.jd3_d">Independent checks and stated limits, in the Evidence view</td><td><a href="index.html?site=atchafalaya&amp;mode=evidence" data-i18n="landing.jd_go">Open</a></td></tr>
+              <tr><th scope="row" data-i18n="landing.jd4">Relevance</th><td data-i18n="landing.jd4_d">Real NISAR products, four kinds of surface change, places on four continents</td><td><a href="index.html?mode=world" data-i18n="landing.jd_go">Open</a></td></tr>
+              <tr><th scope="row" data-i18n="landing.jd5">Presentation</th><td data-i18n="landing.jd5_d">The opening film, and the three-minute story in three languages</td><td><a href="#film" data-i18n="landing.jd_film">Watch</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="jd-note">
+          <a href="media/pitch30-en-vo-clone-subtitled.mp4" download data-i18n="landing.jd_pitch">Download the 30-second cut made for the Space Apps submission, narrated, with English subtitles (MP4)</a>
+          <span class="lp-footer-sep">&middot;</span>
+          <a href="https://colab.research.google.com/drive/1lSSYUk26N6NFmsFQRZTQLYWFdfT2Kefy" target="_blank" rel="noopener noreferrer" class="jd-colab-link colab-run" data-i18n="landing.jd_colab_run">Run the notebook in Google Colab</a>
+          <span class="lp-footer-sep">&middot;</span>
+          <a href="index.html" class="jd-colab-link" data-i18n="landing.jd_notebook">Every site, earthquake and glacier has its own notebook: open one in the app and choose Run in Colab.</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 12 · Close -->
+    <section class="closing" aria-labelledby="close-title">
+      <div class="wrap">
+        <h2 id="close-title" data-i18n="landing.close_title">Other satellites see the treetops. NISAR sees what is underneath.</h2>
+        <div class="hero-ctas center">
+          <a class="btn btn-primary" href="index.html" data-i18n="landing.cta_open">Open the map</a>
+          <a class="btn btn-ghost" href="index.html?mode=world" data-i18n="landing.cta_world">Explore the world</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-footer" id="footer">
+    <div class="wrap lp-footer-inner">
+      <!-- Data credits: every source named with its archive, as the providers ask (D-102). Text marks,
+           not agency insignia: NASA's and ISRO's need permission to use. -->
+      <div class="lp-footer-ribbon">
+        <div class="lp-footer-ribbon-label" data-i18n="landing.footer_partners_title">Data from</div>
+        <div class="lp-footer-logos" role="list">
+          <a href="https://science.nasa.gov/mission/nisar/" target="_blank" rel="noopener noreferrer" class="lp-logo-badge" title="NISAR, the NASA-ISRO Synthetic Aperture Radar mission" role="listitem"><span class="lp-logo-text">NASA-ISRO NISAR</span></a>
+          <a href="https://asf.alaska.edu/" target="_blank" rel="noopener noreferrer" class="lp-logo-badge" title="Alaska Satellite Facility DAAC" role="listitem"><span class="lp-logo-text">ASF DAAC</span></a>
+          <a href="https://www.earthdata.nasa.gov/" target="_blank" rel="noopener noreferrer" class="lp-logo-badge" title="NASA Earthdata and its DAACs" role="listitem"><span class="lp-logo-text">NASA Earthdata</span></a>
+          <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus" target="_blank" rel="noopener noreferrer" class="lp-logo-badge" title="ESA and the EU Copernicus programme" role="listitem"><span class="lp-logo-text">ESA · Copernicus</span></a>
+          <a href="https://www.usgs.gov/" target="_blank" rel="noopener noreferrer" class="lp-logo-badge" title="United States Geological Survey" role="listitem"><span class="lp-logo-text">USGS</span></a>
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="lp-logo-badge" title="OpenStreetMap contributors" role="listitem"><span class="lp-logo-text">OpenStreetMap</span></a>
+        </div>
+      </div>
+
+      <div class="lp-footer-grid">
+        <div class="lp-footer-col">
+          <h4 class="lp-footer-col-title" data-i18n="landing.footer_col_missions_title">Satellite data</h4>
+          <p data-i18n="landing.credit_nisar">NISAR L2 GCOV, GUNW and soil moisture: NASA/JPL and ISRO, distributed by the Alaska Satellite Facility DAAC. OPERA DSWx and RTC-S1: NASA JPL. HLS, NASADEM, MODIS and VIIRS burned area: LP DAAC. GEDI and LBA-ECO: ORNL DAAC. SWOT, GRACE/GRACE-FO and CYGNSS: PO.DAAC. GPM IMERG: GES DISC. ICESat-2: NSIDC DAAC. VIIRS active fire: LAADS DAAC. Relative deprivation: SEDAC. Imagery tiles: NASA GIBS.</p>
+        </div>
+        <div class="lp-footer-col">
+          <h4 class="lp-footer-col-title" data-i18n="landing.footer_col_ground_title">Ground, water and maps</h4>
+          <p data-i18n="landing.credit_ground">River gauges: USGS NWIS, ANA (Brazil), BWDB FFWC (Bangladesh). Earthquake: USGS finite-fault model; GNSS: Nevada Geodetic Laboratory. Glaciers: NASA MEaSUREs ITS_LIVE; Randolph Glacier Inventory 7.0. Land cover: ESA WorldCover 2021 (CC BY 4.0). Surface water: EC JRC Global Surface Water. Wetlands: GLWD v2, Lehner et al. 2025 (CC BY 4.0). Height above drainage: ASF GLO-30 HAND. River flow: GEOGloWS / ECMWF. Population: WorldPop. Village names: GeoNames (CC BY 4.0). Map data &copy; OpenStreetMap contributors (ODbL).</p>
+        </div>
+        <div class="lp-footer-col">
+          <h4 class="lp-footer-col-title" data-i18n="landing.footer_col_legal_title">About this project</h4>
+          <p class="muted" data-i18n="landing.credit_team">Under the Canopy is an independent entry to the 2026 NASA International Space Apps Challenge (Dancing with the SARs). It is not endorsed by NASA, ISRO or any data provider.</p>
+          <p class="muted" data-i18n="landing.credit_copernicus">Contains modified Copernicus Sentinel data (2026), processed by NASA JPL OPERA. Challenge image: NASA/JPL-Caltech.</p>
+        </div>
+      </div>
+
+      <!-- Licences and the notices the data licences require (D-102). Citation text stays as the
+           providers word it, so it is not translated. -->
+      <section class="lp-licences" aria-labelledby="lic-title">
+        <div class="lic-head">
+          <h4 class="lp-footer-col-title" id="lic-title" data-i18n="landing.lic_title">Licences and required notices</h4>
+          <ul class="lic-badges">
+            <li><a class="lb" href="https://github.com/memset2020/under_the_canopy_NASA_SPACE_APP_CHALLENGE/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"><i data-i18n="landing.lic_b_code">code</i><b style="--c:#56b4e9">Apache-2.0</b></a></li>
+            <li><a class="lb" href="https://github.com/memset2020/under_the_canopy_NASA_SPACE_APP_CHALLENGE/blob/main/CREATIONLOG.md#38-the-logo-d-109" target="_blank" rel="noopener noreferrer"><i data-i18n="landing.lic_b_mark">logo</i><b style="--c:#7fd1a8">CC BY 4.0</b></a></li>
+            <li><a class="lb" href="sources.html"><i data-i18n="landing.lic_b_data">data</i><b style="--c:#e69f00" data-i18n="landing.lic_b_data_v">own licences</b></a></li>
+            <li><a class="lb" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer"><i data-i18n="landing.lic_b_map">map</i><b style="--c:#cc79a7">ODbL</b></a></li>
+          </ul>
+        </div>
+        <div class="lic-grid">
+          <article class="lic-col" style="--c:#56b4e9">
+            <header><svg class="lic-glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#56b4e9" stroke-width="1.8"/><text x="14" y="18.2" text-anchor="middle" fill="#56b4e9" font-size="11" font-weight="700" font-family="var(--font-display)">PD</text></svg><div><h5 data-i18n="landing.lic_open">Open, no restrictions</h5><span class="lic-terms" data-i18n="landing.lic_open_t">NASA Earth science data policy</span></div></header>
+            <ul class="lic-tags" translate="no"><li>NISAR</li><li>OPERA</li><li>HLS</li><li>NASADEM</li><li>GEDI</li><li>SWOT</li><li>GRACE-FO</li><li>CYGNSS</li><li>IMERG</li><li>ICESat-2</li><li>SMAP</li><li>MODIS</li><li>VIIRS</li><li>ITS_LIVE</li><li>WetCHARTs</li><li>GIBS</li></ul>
+            <p class="lic-note"><span data-i18n="landing.lic_pd">USGS gauges and the finite-fault model: U.S. public domain.</span></p>
+          </article>
+          <article class="lic-col" style="--c:#7fd1a8">
+            <header><svg class="lic-glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#7fd1a8" stroke-width="1.8"/><text x="14" y="18.2" text-anchor="middle" fill="#7fd1a8" font-size="11" font-weight="700" font-family="var(--font-display)">BY</text></svg><div><h5>CC BY 4.0</h5><span class="lic-terms" data-i18n="landing.lic_by_t">Reuse with attribution</span></div></header>
+            <ul class="lic-tags" translate="no"><li>ESA WorldCover</li><li>GLWD v2</li><li>WorldPop</li><li>GeoNames</li><li>GEOGloWS</li><li>NASA SEDAC</li></ul>
+            <blockquote class="lic-notice" translate="no">© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium. GLWD v2: Lehner et al. 2025 (WWF, McGill).</blockquote>
+          </article>
+          <article class="lic-col" style="--c:#e69f00">
+            <header><svg class="lic-glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#e69f00" stroke-width="1.8"/><text x="14" y="18.2" text-anchor="middle" fill="#e69f00" font-size="11" font-weight="700" font-family="var(--font-display)">©</text></svg><div><h5>Copernicus</h5><span class="lic-terms" data-i18n="landing.lic_cop_t">Free use, notice required</span></div></header>
+            <ul class="lic-tags" translate="no"><li>Sentinel-1</li><li>Copernicus DEM</li><li>JRC Surface Water</li></ul>
+            <blockquote class="lic-notice" translate="no">Contains modified Copernicus Sentinel data (2026). Copernicus DEM (GLO-30 via ASF HAND; GLO-90): © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. JRC Global Surface Water: Source: EC JRC/Google (Pekel et al. 2016).</blockquote>
+          </article>
+          <article class="lic-col" style="--c:#cc79a7">
+            <header><svg class="lic-glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#cc79a7" stroke-width="1.8"/><text x="14" y="18.2" text-anchor="middle" fill="#cc79a7" font-size="11" font-weight="700" font-family="var(--font-display)">DB</text></svg><div><h5>ODbL</h5><span class="lic-terms" data-i18n="landing.lic_odbl_t">Open database, share alike</span></div></header>
+            <ul class="lic-tags" translate="no"><li>OpenStreetMap</li></ul>
+            <blockquote class="lic-notice" translate="no">Map data and basemap © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a></blockquote>
+          </article>
+          <article class="lic-col" style="--c:#c9d4d0">
+            <header><svg class="lic-glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#c9d4d0" stroke-width="1.8"/><text x="14" y="18.2" text-anchor="middle" fill="#c9d4d0" font-size="8.5" font-weight="700" font-family="var(--font-display)">“ ”</text></svg><div><h5 data-i18n="landing.lic_cite">Cited as asked</h5><span class="lic-terms" data-i18n="landing.lic_cite_t">Citation requested by the provider</span></div></header>
+            <ul class="lic-tags" translate="no"><li>NGL GNSS</li><li>GDACS</li><li>RGI 7.0</li><li>ANA</li><li>BWDB FFWC</li><li>PIA26672</li></ul>
+            <p class="lic-note" translate="no">Blewitt et al. 2018 (Eos 99) · EC JRC, UN OCHA · RGI Consortium 2023 · Challenge image: NASA/JPL-Caltech</p>
+          </article>
+        </div>
+        <p class="lic-foot"><a href="sources.html" data-i18n="landing.lic_all">Every source, licence and citation</a><span aria-hidden="true">·</span><a href="https://github.com/memset2020/under_the_canopy_NASA_SPACE_APP_CHALLENGE/blob/main/NOTICE" target="_blank" rel="noopener noreferrer">NOTICE</a><span aria-hidden="true">·</span><a href="https://github.com/memset2020/under_the_canopy_NASA_SPACE_APP_CHALLENGE/blob/main/CREDITS.md" target="_blank" rel="noopener noreferrer">CREDITS.md</a><span aria-hidden="true">·</span><span data-i18n="landing.lic_endorse">Not endorsed by NASA, ISRO or any data provider.</span></p>
+      </section>
+
+      <!-- Footer Bottom Legal & Compliance Bar -->
+      <div class="lp-footer-bottom">
+        <div class="lp-footer-copy" data-i18n="landing.footer_copyright">&copy; 2026 Under the Canopy &middot; Open Science &amp; Reproducible Research</div>
+        <div class="lp-footer-links">
+          <a href="https://github.com/memset2020/under_the_canopy_NASA_SPACE_APP_CHALLENGE" target="_blank" rel="noopener noreferrer" data-i18n="landing.footer_link_source">Source Code</a>
+          <span class="lp-footer-sep">&middot;</span>
+          <a href="https://colab.research.google.com/drive/1lSSYUk26N6NFmsFQRZTQLYWFdfT2Kefy" target="_blank" rel="noopener noreferrer" data-i18n="landing.footer_link_colab_run">Run in Colab</a>
+          <span class="lp-footer-sep">&middot;</span>
+          <a href="https://drive.usercontent.google.com/download?id=1lSSYUk26N6NFmsFQRZTQLYWFdfT2Kefy&amp;export=download&amp;confirm=t" target="_blank" rel="noopener noreferrer" data-i18n="landing.footer_link_notebook">Notebook (.ipynb)</a>
+          <span class="lp-footer-sep">&middot;</span>
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" data-i18n="landing.footer_link_odbl">OpenStreetMap copyright</a>
+          <span class="lp-footer-sep">&middot;</span>
+          <a href="https://search.asf.alaska.edu/" target="_blank" rel="noopener noreferrer" data-i18n="landing.footer_link_asf">ASF Vertex</a>
+          <span class="lp-footer-sep">&middot;</span>
+          <a href="https://earthdata.nasa.gov/" target="_blank" rel="noopener noreferrer" data-i18n="landing.footer_link_earthdata">NASA Earthdata</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

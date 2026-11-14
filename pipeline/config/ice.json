@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "id": "columbia_icefield",
+      "name": "Columbia Icefield, Canadian Rockies",
+      "country": "CA",
+      "bbox": [-117.55, 52.05, -117.05, 52.30],
+      "year": 2026,
+      "baseline_years": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+      "season": ["06-01", "09-30"],
+      "late_summer": ["08-01", "09-15"],
+      "fire_site": "bald_range",
+      "upwind": {
+        "bbox": [-125.0, 48.3, -116.0, 53.0],
+        "label": "southern British Columbia"
+      },
+      "measured": {
+        "athabasca_albedo": {"2015": 0.29, "2018": 0.16},
+        "source": "Aubry-Wake, Bertoncini & Pomeroy 2022, Fire and Ice, Earth's Future 10, e2022EF002685 (on-ice station, Athabasca Glacier, summer means)",
+        "url": "https://doi.org/10.1029/2022EF002685"
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+# Raw satellite data is never committed (CLAUDE.md rule 8). web/data/ IS committed for releases.
+pipeline/data/raw/
+pipeline/data/cache/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Node / Playwright
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+.playwright-mcp/
+
+# Credentials (Earthdata Login lives in ~/.netrc, never here)
+.env
+.env.*
+*.netrc
+
+# Personal Claude Code settings
+.claude/settings.local.json
+
+# OS / Windows download metadata
+*:Zone.Identifier
+.DS_Store
+
+# Simulator data for tests and the demo; rebuilt by `cli.py all --synthetic`
+web/data-synthetic/
+
+# Places built with "analyse here" on this machine
+pipeline/config/sites.local.json
+
+# Per-site notebooks built by notebooks/build_notebooks.py (published to Drive, not committed)
+notebooks/build/
+
+# The narrator's voice recording (docs/10 D-115). Never committed: anyone with it can clone the voice.
+sampleToClone.*
+docs/film/voice-sample.*
+
+# Earlier voice-over versions live only on the film-voiceover branch, not on main.
+videoArchive/

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Flood water hidden under forest canopy, mapped with NISAR L-band radar.">
+  <meta name="color-scheme" content="dark">
+  <title>Under the Canopy</title>
+  <link rel="icon" href="media/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/main.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body data-mode="site">
+  <a class="skip-link" href="#slot-sidebar" data-i18n="app.skip"></a>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" width="28" height="28" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 13.2C5.6 6.2 14.4 6.2 16.6 13.2" stroke="#7FA894" stroke-width="2.6"/><path d="M10 13.2V26" stroke="currentColor" stroke-width="2.8"/><path d="M10 26H28.5" stroke="#56B4E9" stroke-width="2.8"/><path d="M27.45 5.63Q25.24 5.30 24.17 3.34M26.44 8.83Q23.18 8.25 21.52 5.39" stroke="#E69F00" stroke-width="1.8"/><path d="M22.15 9.73L12.6 23.4" stroke="#E69F00" stroke-width="2"/><circle cx="12.4" cy="23.7" r="2" fill="#E69F00"/></svg>
+      <h1 class="wordmark"><a href="landing.html" data-i18n="app.title"></a></h1>
+    </div>
+    <div class="site-picker">
+      <button type="button" class="world-btn" data-mode="world" aria-pressed="false" data-i18n-aria="mode.world_view">
+        <svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 11 H19 M11 3 C7 7 7 15 11 19 C15 15 15 7 11 3" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      </button>
+      <label for="site-select" class="sr-only" data-i18n="app.site"></label>
+      <select id="site-select"></select>
+      <span id="provenance-chip" class="prov-chip" hidden>
+        <span class="prov-dot" aria-hidden="true"></span><span data-i18n="badge.real"></span>
+      </span>
+      <span id="synthetic-badge" class="synthetic-badge" hidden>
+        <span data-i18n="badge.synthetic"></span>
+        <span class="sr-only" data-i18n="badge.synthetic_explain"></span>
+      </span>
+    </div>
+    <div id="slot-header" class="header-features"></div>
+  </header>
+
+  <main class="layout">
+    <nav id="dock" class="dock" data-i18n-aria="dock.label"></nav>
+    <div class="map-wrap">
+      <div class="map-stage">
+        <div id="map" role="application" data-i18n-aria="map.label"></div>
+        <div id="slot-map" class="map-slot"></div>
+      </div>
+      <div id="slot-map-bottom" class="map-slot-bottom"></div>
+    </div>
+    <aside id="slot-sidebar" class="sidebar" tabindex="-1" data-i18n-aria="app.sidebar">
+      <div class="panel-tabs" role="tablist" data-i18n-aria="panel.label">
+        <button type="button" role="tab" class="panel-tab" data-mode="site" data-i18n="panel.findings"></button>
+        <button type="button" role="tab" class="panel-tab" data-mode="evidence" data-i18n="panel.evidence"></button>
+        <button type="button" role="tab" class="panel-tab" data-mode="tools" data-i18n="panel.tools"></button>
+      </div>
+    </aside>
+  </main>
+  <!-- Phone: the map panel opens as a sheet; the findings are below the map; Story where the thumb is. -->
+  <nav class="phone-nav" data-i18n-aria="phone.label">
+    <button type="button" class="phone-btn" data-action="dock" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 3 L19 7.5 L11 12 L3 7.5 Z M3 11.5 L11 16 L19 11.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span data-i18n="phone.map"></span>
+    </button>
+    <button type="button" class="phone-btn" data-action="findings">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 3 H17 V19 H5 Z M8 8 H14 M8 12 H14 M8 16 H12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span data-i18n="phone.findings"></span>
+    </button>
+    <button type="button" class="phone-btn" data-action="story">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 4 H17 V18 L11 14 L5 18 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span data-i18n="mode.story"></span>
+    </button>
+  </nav>
+
+  <div id="app-error" class="app-error" role="alert" hidden></div>
+  <div id="status" class="sr-only" aria-live="polite"></div>
+  <noscript><p class="app-error">Under the Canopy needs JavaScript to draw the map.</p></noscript>
+  <!-- Shown by CSS only if the app has not started after 8 s (same exception as noscript:
+       it must work when the JavaScript, and so i18n, could not load). -->
+  <p class="boot-hint" role="status">The app did not start. Reload with Ctrl+Shift+R (Cmd+Shift+R on a Mac) to clear old files, and open it through the local server, not as a file.</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+Under the Canopy
+Copyright 2026 The Under the Canopy contributors
+
+This product's source code is licensed under the Apache License, Version 2.0 (see LICENSE).
+The Under the Canopy mark (web/media/brand/) is the project's own work under CC BY 4.0 (docs/BRAND.md).
+
+It is an independent entry to the 2026 NASA International Space Apps Challenge ("Dancing with
+the SARs"). It is not endorsed by NASA, ISRO or any data provider.
+
+The data products in web/data/ are derived from third-party data that keep their own licences
+and terms; they are not relicensed by the Apache License. Every source, its licence and the
+citation it asks for are listed in CREDITS.md. In short:
+
+- NISAR data: NASA/JPL and ISRO, distributed by the Alaska Satellite Facility DAAC. NASA Earth
+  science data (OPERA, HLS, NASADEM, GEDI, SWOT, GRACE/GRACE-FO, CYGNSS, GPM IMERG, ICESat-2,
+  MODIS, VIIRS, ITS_LIVE, SEDAC, GIBS) are openly shared without restriction under NASA's Earth
+  science data policy.
+- Contains modified Copernicus Sentinel data (2026), processed by NASA JPL OPERA and in HLS.
+- Copernicus DEM: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018
+  provided under COPERNICUS by the European Union and ESA; all rights reserved. Used here as
+  the ASF GLO-30 HAND product derived from it, and GLO-90 for glacier relief. The organisations in charge of the Copernicus
+  programme do not incur any liability for any use of the Copernicus DEM.
+- ESA WorldCover 2021: (c) ESA WorldCover project 2021 / Contains modified Copernicus Sentinel
+  data (2021) processed by ESA WorldCover consortium. CC BY 4.0.
+- JRC Global Surface Water: Source: EC JRC/Google (Pekel et al. 2016, Nature 540, 418-422).
+- GLWD v2: Lehner et al. 2025, WWF and McGill University. CC BY 4.0.
+- GEOGloWS ECMWF Streamflow Service: GEOGloWS and ECMWF. CC BY 4.0.
+- WorldPop: WorldPop, University of Southampton. CC BY 4.0.
+- Village names: GeoNames (geonames.org). CC BY 4.0.
+- Map data (c) OpenStreetMap contributors, available under the Open Database License (ODbL).
+- USGS data (river gauges, earthquake finite-fault model) are in the U.S. public domain.
+- GNSS positions: Nevada Geodetic Laboratory (Blewitt et al. 2018).
+- Challenge image: NASA/JPL-Caltech (PIA26672).

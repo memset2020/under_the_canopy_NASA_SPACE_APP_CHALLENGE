@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources</title>
+  <meta name="description" content="Every data source, paper and licence behind Under the Canopy, grouped and cited.">
+  <link rel="icon" href="media/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/sources.css">
+  <script type="module" src="src/sources.js"></script>
+</head>
+<body class="sources-page">
+  <header class="src-head">
+    <a class="src-brand" href="landing.html"><img src="media/brand/mark.svg" width="28" height="28" alt=""><span data-i18n="app.title">Under the Canopy</span></a>
+    <nav class="src-nav"><a href="index.html" data-i18n="sources.to_map">Open the map</a><span class="src-langs"><a href="?lang=en">English</a><a href="?lang=bn">বাংলা</a><a href="?lang=pt">Português</a></span></nav>
+  </header>
+  <main id="top" class="src-main">
+    <section class="src-hero">
+      <p class="src-kicker" data-i18n="sources.kicker">Sources and citations</p>
+      <h1 data-i18n="sources.title">Every source, in one place</h1>
+      <p class="src-lede" data-i18n="sources.lede">Each map in the app stands on these: the radar itself, the satellites and gauges it is checked against, and the papers its methods come from. Every entry says what the source tells us, how it may be used and how to cite it.</p>
+      <ul class="src-stats" id="src-stats"></ul>
+    </section>
+    <section class="src-web" aria-labelledby="web-title">
+      <div class="web-grid">
+        <div>
+          <h2 id="web-title" data-i18n="sources.web_title">The evidence web</h2>
+          <p class="src-web-lede" data-i18n="sources.web_lede2">Which family of sources holds up which change. Each dot counts its sources; choose one to see them.</p>
+          <div id="src-matrix" class="mx"></div>
+        </div>
+        <aside class="web-detail" id="web-detail" aria-live="polite"></aside>
+      </div>
+    </section>
+    <div class="src-tools">
+      <input type="search" id="src-search" data-i18n-placeholder="sources.search" aria-label="Search the sources">
+      <div class="src-active" id="src-active" hidden></div>
+      <p class="src-count" id="src-count"></p>
+    </div>
+    <div class="cat-head"><span data-i18n="sources.col_source">Source</span><span data-i18n="sources.col_role">What it tells us</span><span class="cat-uses-h" id="cat-uses-h"></span><span data-i18n="sources.col_licence">Licence</span></div>
+    <div id="src-list"></div>
+    <p class="src-foot" data-i18n="sources.foot">The code is Apache-2.0; the data keep their own licences. The full table, with required notices, is in CREDITS.md and NOTICE in the repository.</p>
+  </main>
+</body>
+</html>

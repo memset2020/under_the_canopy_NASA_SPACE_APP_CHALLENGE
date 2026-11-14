@@ -1,0 +1,50 @@
+{
+ "labels": {
+  "flooded_veg": 622,
+  "open_water": 6000,
+  "dry_veg": 539,
+  "dry_open": 5856
+ },
+ "held_out_share": 0.46,
+ "defaults": {
+  "ow_hh_db": -16.0,
+  "ow_hv_db": -22.0,
+  "fv_hh_db": -5.0,
+  "fv_ratio_db": 7.0,
+  "margin_db": 1.0,
+  "max_spread_db": 3.0
+ },
+ "tuned": {
+  "ow_hh_db": -9.75,
+  "ow_hv_db": -16.5,
+  "fv_hh_db": -4.5,
+  "fv_ratio_db": 4.25,
+  "margin_db": 1.0,
+  "max_spread_db": 3.0
+ },
+ "held_out_before": {
+  "flooded_veg": {
+   "balanced_accuracy": 0.506,
+   "recall": 0.083,
+   "specificity": 0.929
+  },
+  "open_water": {
+   "balanced_accuracy": 0.608,
+   "recall": 0.233,
+   "specificity": 0.983
+  }
+ },
+ "held_out_after": {
+  "flooded_veg": {
+   "balanced_accuracy": 0.776,
+   "recall": 0.6,
+   "specificity": 0.952
+  },
+  "open_water": {
+   "balanced_accuracy": 0.79,
+   "recall": 0.778,
+   "specificity": 0.803
+  }
+ },
+ "seasonal_signal": null
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Downwind ice: one icefield (web/data/ice/<id>/ice.json), ice schema 1 (docs/03 §4.19, docs/15)",
+  "type": "object",
+  "required": ["schema_version", "id", "name", "bounds", "year", "baseline_years", "fire_site", "glaciers", "measured", "fire", "smoke", "albedo", "speed"],
+  "$defs": {
+    "season": {
+      "type": "object",
+      "required": ["days", "window", "years", "value", "base_median", "rank_low", "n_years"],
+      "properties": {
+        "days": {
+          "type": "array",
+          "items": { "type": "object", "required": ["date", "value", "base_median", "base_lo", "base_hi"] }
+        },
+        "years": { "type": "array", "items": { "type": "object", "required": ["year", "value", "days"] } },
+        "window": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 2 }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": 1 },
+    "bounds": { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4 },
+    "glaciers": {
+      "type": "object",
+      "required": ["source", "geojson", "n", "area_km2", "outline_dates", "named"]
+    },
+    "fire": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["source", "bbox", "label", "n", "days"],
+          "properties": { "days": { "type": "array", "items": { "type": "object", "required": ["date", "n", "frp_mw"] } } }
+        }
+      ]
+    },
+    "smoke": {
+      "oneOf": [
+        { "type": "null" },
+        { "allOf": [{ "$ref": "#/$defs/season" }, { "type": "object", "required": ["source", "cell_deg", "smoky_aod", "smoky_days", "smoky_dates", "measured_days", "max"] }] }
+      ]
+    },
+    "albedo": {
+      "oneOf": [
+        { "type": "null" },
+        { "allOf": [{ "$ref": "#/$defs/season" }, { "type": "object", "required": ["source", "ice_cell_min", "cells"] }] }
+      ]
+    },
+    "speed": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["goff_source", "itslive_source", "agree_along_m", "agree_range_m", "pairs", "rock_noise_median_m_yr", "ice_agree_median_pct", "best_pair", "glaciers", "by_pair"],
+          "properties": {
+            "glaciers": {
+              "type": "array",
+              "items": { "type": "object", "required": ["name", "itslive_m_yr", "itslive_pairs", "nisar_m_yr", "nisar_agree_pct"] }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

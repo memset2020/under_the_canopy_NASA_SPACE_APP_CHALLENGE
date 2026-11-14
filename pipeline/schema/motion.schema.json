@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ground that moved: one event (web/data/motion/<id>/motion.json), motion schema 15 (docs/03 §4, docs/10 D-082)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "kind",
+    "grid",
+    "binary",
+    "scale_cm",
+    "nodata",
+    "planes",
+    "geometries",
+    "reference",
+    "wavelength_m",
+    "profiles"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 15
+    },
+    "kind": {
+      "enum": [
+        "earthquake",
+        "subsidence"
+      ]
+    },
+    "grid": {
+      "type": "object",
+      "required": [
+        "width",
+        "height",
+        "bounds",
+        "res_m"
+      ]
+    },
+    "binary": {
+      "type": "string",
+      "pattern": "\\.bin(\\.gz)?$"
+    },
+    "scale_cm": {
+      "type": "number"
+    },
+    "nodata": {
+      "const": -32768
+    },
+    "planes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "unit"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "los",
+              "east",
+              "up",
+              "rate_los",
+              "rate_up",
+              "rate_east",
+              "cum",
+              "model_los",
+              "model_east",
+              "model_up",
+              "coherence",
+              "sigma",
+              "dem",
+              "before_los",
+              "before_east",
+              "before_up"
+            ]
+          },
+          "unit": {
+            "enum": [
+              "cm",
+              "cm/yr",
+              "m",
+              "1"
+            ]
+          },
+          "scale": {
+            "type": "number"
+          },
+          "noise": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "of": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "geometries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "track",
+          "direction",
+          "los_enu",
+          "incidence_deg",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "jpl": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "n",
+              "corr",
+              "offset_cm",
+              "rms_diff_cm",
+              "slope"
+            ]
+          }
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "bbox",
+        "label"
+      ]
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "a",
+          "b",
+          "half_width_km"
+        ]
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "label",
+        "fit",
+        "patches",
+        "trace"
+      ],
+      "properties": {
+        "patches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "ring",
+              "slip_m",
+              "rake"
+            ]
+          }
+        }
+      }
+    },
+    "gnss": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "lon",
+          "lat",
+          "period",
+          "start",
+          "end",
+          "rate_u_cm_yr",
+          "los_rate_cm_yr",
+          "nisar"
+        ],
+        "properties": {
+          "period": {
+            "enum": [
+              "same",
+              "earlier"
+            ]
+          }
+        }
+      }
+    },
+    "quakes": {
+      "type": "array"
+    },
+    "fault": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "rupture": {
+      "type": "object",
+      "required": [
+        "file",
+        "grid",
+        "components",
+        "scale_cm",
+        "times_s",
+        "moment_released_nm"
+      ],
+      "properties": {
+        "times_s": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2
+        },
+        "moment_released_nm": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+# Detailed belt on free GitHub-hosted runners (docs/13 option B, D-057). Free for public repos.
+# Runs only when started by hand. Needs two repository secrets, set by the owner in
+# Settings > Secrets and variables > Actions: EARTHDATA_USERNAME, EARTHDATA_PASSWORD.
+# They are written to the runner's ~/.netrc for earthaccess and never enter the repository.
+name: belt
+on:
+  workflow_dispatch:
+    inputs:
+      scope: { description: "strict or full", default: "strict" }
+      start: { description: "first cell (offset)", default: "0" }
+      per_job: { description: "cells per job", default: "25" }
+      jobs: { description: "parallel jobs (max 20)", default: "20" }
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      chunks: ${{ steps.c.outputs.chunks }}
+    steps:
+      - id: c
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          start, per, n = int("${{ inputs.start }}"), int("${{ inputs.per_job }}"), int("${{ inputs.jobs }}")
+          print("chunks=" + json.dumps([start + i * per for i in range(min(n, 20))]))
+          PY
+
+  cells:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        offset: ${{ fromJson(needs.plan.outputs.chunks) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install the pipeline
+        working-directory: pipeline
+        run: pip install -e .[real]
+      - name: Earthdata login for earthaccess (runner only)
+        env:
+          EDL_USER: ${{ secrets.EARTHDATA_USERNAME }}
+          EDL_PASS: ${{ secrets.EARTHDATA_PASSWORD }}
+        run: |
+          test -n "$EDL_USER" || { echo "Set EARTHDATA_USERNAME and EARTHDATA_PASSWORD secrets"; exit 1; }
+          printf 'machine urs.earthdata.nasa.gov login %s password %s\n' "$EDL_USER" "$EDL_PASS" > ~/.netrc
+          chmod 600 ~/.netrc
+      - name: Map cells
+        working-directory: pipeline
+        run: python cli.py belt --scope "${{ inputs.scope }}" --offset ${{ matrix.offset }} --limit ${{ inputs.per_job }} --lanes 3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: belt-${{ matrix.offset }}
+          path: web/data/belt/cell_*
+          if-no-files-found: ignore
+
+  merge:
+    needs: cells
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/download-artifact@v4
+        with: { path: belt-parts, pattern: "belt-*" }
+      - name: Merge cells and rebuild the index
+        run: |
+          mkdir -p web/data/belt
+          find belt-parts -mindepth 2 -maxdepth 2 -type d -name 'cell_*' -exec cp -r {} web/data/belt/ \;
+          cd pipeline && pip install -e . && python -c "from canopy import belt, export, config; belt.write_index(); export.write_manifest(config.WEB_DATA_DIR, default_site='atchafalaya')"
+      - name: Commit
+        run: |
+          git config user.name "belt-bot"
+          git config user.email "belt-bot@users.noreply.github.com"
+          git add web/data/belt web/data/manifest.json
+          git diff --cached --quiet || git commit -m "Belt: add mapped cells (offset ${{ inputs.start }})"
+          git push

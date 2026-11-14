@@ -1,0 +1,16 @@
+{
+  "quake": {
+    "file": "map-quake.jpg",
+    "lo": -80,
+    "hi": 80,
+    "width": 986,
+    "height": 369
+  },
+  "sink": {
+    "file": "map-sink.jpg",
+    "lo": -40,
+    "hi": 40,
+    "width": 472,
+    "height": 553
+  }
+}

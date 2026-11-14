@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Under the Canopy global context grid (docs/03 §4.10)",
+  "type": "object",
+  "required": [
+    "grid",
+    "png_bounds",
+    "binary",
+    "nodata",
+    "nisar_window",
+    "min_passes_detailed",
+    "cygnss_months",
+    "likely_rule",
+    "layers",
+    "sites",
+    "sources"
+  ],
+  "properties": {
+    "grid": {
+      "type": "object",
+      "required": [
+        "res_deg",
+        "width",
+        "height",
+        "bounds"
+      ],
+      "properties": {
+        "res_deg": {
+          "type": "number"
+        },
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        },
+        "bounds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    },
+    "png_bounds": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "binary": {
+      "type": "string"
+    },
+    "nodata": {
+      "const": 255
+    },
+    "nisar_window": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "min_passes_detailed": {
+      "type": "integer"
+    },
+    "cygnss_months": {
+      "type": "integer"
+    },
+    "likely_rule": {
+      "type": "object"
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "encoding",
+          "source",
+          "png"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "encoding": {
+            "enum": [
+              "percent",
+              "count",
+              "day",
+              "half_m",
+              "log_people",
+              "class",
+              "month",
+              "signed_cm",
+              "log_mg"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "png": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "sites": {
+      "type": "array"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "provider",
+          "role"
+        ]
+      }
+    },
+    "water_storage_month": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "groundwater_week": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "wetland_ch4": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "year",
+        "members",
+        "total_tg",
+        "member_total_tg",
+        "extent_moved_pct",
+        "q10_moved_pct",
+        "version"
+      ],
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "members": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "total_tg": {
+          "type": "number"
+        },
+        "member_total_tg": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "extent_moved_pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "q10_moved_pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

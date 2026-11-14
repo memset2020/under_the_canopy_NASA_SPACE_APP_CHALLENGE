@@ -1,0 +1,955 @@
+{
+ "schema_version": 14,
+ "synthetic": false,
+ "site": {
+  "id": "thunder_bay_36",
+  "name": "Thunder Bay 36 fire, Ontario",
+  "country": "CA",
+  "center": [
+   -89.2,
+   50.5
+  ],
+  "zoom": 10,
+  "kind": "fire"
+ },
+ "grid": {
+  "width": 512,
+  "height": 906,
+  "bounds": [
+   -89.6,
+   50.05,
+   -88.8,
+   50.95
+  ],
+  "crs": "EPSG:4326",
+  "pixel_size_m": 110.6
+ },
+ "track": {
+  "number": 41,
+  "direction": "descending"
+ },
+ "thresholds": {
+  "ow_hh_db": -16.0,
+  "ow_hv_db": -22.0,
+  "fv_hh_db": -5.0,
+  "fv_ratio_db": 7.0,
+  "margin_db": 1.0,
+  "max_spread_db": 3.0
+ },
+ "passes": [
+  {
+   "usual_water_km2": 108.541,
+   "rtc_date": null,
+   "id": "p01",
+   "date": "2026-06-17",
+   "acquired_utc": "2026-06-17T01:12:51Z",
+   "flooded_veg_km2": 13.856,
+   "open_water_km2": 108.638,
+   "flooded_km2": 122.494,
+   "low_conf_fraction": 0.1699,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-06-18",
+   "optical_water_km2": 45.934,
+   "optical_clear_fraction": 0.042,
+   "class_png": "passes/p01_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 28.854,
+   "rtc_date": "2026-06-30",
+   "id": "p02",
+   "date": "2026-06-29",
+   "acquired_utc": "2026-06-29T01:12:50Z",
+   "flooded_veg_km2": 5.479,
+   "open_water_km2": 28.866,
+   "flooded_km2": 34.345,
+   "low_conf_fraction": 0.1377,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-07-04",
+   "optical_water_km2": 896.099,
+   "optical_clear_fraction": 0.897,
+   "class_png": "passes/p02_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 144.405,
+   "rtc_date": "2026-07-12",
+   "id": "p03",
+   "date": "2026-07-11",
+   "acquired_utc": "2026-07-11T01:12:49Z",
+   "flooded_veg_km2": 5.447,
+   "open_water_km2": 144.417,
+   "flooded_km2": 149.864,
+   "low_conf_fraction": 0.1542,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-07-11",
+   "optical_water_km2": 718.811,
+   "optical_clear_fraction": 0.735,
+   "class_png": "passes/p03_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 27.12,
+   "rtc_date": "2026-07-24",
+   "id": "p04",
+   "date": "2026-07-23",
+   "acquired_utc": "2026-07-23T01:12:49Z",
+   "flooded_veg_km2": 22.71,
+   "open_water_km2": 27.12,
+   "flooded_km2": 49.83,
+   "low_conf_fraction": 0.1861,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-07-24",
+   "optical_water_km2": 966.272,
+   "optical_clear_fraction": 0.927,
+   "class_png": "passes/p04_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 28.969,
+   "rtc_date": "2026-08-17",
+   "id": "p05",
+   "date": "2026-08-16",
+   "acquired_utc": "2026-08-16T01:12:47Z",
+   "flooded_veg_km2": 40.435,
+   "open_water_km2": 28.969,
+   "flooded_km2": 69.404,
+   "low_conf_fraction": 0.2014,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-08-18",
+   "optical_water_km2": 519.869,
+   "optical_clear_fraction": 0.526,
+   "class_png": "passes/p05_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 24.648,
+   "rtc_date": "2026-09-10",
+   "id": "p06",
+   "date": "2026-09-09",
+   "acquired_utc": "2026-09-09T01:12:47Z",
+   "flooded_veg_km2": 231.55,
+   "open_water_km2": 24.648,
+   "flooded_km2": 256.198,
+   "low_conf_fraction": 0.2534,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-05",
+   "optical_water_km2": 393.83,
+   "optical_clear_fraction": 0.304,
+   "class_png": "passes/p06_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 213.579,
+   "rtc_date": "2026-09-22",
+   "id": "p07",
+   "date": "2026-09-21",
+   "acquired_utc": "2026-09-21T01:12:47Z",
+   "flooded_veg_km2": 121.262,
+   "open_water_km2": 213.627,
+   "flooded_km2": 334.889,
+   "low_conf_fraction": 0.2504,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-21",
+   "optical_water_km2": 1202.953,
+   "optical_clear_fraction": 1.0,
+   "class_png": "passes/p07_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 84.542,
+   "rtc_date": "2026-10-04",
+   "id": "p08",
+   "date": "2026-10-03",
+   "acquired_utc": "2026-10-03T01:12:47Z",
+   "flooded_veg_km2": 261.652,
+   "open_water_km2": 84.554,
+   "flooded_km2": 346.205,
+   "low_conf_fraction": 0.2671,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-30",
+   "optical_water_km2": 1492.826,
+   "optical_clear_fraction": 0.877,
+   "class_png": "passes/p08_class.png",
+   "cband_png": null
+  }
+ ],
+ "peak_pass": "p08",
+ "grid_stack": {
+  "stack_file": "stack.bin",
+  "static_file": "static.bin",
+  "order": "layer, pass, row, col",
+  "layers": [
+   {
+    "name": "hh",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "hv",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "hh_spread",
+    "scale": 0.25,
+    "offset": 0,
+    "nodata": null
+   },
+   {
+    "name": "cband",
+    "codes": {
+     "0": "no_data",
+     "1": "not_water",
+     "2": "water"
+    }
+   },
+   {
+    "name": "level_cm",
+    "scale": 2.0,
+    "offset": -256.0,
+    "nodata": 0
+   },
+   {
+    "name": "vv",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "vh",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   }
+  ],
+  "static_layers": [
+   {
+    "name": "veg",
+    "codes": {
+     "0": "other",
+     "1": "vegetation",
+     "2": "built_up"
+    }
+   },
+   {
+    "name": "hydroperiod_days",
+    "scale": 1,
+    "offset": 0,
+    "nodata": null
+   },
+   {
+    "name": "canopy_cover_pct",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "canopy_height_m",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "terrain_gate",
+    "codes": {
+     "0": "floodable",
+     "1": "high_ground"
+    }
+   },
+   {
+    "name": "jrc_occurrence",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "hand_m",
+    "scale": 0.5,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "glwd_class",
+    "nodata": 255,
+    "codes": {
+     "0": "dryland",
+     "1": "open_water",
+     "2": "open_water",
+     "3": "open_water",
+     "4": "open_water",
+     "5": "open_water",
+     "6": "open_water",
+     "7": "open_water",
+     "8": "forested_wetland",
+     "10": "forested_wetland",
+     "12": "forested_wetland",
+     "14": "forested_wetland",
+     "16": "forested_wetland",
+     "18": "forested_wetland",
+     "20": "forested_wetland",
+     "22": "forested_wetland",
+     "24": "forested_wetland",
+     "26": "forested_wetland",
+     "28": "forested_wetland",
+     "9": "wetland",
+     "11": "wetland",
+     "13": "wetland",
+     "15": "wetland",
+     "17": "wetland",
+     "19": "wetland",
+     "21": "wetland",
+     "23": "wetland",
+     "25": "wetland",
+     "27": "wetland",
+     "29": "wetland",
+     "30": "wetland",
+     "31": "wetland",
+     "32": "wetland",
+     "33": "rice"
+    }
+   },
+   {
+    "name": "burn_pass",
+    "scale": 1,
+    "offset": 0,
+    "nodata": null
+   }
+  ]
+ },
+ "products": {
+  "hydroperiod": {
+   "png": "hydroperiod.png",
+   "max_days": 120,
+   "season_days": 120,
+   "flooded_any_km2": 578.703
+  },
+  "optical": {
+   "png": "optical.png",
+   "date": "2026-07-24",
+   "cloud_fraction": 0.092
+  },
+  "level_change": [],
+  "canopy": {
+   "height_max_m": 15.4,
+   "source": "NASA GEDI canopy cover and height (gridded high-quality shots, 1 km)",
+   "height_png": "canopy_height.png",
+   "cover_png": "canopy_cover.png",
+   "detection_by_cover": [
+    {
+     "cover_from": 0,
+     "cover_to": 20,
+     "pixels": 69552,
+     "hidden_share": 0.113,
+     "low_conf_share": 0.483
+    },
+    {
+     "cover_from": 20,
+     "cover_to": 40,
+     "pixels": 59487,
+     "hidden_share": 0.218,
+     "low_conf_share": 0.523
+    },
+    {
+     "cover_from": 40,
+     "cover_to": 60,
+     "pixels": 5449,
+     "hidden_share": 0.089,
+     "low_conf_share": 0.362
+    },
+    {
+     "cover_from": 60,
+     "cover_to": 80,
+     "pixels": 127,
+     "hidden_share": 0.0,
+     "low_conf_share": 0.252
+    },
+    {
+     "cover_from": 80,
+     "cover_to": 100,
+     "pixels": 4,
+     "hidden_share": 0.25,
+     "low_conf_share": 0.75
+    }
+   ]
+  },
+  "terrain": {
+   "source": "NASADEM 30 m",
+   "rule": "more than 12 m above the local open-water surface (NASADEM)",
+   "gated_km2": 2989.619
+  },
+  "hand": {
+   "png": "hand.png",
+   "max_m": 15.0,
+   "low_m": 5.0,
+   "source": "ASF GLO-30 HAND (Copernicus DEM)",
+   "hidden_median_m": 3.9,
+   "dry_veg_median_m": 2.8,
+   "open_water_median_m": 0.0,
+   "hidden_low_pct": 61.7,
+   "dry_veg_low_pct": 70.1,
+   "open_water_low_pct": 100.0
+  },
+  "glwd": {
+   "source": "GLWD v2.0 (Lehner et al. 2025)",
+   "hidden_wetland_pct": 79.3,
+   "hidden_forested_pct": 76.6,
+   "dry_veg_wetland_pct": 84.5,
+   "dry_veg_forested_pct": 82.4,
+   "site_wetland_pct": 76.1,
+   "site_forested_pct": 74.5
+  },
+  "outlook": null,
+  "burn": {
+   "png": "burn.png",
+   "rise_db": 1.0,
+   "tuned_site": "thunder_bay_36",
+   "onset_db": 0.5,
+   "last_pass_rise_db": 1.5,
+   "grid": {
+    "width": 1030,
+    "height": 1822,
+    "pixel_m": 55.0
+   },
+   "min_patch_km2": 0.05,
+   "baseline": [
+    "2026-06-17",
+    "2026-06-29",
+    "2026-07-11"
+   ],
+   "forest_km2": 4431.7,
+   "burned_km2": 1879.4,
+   "by_pass": [
+    {
+     "date": "2026-06-17",
+     "new_km2": 0.0,
+     "burned_km2": 0.0
+    },
+    {
+     "date": "2026-06-29",
+     "new_km2": 0.0,
+     "burned_km2": 0.0
+    },
+    {
+     "date": "2026-07-11",
+     "new_km2": 0.0,
+     "burned_km2": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "new_km2": 1495.3,
+     "burned_km2": 1495.3
+    },
+    {
+     "date": "2026-08-16",
+     "new_km2": 272.22,
+     "burned_km2": 1767.52
+    },
+    {
+     "date": "2026-09-09",
+     "new_km2": 106.62,
+     "burned_km2": 1874.14
+    },
+    {
+     "date": "2026-09-21",
+     "new_km2": 5.24,
+     "burned_km2": 1879.38
+    },
+    {
+     "date": "2026-10-03",
+     "new_km2": 0.04,
+     "burned_km2": 1879.42
+    }
+   ],
+   "fire": {
+    "name": "Thunder Bay 36",
+    "reported_ha": 318813,
+    "reported_source": "Ontario Forest Fires via Turtle Island News, 24 Jul 2026 (verify)"
+   },
+   "validation": {
+    "product": "MCD64A1",
+    "source": "NASA MODIS MCD64A1 v061 burned area (500 m, monthly)",
+    "ref_months": [
+     "2026-06",
+     "2026-07"
+    ],
+    "ref_burned_km2": 1829.5,
+    "precision": 0.844,
+    "recall": 0.863,
+    "f1": 0.854,
+    "cells": 1457151,
+    "held_out": {
+     "half": "east",
+     "precision": 0.857,
+     "recall": 0.833,
+     "f1": 0.845,
+     "cells": 743505
+    },
+    "dates": {
+     "cells": 522381,
+     "within_pct": 94.4,
+     "median_lag_days": 9.0
+    },
+    "sweep": [
+     {
+      "rise_db": 0.5,
+      "precision": 0.559,
+      "recall": 0.966,
+      "f1": 0.708,
+      "cells": 1457151
+     },
+     {
+      "rise_db": 0.75,
+      "precision": 0.728,
+      "recall": 0.926,
+      "f1": 0.815,
+      "cells": 1457151
+     },
+     {
+      "rise_db": 1.0,
+      "precision": 0.844,
+      "recall": 0.863,
+      "f1": 0.854,
+      "cells": 1457151
+     },
+     {
+      "rise_db": 1.25,
+      "precision": 0.874,
+      "recall": 0.776,
+      "f1": 0.822,
+      "cells": 1457151
+     },
+     {
+      "rise_db": 1.5,
+      "precision": 0.892,
+      "recall": 0.661,
+      "f1": 0.759,
+      "cells": 1457151
+     },
+     {
+      "rise_db": 2.0,
+      "precision": 0.914,
+      "recall": 0.379,
+      "f1": 0.535,
+      "cells": 1457151
+     }
+    ]
+   },
+   "checks": [
+    {
+     "product": "VNP64A1",
+     "source": "NASA VIIRS VNP64A1 v002 burned area (500 m, monthly)",
+     "ref_months": [
+      "2026-06",
+      "2026-07",
+      "2026-08"
+     ],
+     "ref_burned_km2": 589.0,
+     "precision": 0.261,
+     "recall": 0.828,
+     "f1": 0.397,
+     "cells": 1457151,
+     "held_out": {
+      "half": "east",
+      "precision": 0.163,
+      "recall": 0.778,
+      "f1": 0.27,
+      "cells": 743505
+     },
+     "dates": {
+      "cells": 161395,
+      "within_pct": 92.0,
+      "median_lag_days": 10.0
+     },
+     "sweep": [
+      {
+       "rise_db": 0.5,
+       "precision": 0.178,
+       "recall": 0.957,
+       "f1": 0.301,
+       "cells": 1457151
+      },
+      {
+       "rise_db": 0.75,
+       "precision": 0.23,
+       "recall": 0.907,
+       "f1": 0.367,
+       "cells": 1457151
+      },
+      {
+       "rise_db": 1.0,
+       "precision": 0.261,
+       "recall": 0.828,
+       "f1": 0.397,
+       "cells": 1457151
+      },
+      {
+       "rise_db": 1.25,
+       "precision": 0.26,
+       "recall": 0.715,
+       "f1": 0.381,
+       "cells": 1457151
+      },
+      {
+       "rise_db": 1.5,
+       "precision": 0.248,
+       "recall": 0.569,
+       "f1": 0.345,
+       "cells": 1457151
+      },
+      {
+       "rise_db": 2.0,
+       "precision": 0.205,
+       "recall": 0.263,
+       "f1": 0.23,
+       "cells": 1457151
+      }
+     ]
+    }
+   ],
+   "active_fire": {
+    "source": "NASA VIIRS 375 m active fire v002 (VNP14IMG, VJ114IMG, VJ214IMG)",
+    "sensors": [
+     "NOAA-20",
+     "NOAA-21",
+     "Suomi NPP"
+    ],
+    "n": 46191,
+    "first": "2026-07-12",
+    "last": "2026-08-31",
+    "frp_max_mw": 2374.8,
+    "by_day": [
+     {
+      "date": "2026-07-12",
+      "n": 21,
+      "frp_mw": 1278.1
+     },
+     {
+      "date": "2026-07-13",
+      "n": 1837,
+      "frp_mw": 135346.5
+     },
+     {
+      "date": "2026-07-14",
+      "n": 16684,
+      "frp_mw": 639645.1
+     },
+     {
+      "date": "2026-07-15",
+      "n": 21495,
+      "frp_mw": 166059.0
+     },
+     {
+      "date": "2026-07-16",
+      "n": 5843,
+      "frp_mw": 31330.2
+     },
+     {
+      "date": "2026-07-17",
+      "n": 287,
+      "frp_mw": 527.0
+     },
+     {
+      "date": "2026-07-18",
+      "n": 3,
+      "frp_mw": 3.0
+     },
+     {
+      "date": "2026-07-19",
+      "n": 4,
+      "frp_mw": 12.7
+     },
+     {
+      "date": "2026-08-02",
+      "n": 8,
+      "frp_mw": 89.6
+     },
+     {
+      "date": "2026-08-03",
+      "n": 2,
+      "frp_mw": 3.7
+     },
+     {
+      "date": "2026-08-18",
+      "n": 1,
+      "frp_mw": 2.8
+     },
+     {
+      "date": "2026-08-24",
+      "n": 1,
+      "frp_mw": 6.9
+     },
+     {
+      "date": "2026-08-25",
+      "n": 1,
+      "frp_mw": 1.8
+     },
+     {
+      "date": "2026-08-29",
+      "n": 1,
+      "frp_mw": 1.0
+     },
+     {
+      "date": "2026-08-30",
+      "n": 2,
+      "frp_mw": 22.9
+     },
+     {
+      "date": "2026-08-31",
+      "n": 1,
+      "frp_mw": 0.5
+     }
+    ],
+    "by_pass": [
+     {
+      "date": "2026-06-17",
+      "n_since_last": 0,
+      "frp_mw": 0.0
+     },
+     {
+      "date": "2026-06-29",
+      "n_since_last": 0,
+      "frp_mw": 0.0
+     },
+     {
+      "date": "2026-07-11",
+      "n_since_last": 0,
+      "frp_mw": 0.0
+     },
+     {
+      "date": "2026-07-23",
+      "n_since_last": 46174,
+      "frp_mw": 974201.6
+     },
+     {
+      "date": "2026-08-16",
+      "n_since_last": 10,
+      "frp_mw": 93.3
+     },
+     {
+      "date": "2026-09-09",
+      "n_since_last": 7,
+      "frp_mw": 35.8
+     },
+     {
+      "date": "2026-09-21",
+      "n_since_last": 0,
+      "frp_mw": 0.0
+     },
+     {
+      "date": "2026-10-03",
+      "n_since_last": 0,
+      "frp_mw": 0.0
+     }
+    ],
+    "points": "active_fire.json",
+    "dates": {
+     "cells": 12139,
+     "cell_deg": 0.005,
+     "within_pct": 99.3,
+     "before_pct": 100.0,
+     "median_lead_days": 9.0
+    }
+   },
+   "flood_lookalike": {
+    "date": "2026-10-03",
+    "before_km2": 13.9,
+    "km2": 261.7,
+    "in_burned_pct": 90.9
+   }
+  }
+ },
+ "context": {
+  "rain_daily": [],
+  "rain_source": null,
+  "inundation_daily": [],
+  "inundation_source": null,
+  "soil_moisture": [],
+  "soil_moisture_source": null,
+  "water_storage_monthly": [],
+  "water_storage_source": null
+ },
+ "validation": {
+  "gauge": null,
+  "reference_map": null,
+  "swot": [],
+  "icesat2": [],
+  "calibration": null
+ },
+ "exposure": null,
+ "downloads": [
+  {
+   "label_key": "download.areas_csv",
+   "path": "export/areas.csv"
+  },
+  {
+   "label_key": "download.flood_geojson",
+   "path": "export/flood_p08.geojson"
+  }
+ ],
+ "warnings": [
+  {
+   "code": "no_cband_match",
+   "detail": "p01 2026-06-17"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p02 2026-06-29"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p03 2026-07-11"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p04 2026-07-23"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p05 2026-08-16"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p06 2026-09-09"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p07 2026-09-21"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p08 2026-10-03"
+  },
+  {
+   "code": "no_level_change",
+   "detail": ""
+  },
+  {
+   "code": "no_swot",
+   "detail": ""
+  },
+  {
+   "code": "hidden_flood_uncalibrated",
+   "detail": "no local labels yet"
+  },
+  {
+   "code": "no_gauge",
+   "detail": ""
+  },
+  {
+   "code": "no_exposure",
+   "detail": ""
+  }
+ ],
+ "sources": [
+  {
+   "id": "nisar_gcov",
+   "name": "NISAR L2 GCOV (L-band, HH/HV)",
+   "provider": "NASA/ISRO via ASF DAAC",
+   "url": "https://nisar-docs.asf.alaska.edu/gcov/",
+   "role": "L-band backscatter for every pass"
+  },
+  {
+   "id": "esa_worldcover",
+   "name": "ESA WorldCover 10 m",
+   "provider": "ESA",
+   "url": "https://esa-worldcover.org/",
+   "role": "Where vegetation can hide water; built-up exclusion"
+  },
+  {
+   "id": "opera_dswx_hls",
+   "name": "OPERA DSWx-HLS",
+   "provider": "NASA JPL OPERA via PO.DAAC",
+   "url": "https://www.jpl.nasa.gov/go/opera",
+   "role": "What optical satellites saw as water (cloud-free pixels only)"
+  },
+  {
+   "id": "nasa_hls",
+   "name": "NASA HLS (Landsat 8/9 + Sentinel-2, 30 m)",
+   "provider": "NASA LP DAAC",
+   "url": "https://www.earthdata.nasa.gov/data/projects/hls",
+   "role": "The optical photo in the reveal"
+  },
+  {
+   "id": "nasa_gedi",
+   "name": "NASA GEDI canopy cover and height (gridded high-quality shots, 1 km)",
+   "provider": "NASA ORNL DAAC",
+   "url": "https://gedi.umd.edu/",
+   "role": "How dense and tall the canopy is where L-band sees water"
+  },
+  {
+   "id": "nasadem",
+   "name": "NASADEM 30 m",
+   "provider": "NASA LP DAAC",
+   "url": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-nasadem-hgt-001",
+   "role": "Terrain gate: no hidden-flood claim on high ground"
+  },
+  {
+   "id": "opera_rtc_s1",
+   "name": "OPERA RTC-S1 (C-band VV/VH backscatter)",
+   "provider": "NASA JPL OPERA via ASF DAAC",
+   "url": "https://www.jpl.nasa.gov/go/opera",
+   "role": "C-band's own numbers at each spot, for comparison with L-band"
+  },
+  {
+   "id": "jrc",
+   "name": "JRC Global Surface Water occurrence 1984–2021 (v1.4)",
+   "provider": "European Commission JRC / Google (open data)",
+   "role": "Where water usually is, so the usual river is not counted as flood",
+   "url": "https://global-surface-water.appspot.com/"
+  },
+  {
+   "id": "hand",
+   "name": "GLO-30 HAND, height above nearest drainage (v1, 2021)",
+   "provider": "Alaska Satellite Facility (NASA DAAC) from the Copernicus GLO-30 DEM, CC0",
+   "role": "How far above the nearest stream or river each place is: floods reach low ground",
+   "url": "https://registry.opendata.aws/glo-30-hand/"
+  },
+  {
+   "id": "glwd",
+   "name": "GLWD v2.0 Global Lakes and Wetlands Database (2025)",
+   "provider": "WWF / McGill (Lehner et al. 2025), CC BY 4.0",
+   "role": "Where wetlands, and forested wetlands, are usually mapped: an independent check",
+   "url": "https://www.hydrosheds.org/products/glwd"
+  },
+  {
+   "id": "mcd64a1",
+   "name": "MODIS MCD64A1 v061 burned area (500 m, monthly)",
+   "provider": "NASA LP DAAC",
+   "url": "https://doi.org/10.5067/MODIS/MCD64A1.061",
+   "role": "Independent check of where and when the forest burned (optical and thermal)"
+  },
+  {
+   "id": "vnp64a1",
+   "name": "VIIRS VNP64A1 v002 burned area (500 m, monthly)",
+   "provider": "NASA LP DAAC",
+   "url": "https://doi.org/10.5067/VIIRS/VNP64A1.002",
+   "role": "Second check of the burned forest; reaches later months than MODIS"
+  },
+  {
+   "id": "viirs_af",
+   "name": "VIIRS 375 m active fire v002 (VNP14IMG, VJ114IMG, VJ214IMG)",
+   "provider": "NASA LAADS DAAC",
+   "url": "https://doi.org/10.5067/VIIRS/VNP14IMG.002",
+   "role": "Where and when the fire burned, several times a day, between radar passes"
+  }
+ ]
+}

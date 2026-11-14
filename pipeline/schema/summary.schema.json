@@ -1,0 +1,1680 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://under-the-canopy/summary.schema.json",
+  "title": "Under the Canopy site summary, schema_version 10 (docs/03 §4.3)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "synthetic",
+    "site",
+    "grid",
+    "track",
+    "thresholds",
+    "passes",
+    "peak_pass",
+    "grid_stack",
+    "products",
+    "validation",
+    "exposure",
+    "downloads",
+    "warnings",
+    "sources",
+    "context"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "nullableDate": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "km2": {
+      "type": "number",
+      "minimum": 0
+    },
+    "nullableNumber": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "quantLayer": {
+      "type": "object",
+      "required": [
+        "name",
+        "scale",
+        "offset",
+        "nodata"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "scale": {
+          "type": "number"
+        },
+        "offset": {
+          "type": "number"
+        },
+        "nodata": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "codeLayer": {
+      "type": "object",
+      "required": [
+        "name",
+        "codes"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "codes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": 14
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "country",
+        "center",
+        "zoom"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_-]+$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 2,
+          "maxLength": 2,
+          "description": "ISO 3166-1 alpha-2; null for a place analysed on this computer (no country lookup)"
+        },
+        "center": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "zoom": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 19
+        },
+        "kind": {
+          "enum": [
+            "flood",
+            "fire"
+          ],
+          "description": "v13: the surface change the site shows"
+        }
+      }
+    },
+    "grid": {
+      "type": "object",
+      "required": [
+        "width",
+        "height",
+        "bounds",
+        "crs",
+        "pixel_size_m"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1024
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1024
+        },
+        "bounds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "crs": {
+          "const": "EPSG:4326"
+        },
+        "pixel_size_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "track": {
+      "type": "object",
+      "required": [
+        "number",
+        "direction"
+      ],
+      "properties": {
+        "number": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "ascending",
+            "descending",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "ow_hh_db",
+        "ow_hv_db",
+        "fv_hh_db",
+        "fv_ratio_db",
+        "margin_db",
+        "max_spread_db"
+      ],
+      "additionalProperties": {
+        "type": "number",
+        "multipleOf": 0.25
+      }
+    },
+    "passes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "date",
+          "flooded_veg_km2",
+          "open_water_km2",
+          "flooded_km2",
+          "low_conf_fraction",
+          "hidden_from_cband_km2",
+          "cband_date",
+          "class_png",
+          "cband_png",
+          "optical_date",
+          "optical_water_km2",
+          "optical_clear_fraction",
+          "rtc_date",
+          "usual_water_km2",
+          "hidden_low_conf_km2",
+          "acquired_utc"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^p\\d{2,3}$"
+          },
+          "date": {
+            "$ref": "#/$defs/date"
+          },
+          "flooded_veg_km2": {
+            "$ref": "#/$defs/km2"
+          },
+          "open_water_km2": {
+            "$ref": "#/$defs/km2"
+          },
+          "flooded_km2": {
+            "$ref": "#/$defs/km2"
+          },
+          "low_conf_fraction": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "hidden_from_cband_km2": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "cband_date": {
+            "$ref": "#/$defs/nullableDate"
+          },
+          "class_png": {
+            "type": "string"
+          },
+          "cband_png": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "optical_date": {
+            "$ref": "#/$defs/nullableDate"
+          },
+          "optical_water_km2": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "optical_clear_fraction": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "rtc_date": {
+            "$ref": "#/$defs/nullableDate"
+          },
+          "usual_water_km2": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "hidden_low_conf_km2": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "acquired_utc": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+            "description": "v11: earliest granule start (UTC) of the pass date, from the granule name"
+          },
+          "fill": {
+            "description": "D-101 (optional, additive in v14): where this pass's own track had no radar, pixels taken from another NISAR track's pass; null or absent when none",
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "track",
+              "direction",
+              "date",
+              "days_apart",
+              "share",
+              "offset_hh_db",
+              "offset_hv_db"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "track": {
+                "type": "integer"
+              },
+              "direction": {
+                "type": "string"
+              },
+              "date": {
+                "$ref": "#/$defs/date"
+              },
+              "days_apart": {
+                "type": "integer"
+              },
+              "share": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "offset_hh_db": {
+                "type": "number"
+              },
+              "offset_hv_db": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "peak_pass": {
+      "type": "string"
+    },
+    "grid_stack": {
+      "type": "object",
+      "required": [
+        "stack_file",
+        "static_file",
+        "order",
+        "layers",
+        "static_layers"
+      ],
+      "properties": {
+        "stack_file": {
+          "type": "string"
+        },
+        "static_file": {
+          "type": "string"
+        },
+        "order": {
+          "const": "layer, pass, row, col"
+        },
+        "layers": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/quantLayer"
+              },
+              {
+                "$ref": "#/$defs/codeLayer"
+              }
+            ]
+          }
+        },
+        "static_layers": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/quantLayer"
+              },
+              {
+                "$ref": "#/$defs/codeLayer"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "products": {
+      "type": "object",
+      "required": [
+        "hydroperiod",
+        "optical",
+        "level_change",
+        "canopy",
+        "terrain",
+        "hand",
+        "glwd",
+        "outlook",
+        "burn"
+      ],
+      "properties": {
+        "hydroperiod": {
+          "type": "object",
+          "required": [
+            "png",
+            "max_days",
+            "season_days",
+            "flooded_any_km2"
+          ],
+          "properties": {
+            "png": {
+              "type": "string"
+            },
+            "max_days": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+            },
+            "season_days": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "flooded_any_km2": {
+              "$ref": "#/$defs/km2"
+            }
+          }
+        },
+        "optical": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "png",
+                "date",
+                "cloud_fraction"
+              ],
+              "properties": {
+                "png": {
+                  "type": "string"
+                },
+                "date": {
+                  "$ref": "#/$defs/nullableDate"
+                },
+                "cloud_fraction": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          ]
+        },
+        "level_change": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "to",
+              "png",
+              "median_cm",
+              "p10_cm",
+              "p90_cm",
+              "n_px",
+              "coherent_share",
+              "scale_cm",
+              "sign_status",
+              "sign_pairs_strong",
+              "sign_pairs_total",
+              "sign_r"
+            ],
+            "properties": {
+              "from": {
+                "$ref": "#/$defs/date"
+              },
+              "to": {
+                "$ref": "#/$defs/date"
+              },
+              "png": {
+                "type": "string"
+              },
+              "median_cm": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "p10_cm": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "p90_cm": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "n_px": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "coherent_share": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "scale_cm": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "sign_status": {
+                "enum": [
+                  "gauge",
+                  "undetermined",
+                  "no_gauge",
+                  "synthetic"
+                ]
+              },
+              "sign_pairs_strong": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "sign_pairs_total": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "sign_r": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "phase_share": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "flooded_px": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "empty_reason": {
+                "enum": [
+                  null,
+                  "no_phase",
+                  "no_reference",
+                  "too_few_flooded"
+                ],
+                "description": "v13 (D-081): why the pair has no measurement"
+              }
+            }
+          }
+        },
+        "canopy": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "source",
+                "height_png",
+                "cover_png",
+                "detection_by_cover",
+                "height_max_m"
+              ],
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "height_png": {
+                  "type": "string"
+                },
+                "cover_png": {
+                  "type": "string"
+                },
+                "detection_by_cover": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "cover_from",
+                      "cover_to",
+                      "pixels",
+                      "hidden_share",
+                      "low_conf_share"
+                    ],
+                    "properties": {
+                      "cover_from": {
+                        "type": "integer"
+                      },
+                      "cover_to": {
+                        "type": "integer"
+                      },
+                      "pixels": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "hidden_share": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "low_conf_share": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      }
+                    }
+                  }
+                },
+                "height_max_m": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                }
+              }
+            }
+          ]
+        },
+        "terrain": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "source",
+                "rule",
+                "gated_km2"
+              ],
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "rule": {
+                  "type": "string"
+                },
+                "gated_km2": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          ]
+        },
+        "hand": {
+          "description": "v11: ASF GLO-30 HAND (height above nearest drainage) map and the low-ground check",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "png",
+                "max_m",
+                "low_m",
+                "source",
+                "hidden_median_m",
+                "hidden_low_pct",
+                "dry_veg_median_m",
+                "dry_veg_low_pct",
+                "open_water_median_m",
+                "open_water_low_pct"
+              ],
+              "properties": {
+                "png": {
+                  "type": "string"
+                },
+                "max_m": {
+                  "type": "number"
+                },
+                "low_m": {
+                  "type": "number"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "hidden_median_m": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "hidden_low_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "dry_veg_median_m": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "dry_veg_low_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "open_water_median_m": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "open_water_low_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "glwd": {
+          "description": "v11: GLWD v2 forested-wetland shares (independent of the radar)",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "source",
+                "hidden_wetland_pct",
+                "hidden_forested_pct",
+                "dry_veg_wetland_pct",
+                "dry_veg_forested_pct",
+                "site_wetland_pct",
+                "site_forested_pct"
+              ],
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "hidden_wetland_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "hidden_forested_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "dry_veg_wetland_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "dry_veg_forested_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "site_wetland_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "site_forested_pct": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "outlook": {
+          "description": "v11: experimental two-week outlook (GEOGloWS flow x NISAR-fitted response)",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "source",
+                "river_id",
+                "fit",
+                "usable",
+                "past",
+                "forecast",
+                "flows",
+                "withheld"
+              ],
+              "properties": {
+                "withheld": {
+                  "description": "v12: why there is no outlook (null when usable)",
+                  "enum": [
+                    null,
+                    "few_passes",
+                    "weak",
+                    "inverse"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "burn": {
+          "description": "v13: burned forest on fire sites (canopy/burn.py); null elsewhere. v14: checks against every burned-area product, VIIRS active fire",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "png",
+                "rise_db",
+                "onset_db",
+                "baseline",
+                "forest_km2",
+                "burned_km2",
+                "by_pass",
+                "validation",
+                "flood_lookalike",
+                "checks",
+                "active_fire",
+                "tuned_site"
+              ],
+              "properties": {
+                "rise_db": {
+                  "type": "number"
+                },
+                "onset_db": {
+                  "type": "number"
+                },
+                "baseline": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 2
+                },
+                "by_pass": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "date",
+                      "new_km2",
+                      "burned_km2"
+                    ]
+                  }
+                },
+                "validation": {
+                  "description": "v14: the site's reference burned-area product (MCD64A1 unless the site names another)",
+                  "oneOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "product",
+                        "source",
+                        "ref_burned_km2",
+                        "precision",
+                        "recall",
+                        "f1",
+                        "held_out",
+                        "ref_months",
+                        "dates",
+                        "sweep"
+                      ]
+                    }
+                  ]
+                },
+                "flood_lookalike": {
+                  "description": "v13: the flood rule's water under trees after the fire, and the share inside NISAR's burned forest",
+                  "oneOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "date",
+                        "before_km2",
+                        "km2",
+                        "in_burned_pct"
+                      ]
+                    }
+                  ]
+                },
+                "checks": {
+                  "description": "v14: the same check against the other burned-area products fetched",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "product",
+                      "source",
+                      "ref_burned_km2",
+                      "precision",
+                      "recall",
+                      "f1",
+                      "held_out",
+                      "ref_months",
+                      "dates",
+                      "sweep"
+                    ]
+                  }
+                },
+                "active_fire": {
+                  "description": "v14: VIIRS 375 m active fire detections (canopy/active_fire.py)",
+                  "oneOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "source",
+                        "sensors",
+                        "n",
+                        "first",
+                        "last",
+                        "frp_max_mw",
+                        "by_day",
+                        "by_pass",
+                        "points",
+                        "dates"
+                      ],
+                      "properties": {
+                        "by_day": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "date",
+                              "n",
+                              "frp_mw"
+                            ]
+                          }
+                        },
+                        "by_pass": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "date",
+                              "n_since_last",
+                              "frp_mw"
+                            ]
+                          }
+                        },
+                        "dates": {
+                          "oneOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "type": "object",
+                              "required": [
+                                "cells",
+                                "within_pct",
+                                "before_pct",
+                                "median_lead_days"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                "tuned_site": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "gauge",
+        "reference_map",
+        "swot",
+        "calibration",
+        "icesat2"
+      ],
+      "properties": {
+        "gauge": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "source",
+                "units",
+                "series",
+                "stage_daily",
+                "r",
+                "n",
+                "best_lag_days",
+                "r_best"
+              ],
+              "properties": {
+                "series": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "date",
+                      "stage_m",
+                      "flooded_km2"
+                    ],
+                    "properties": {
+                      "date": {
+                        "$ref": "#/$defs/date"
+                      },
+                      "stage_m": {
+                        "$ref": "#/$defs/nullableNumber"
+                      },
+                      "flooded_km2": {
+                        "$ref": "#/$defs/km2"
+                      }
+                    }
+                  }
+                },
+                "stage_daily": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "$ref": "#/$defs/date"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ],
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "r": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": -1,
+                  "maximum": 1
+                },
+                "r_best": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": -1,
+                  "maximum": 1
+                },
+                "n": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "best_lag_days": {
+                  "type": "integer"
+                }
+              }
+            }
+          ]
+        },
+        "reference_map": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "name",
+                "reference_period",
+                "compared_pass",
+                "agreement",
+                "recall_water",
+                "recall_flooded_veg",
+                "n_px"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "reference_period": {
+                  "type": "string"
+                },
+                "compared_pass": {
+                  "type": "string"
+                },
+                "agreement": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "recall_water": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "recall_flooded_veg": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "n_px": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          ]
+        },
+        "swot": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "kind",
+              "series",
+              "r",
+              "n"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "lake",
+                  "river"
+                ]
+              },
+              "series": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "date",
+                    "wse_m"
+                  ],
+                  "properties": {
+                    "date": {
+                      "$ref": "#/$defs/date"
+                    },
+                    "wse_m": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "r": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": -1,
+                "maximum": 1
+              },
+              "n": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "calibration": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "flooded_veg",
+                "open_water"
+              ],
+              "properties": {
+                "flooded_veg": {
+                  "type": "object",
+                  "required": [
+                    "applied",
+                    "held_out_before",
+                    "held_out_after",
+                    "label_sources",
+                    "rejected"
+                  ],
+                  "properties": {
+                    "applied": {
+                      "type": "boolean"
+                    },
+                    "held_out_before": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "held_out_after": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "label_sources": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "rejected": {
+                      "enum": [
+                        null,
+                        "search_edge",
+                        "gauge_timing"
+                      ]
+                    }
+                  }
+                },
+                "open_water": {
+                  "type": "object",
+                  "required": [
+                    "applied",
+                    "held_out_before",
+                    "held_out_after",
+                    "label_sources",
+                    "rejected"
+                  ],
+                  "properties": {
+                    "applied": {
+                      "type": "boolean"
+                    },
+                    "held_out_before": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "held_out_after": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "label_sources": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "rejected": {
+                      "enum": [
+                        null,
+                        "search_edge",
+                        "gauge_timing"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "icesat2": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "kind",
+              "series",
+              "r",
+              "n"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "lidar"
+                ],
+                "description": "ICESat-2 ATL13 heights from all water in the box (a site median), not one water body"
+              },
+              "series": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "date",
+                    "wse_m"
+                  ],
+                  "properties": {
+                    "date": {
+                      "$ref": "#/$defs/date"
+                    },
+                    "wse_m": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "r": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": -1,
+                "maximum": 1
+              },
+              "n": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "exposure": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "buffer_m",
+            "population_near_hidden_flood",
+            "roads_flooded_km",
+            "roads_geojson",
+            "places",
+            "grdi_near_flood",
+            "grdi_site"
+          ],
+          "properties": {
+            "buffer_m": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "population_near_hidden_flood": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "roads_flooded_km": {
+              "type": "number",
+              "minimum": 0
+            },
+            "roads_geojson": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "places": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "lon",
+                  "lat",
+                  "population",
+                  "nearest_flood_m",
+                  "days_flooded"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "lon": {
+                    "type": "number"
+                  },
+                  "lat": {
+                    "type": "number"
+                  },
+                  "population": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "nearest_flood_m": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "days_flooded": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "grdi_near_flood": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "grdi_site": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "downloads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label_key",
+          "path"
+        ],
+        "properties": {
+          "label_key": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "detail"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[a-z_]+$"
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "provider",
+          "url",
+          "role"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "rain_daily",
+        "rain_source",
+        "inundation_daily",
+        "inundation_source",
+        "soil_moisture",
+        "soil_moisture_source",
+        "water_storage_monthly",
+        "water_storage_source"
+      ],
+      "properties": {
+        "rain_daily": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "$ref": "#/$defs/date"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "inundation_daily": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "$ref": "#/$defs/date"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "soil_moisture": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "$ref": "#/$defs/date"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "rain_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "inundation_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "soil_moisture_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "water_storage_monthly": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "water_storage_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

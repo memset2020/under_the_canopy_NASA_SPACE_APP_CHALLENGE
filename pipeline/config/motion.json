@@ -1,0 +1,142 @@
+{
+  "events": [
+    {
+      "id": "venezuela_2026",
+      "name": "Venezuela earthquakes, 24 June 2026",
+      "kind": "earthquake",
+      "country": "VE",
+      "bbox": [
+        -69.0,
+        9.8,
+        -66.3,
+        10.8
+      ],
+      "res_m": 300,
+      "height_m": 500,
+      "search": [
+        "2026-05-15",
+        "2026-07-31"
+      ],
+      "event_utc": "2026-06-24T22:04:31Z",
+      "reference": {
+        "bbox": [
+          -68.6,
+          9.8,
+          -66.9,
+          9.95
+        ],
+        "label": "ground 60 to 90 km south of the fault"
+      },
+      "quakes": [
+        {
+          "id": "us6000t7zc",
+          "mag": 7.2,
+          "lon": -68.5564,
+          "lat": 10.3713,
+          "depth_km": 10,
+          "utc": "2026-06-24T22:04:31Z",
+          "place": "20 km E of San Felipe"
+        },
+        {
+          "id": "us6000t7zp",
+          "mag": 7.5,
+          "lon": -67.2205,
+          "lat": 10.5955,
+          "depth_km": 10,
+          "utc": "2026-06-24T22:05:04Z",
+          "place": "20 km W of Catia La Mar"
+        }
+      ],
+      "fault_file": "rupture.json",
+      "model": {
+        "file": "complete_inversion.fsp",
+        "label": "USGS NEIC finite-fault model, version 3 (us6000t7zp, 27 Jul 2026)",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7zp/finite-fault",
+        "used_geometries": [
+          "054D",
+          "061A",
+          "162A"
+        ],
+        "used_data": "teleseismic body and surface waves, NISAR tracks 54 D, 61 A and 162 A (JPL's processing) and GNSS station CCS1"
+      },
+      "profiles": [
+        {
+          "id": "A",
+          "centre": [
+            -68.3,
+            10.4
+          ],
+          "azimuth_deg": 351,
+          "half_km": 40,
+          "half_width_km": 3
+        },
+        {
+          "id": "B",
+          "centre": [
+            -67.02,
+            10.35
+          ],
+          "azimuth_deg": 356,
+          "half_km": 30,
+          "half_width_km": 3
+        }
+      ]
+    },
+    {
+      "id": "mexico_city",
+      "name": "Mexico City, sinking ground",
+      "kind": "subsidence",
+      "country": "MX",
+      "bbox": [
+        -99.3,
+        19.15,
+        -98.85,
+        19.65
+      ],
+      "res_m": 100,
+      "height_m": 2240,
+      "search": [
+        "2026-05-15",
+        "2026-10-08"
+      ],
+      "reference": {
+        "bbox": [
+          -99.2,
+          19.31,
+          -99.17,
+          19.34
+        ],
+        "min_height_m": 2500,
+        "label": "the volcanic hills around the basin, every cell above 2,500 m (a small box at Ciudad Universitaria moved about 5.5 cm a year against them)"
+      },
+      "tropo_fit_min_height_m": 2400,
+      "gnss": true,
+      "profiles": [
+        {
+          "id": "A",
+          "a": [
+            -99.27,
+            19.44
+          ],
+          "b": [
+            -98.87,
+            19.44
+          ],
+          "half_width_km": 1
+        },
+        {
+          "id": "B",
+          "a": [
+            -99.05,
+            19.2
+          ],
+          "b": [
+            -99.05,
+            19.6
+          ],
+          "half_width_km": 1
+        }
+      ]
+    }
+  ]
+}

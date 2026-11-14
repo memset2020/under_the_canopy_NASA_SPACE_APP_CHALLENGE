@@ -1,0 +1,16 @@
+{
+  "name": "under-the-canopy-web",
+  "private": true,
+  "type": "module",
+  "description": "Static web app. Zero runtime dependencies; Playwright is dev-only (docs/10 D-006).",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "test:unit": "node --test tests/unit",
+    "test:e2e": "playwright test",
+    "film": "node tools/film/render.mjs",
+    "screens": "node tools/landing/screens.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

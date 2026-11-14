@@ -1,0 +1,1901 @@
+{
+ "schema_version": 14,
+ "synthetic": false,
+ "site": {
+  "id": "hot_s5p38_w63p12",
+  "name": "Amazonas, Brazil (5.38°S, 63.12°W)",
+  "country": "BR",
+  "center": [
+   -63.125,
+   -5.375
+  ],
+  "zoom": 12,
+  "kind": "flood"
+ },
+ "grid": {
+  "width": 256,
+  "height": 225,
+  "bounds": [
+   -63.205,
+   -5.445,
+   -63.045,
+   -5.305
+  ],
+  "crs": "EPSG:4326",
+  "pixel_size_m": 69.3
+ },
+ "track": {
+  "number": 60,
+  "direction": "ascending"
+ },
+ "thresholds": {
+  "ow_hh_db": -16.0,
+  "ow_hv_db": -22.0,
+  "fv_hh_db": -5.0,
+  "fv_ratio_db": 7.0,
+  "margin_db": 1.0,
+  "max_spread_db": 3.0
+ },
+ "passes": [
+  {
+   "usual_water_km2": 0.235,
+   "rtc_date": null,
+   "id": "p01",
+   "date": "2026-08-17",
+   "acquired_utc": "2026-08-17T09:54:05Z",
+   "flooded_veg_km2": 1.55,
+   "open_water_km2": 0.235,
+   "flooded_km2": 1.785,
+   "low_conf_fraction": 0.1037,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-08-15",
+   "optical_water_km2": 23.059,
+   "optical_clear_fraction": 1.0,
+   "class_png": "passes/p01_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 0.221,
+   "rtc_date": "2026-08-30",
+   "id": "p02",
+   "date": "2026-08-29",
+   "acquired_utc": "2026-08-29T09:54:05Z",
+   "flooded_veg_km2": 0.614,
+   "open_water_km2": 0.221,
+   "flooded_km2": 0.835,
+   "low_conf_fraction": 0.0845,
+   "hidden_from_cband_km2": 0.058,
+   "hidden_low_conf_km2": 0.513,
+   "cband_date": "2026-08-30",
+   "optical_date": "2026-08-31",
+   "optical_water_km2": 21.83,
+   "optical_clear_fraction": 1.0,
+   "class_png": "passes/p02_class.png",
+   "cband_png": "passes/p02_cband.png"
+  },
+  {
+   "usual_water_km2": 0.297,
+   "rtc_date": null,
+   "id": "p03",
+   "date": "2026-09-10",
+   "acquired_utc": "2026-09-10T09:54:05Z",
+   "flooded_veg_km2": 0.504,
+   "open_water_km2": 0.297,
+   "flooded_km2": 0.801,
+   "low_conf_fraction": 0.0824,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-16",
+   "optical_water_km2": 16.586,
+   "optical_clear_fraction": 0.97,
+   "class_png": "passes/p03_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": 0.0,
+   "rtc_date": null,
+   "id": "p04",
+   "date": "2026-10-04",
+   "acquired_utc": "2026-10-04T09:54:05Z",
+   "flooded_veg_km2": 0.264,
+   "open_water_km2": 0.0,
+   "flooded_km2": 0.264,
+   "low_conf_fraction": 0.045,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-28",
+   "optical_water_km2": 3.68,
+   "optical_clear_fraction": 0.443,
+   "class_png": "passes/p04_class.png",
+   "cband_png": null
+  }
+ ],
+ "peak_pass": "p01",
+ "grid_stack": {
+  "stack_file": "stack.bin",
+  "static_file": "static.bin",
+  "order": "layer, pass, row, col",
+  "layers": [
+   {
+    "name": "hh",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "hv",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "hh_spread",
+    "scale": 0.25,
+    "offset": 0,
+    "nodata": null
+   },
+   {
+    "name": "cband",
+    "codes": {
+     "0": "no_data",
+     "1": "not_water",
+     "2": "water"
+    }
+   },
+   {
+    "name": "level_cm",
+    "scale": 2.0,
+    "offset": -256.0,
+    "nodata": 0
+   },
+   {
+    "name": "vv",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "vh",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   }
+  ],
+  "static_layers": [
+   {
+    "name": "veg",
+    "codes": {
+     "0": "other",
+     "1": "vegetation",
+     "2": "built_up"
+    }
+   },
+   {
+    "name": "hydroperiod_days",
+    "scale": 1,
+    "offset": 0,
+    "nodata": null
+   },
+   {
+    "name": "canopy_cover_pct",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "canopy_height_m",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "terrain_gate",
+    "codes": {
+     "0": "floodable",
+     "1": "high_ground"
+    }
+   },
+   {
+    "name": "jrc_occurrence",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "hand_m",
+    "scale": 0.5,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "glwd_class",
+    "nodata": 255,
+    "codes": {
+     "0": "dryland",
+     "1": "open_water",
+     "2": "open_water",
+     "3": "open_water",
+     "4": "open_water",
+     "5": "open_water",
+     "6": "open_water",
+     "7": "open_water",
+     "8": "forested_wetland",
+     "10": "forested_wetland",
+     "12": "forested_wetland",
+     "14": "forested_wetland",
+     "16": "forested_wetland",
+     "18": "forested_wetland",
+     "20": "forested_wetland",
+     "22": "forested_wetland",
+     "24": "forested_wetland",
+     "26": "forested_wetland",
+     "28": "forested_wetland",
+     "9": "wetland",
+     "11": "wetland",
+     "13": "wetland",
+     "15": "wetland",
+     "17": "wetland",
+     "19": "wetland",
+     "21": "wetland",
+     "23": "wetland",
+     "25": "wetland",
+     "27": "wetland",
+     "29": "wetland",
+     "30": "wetland",
+     "31": "wetland",
+     "32": "wetland",
+     "33": "rice"
+    }
+   }
+  ]
+ },
+ "products": {
+  "hydroperiod": {
+   "png": "hydroperiod.png",
+   "max_days": 54,
+   "season_days": 60,
+   "flooded_any_km2": 3.152
+  },
+  "optical": {
+   "png": "optical.png",
+   "date": "2026-09-11",
+   "cloud_fraction": 0.0
+  },
+  "level_change": [
+   {
+    "from": "2026-06-30",
+    "to": "2026-07-12",
+    "png": "level/2026-06-30_2026-07-12.png",
+    "median_cm": null,
+    "p10_cm": null,
+    "p90_cm": null,
+    "n_px": 0,
+    "coherent_share": 0.0,
+    "phase_share": null,
+    "flooded_px": null,
+    "empty_reason": null,
+    "sign_status": "no_gauge",
+    "sign_pairs_strong": null,
+    "sign_pairs_total": null,
+    "sign_r": null,
+    "scale_cm": 1.0
+   },
+   {
+    "from": "2026-07-12",
+    "to": "2026-07-24",
+    "png": "level/2026-07-12_2026-07-24.png",
+    "median_cm": null,
+    "p10_cm": null,
+    "p90_cm": null,
+    "n_px": 0,
+    "coherent_share": 0.0,
+    "phase_share": null,
+    "flooded_px": null,
+    "empty_reason": null,
+    "sign_status": "no_gauge",
+    "sign_pairs_strong": null,
+    "sign_pairs_total": null,
+    "sign_r": null,
+    "scale_cm": 1.0
+   },
+   {
+    "from": "2026-07-24",
+    "to": "2026-08-17",
+    "png": "level/2026-07-24_2026-08-17.png",
+    "median_cm": null,
+    "p10_cm": null,
+    "p90_cm": null,
+    "n_px": 0,
+    "coherent_share": 0.0,
+    "phase_share": null,
+    "flooded_px": null,
+    "empty_reason": null,
+    "sign_status": "no_gauge",
+    "sign_pairs_strong": null,
+    "sign_pairs_total": null,
+    "sign_r": null,
+    "scale_cm": 1.0
+   },
+   {
+    "from": "2026-08-17",
+    "to": "2026-08-29",
+    "png": "level/2026-08-17_2026-08-29.png",
+    "median_cm": null,
+    "p10_cm": null,
+    "p90_cm": null,
+    "n_px": 0,
+    "coherent_share": 0.351,
+    "phase_share": 0.694,
+    "flooded_px": 19,
+    "empty_reason": "too_few_flooded",
+    "sign_status": "no_gauge",
+    "sign_pairs_strong": null,
+    "sign_pairs_total": null,
+    "sign_r": null,
+    "scale_cm": 1.0
+   },
+   {
+    "from": "2026-08-29",
+    "to": "2026-09-10",
+    "png": "level/2026-08-29_2026-09-10.png",
+    "median_cm": null,
+    "p10_cm": null,
+    "p90_cm": null,
+    "n_px": 0,
+    "coherent_share": 0.375,
+    "phase_share": 0.617,
+    "flooded_px": 13,
+    "empty_reason": "too_few_flooded",
+    "sign_status": "no_gauge",
+    "sign_pairs_strong": null,
+    "sign_pairs_total": null,
+    "sign_r": null,
+    "scale_cm": 1.0
+   }
+  ],
+  "canopy": {
+   "height_max_m": 30.1,
+   "source": "NASA GEDI canopy cover and height (gridded high-quality shots, 1 km)",
+   "height_png": "canopy_height.png",
+   "cover_png": "canopy_cover.png",
+   "detection_by_cover": [
+    {
+     "cover_from": 0,
+     "cover_to": 20,
+     "pixels": 160,
+     "hidden_share": 0.006,
+     "low_conf_share": 0.006
+    },
+    {
+     "cover_from": 20,
+     "cover_to": 40,
+     "pixels": 961,
+     "hidden_share": 0.001,
+     "low_conf_share": 0.008
+    },
+    {
+     "cover_from": 40,
+     "cover_to": 60,
+     "pixels": 4328,
+     "hidden_share": 0.015,
+     "low_conf_share": 0.116
+    },
+    {
+     "cover_from": 60,
+     "cover_to": 80,
+     "pixels": 6422,
+     "hidden_share": 0.016,
+     "low_conf_share": 0.17
+    },
+    {
+     "cover_from": 80,
+     "cover_to": 100,
+     "pixels": 10496,
+     "hidden_share": 0.011,
+     "low_conf_share": 0.136
+    }
+   ]
+  },
+  "terrain": {
+   "source": "NASADEM 30 m",
+   "rule": "more than 12 m above the local open-water surface (NASADEM)",
+   "gated_km2": 145.782
+  },
+  "hand": {
+   "png": "hand.png",
+   "max_m": 15.0,
+   "low_m": 5.0,
+   "source": "ASF GLO-30 HAND (Copernicus DEM)",
+   "hidden_median_m": 0.8,
+   "dry_veg_median_m": 0.7,
+   "open_water_median_m": 0.0,
+   "hidden_low_pct": 80.5,
+   "dry_veg_low_pct": 89.2,
+   "open_water_low_pct": 100.0
+  },
+  "glwd": {
+   "source": "GLWD v2.0 (Lehner et al. 2025)",
+   "hidden_wetland_pct": 87.6,
+   "hidden_forested_pct": 87.6,
+   "dry_veg_wetland_pct": 96.3,
+   "dry_veg_forested_pct": 96.3,
+   "site_wetland_pct": 91.6,
+   "site_forested_pct": 91.6
+  },
+  "outlook": {
+   "source": "GEOGloWS ECMWF river model (retrospective and 15-day ensemble forecast)",
+   "river_id": 621126139,
+   "river_mean_cms": 4198.5,
+   "reaches_checked": 35,
+   "forecast_generated": "2026-10-08T06:12:01+00:00",
+   "fit": {
+    "n": 3,
+    "r": 0.945,
+    "slope": 4.6894,
+    "intercept": -13.5967,
+    "rmse_km2": 0.154,
+    "x_lo": 2.9801,
+    "x_hi": 3.2107
+   },
+   "usable": false,
+   "withheld": "few_passes",
+   "past": [
+    [
+     "2026-08-17",
+     1624.26,
+     1.55
+    ],
+    [
+     "2026-08-29",
+     1192.82,
+     0.614
+    ],
+    [
+     "2026-09-10",
+     955.15,
+     0.504
+    ],
+    [
+     "2026-10-04",
+     null,
+     0.264
+    ]
+   ],
+   "forecast": [],
+   "flows": [
+    [
+     "2026-06-06",
+     17638.42
+    ],
+    [
+     "2026-06-07",
+     17229.18
+    ],
+    [
+     "2026-06-08",
+     16733.54
+    ],
+    [
+     "2026-06-09",
+     16220.73
+    ],
+    [
+     "2026-06-10",
+     15790.5
+    ],
+    [
+     "2026-06-11",
+     15360.74
+    ],
+    [
+     "2026-06-12",
+     14643.42
+    ],
+    [
+     "2026-06-13",
+     13918.26
+    ],
+    [
+     "2026-06-14",
+     13364.31
+    ],
+    [
+     "2026-06-15",
+     12964.11
+    ],
+    [
+     "2026-06-16",
+     12497.92
+    ],
+    [
+     "2026-06-17",
+     11925.22
+    ],
+    [
+     "2026-06-18",
+     11282.21
+    ],
+    [
+     "2026-06-19",
+     10610.12
+    ],
+    [
+     "2026-06-20",
+     9938.69
+    ],
+    [
+     "2026-06-21",
+     9342.14
+    ],
+    [
+     "2026-06-22",
+     8887.68
+    ],
+    [
+     "2026-06-23",
+     8497.14
+    ],
+    [
+     "2026-06-24",
+     8108.93
+    ],
+    [
+     "2026-06-25",
+     7805.69
+    ],
+    [
+     "2026-06-26",
+     7632.67
+    ],
+    [
+     "2026-06-27",
+     7421.94
+    ],
+    [
+     "2026-06-28",
+     7124.72
+    ],
+    [
+     "2026-06-29",
+     6852.52
+    ],
+    [
+     "2026-06-30",
+     6595.99
+    ],
+    [
+     "2026-07-01",
+     6454.95
+    ],
+    [
+     "2026-07-02",
+     6235.8
+    ],
+    [
+     "2026-07-03",
+     5996.54
+    ],
+    [
+     "2026-07-04",
+     5793.58
+    ],
+    [
+     "2026-07-05",
+     5555.02
+    ],
+    [
+     "2026-07-06",
+     5305.6
+    ],
+    [
+     "2026-07-07",
+     5051.82
+    ],
+    [
+     "2026-07-08",
+     4845.92
+    ],
+    [
+     "2026-07-09",
+     4693.11
+    ],
+    [
+     "2026-07-10",
+     4552.83
+    ],
+    [
+     "2026-07-11",
+     4388.95
+    ],
+    [
+     "2026-07-12",
+     4222.12
+    ],
+    [
+     "2026-07-13",
+     4083.97
+    ],
+    [
+     "2026-07-14",
+     3975.97
+    ],
+    [
+     "2026-07-15",
+     3876.26
+    ],
+    [
+     "2026-07-16",
+     3757.97
+    ],
+    [
+     "2026-07-17",
+     3652.59
+    ],
+    [
+     "2026-07-18",
+     3583.81
+    ],
+    [
+     "2026-07-19",
+     3525.56
+    ],
+    [
+     "2026-07-20",
+     3457.39
+    ],
+    [
+     "2026-07-21",
+     3378.03
+    ],
+    [
+     "2026-07-22",
+     3262.14
+    ],
+    [
+     "2026-07-23",
+     3132.24
+    ],
+    [
+     "2026-07-24",
+     3010.16
+    ],
+    [
+     "2026-07-25",
+     2926.43
+    ],
+    [
+     "2026-07-26",
+     2876.05
+    ],
+    [
+     "2026-07-27",
+     2796.82
+    ],
+    [
+     "2026-07-28",
+     2706.21
+    ],
+    [
+     "2026-07-29",
+     2619.12
+    ],
+    [
+     "2026-07-30",
+     2548.99
+    ],
+    [
+     "2026-07-31",
+     2483.63
+    ],
+    [
+     "2026-08-01",
+     2417.01
+    ],
+    [
+     "2026-08-02",
+     2352.0
+    ],
+    [
+     "2026-08-03",
+     2286.22
+    ],
+    [
+     "2026-08-04",
+     2225.62
+    ],
+    [
+     "2026-08-05",
+     2172.53
+    ],
+    [
+     "2026-08-06",
+     2123.09
+    ],
+    [
+     "2026-08-07",
+     2075.61
+    ],
+    [
+     "2026-08-08",
+     2028.17
+    ],
+    [
+     "2026-08-09",
+     1976.05
+    ],
+    [
+     "2026-08-10",
+     1920.07
+    ],
+    [
+     "2026-08-11",
+     1868.57
+    ],
+    [
+     "2026-08-12",
+     1824.98
+    ],
+    [
+     "2026-08-13",
+     1784.77
+    ],
+    [
+     "2026-08-14",
+     1741.95
+    ],
+    [
+     "2026-08-15",
+     1698.79
+    ],
+    [
+     "2026-08-16",
+     1659.87
+    ],
+    [
+     "2026-08-17",
+     1624.26
+    ],
+    [
+     "2026-08-18",
+     1593.05
+    ],
+    [
+     "2026-08-19",
+     1567.71
+    ],
+    [
+     "2026-08-20",
+     1537.98
+    ],
+    [
+     "2026-08-21",
+     1497.97
+    ],
+    [
+     "2026-08-22",
+     1452.32
+    ],
+    [
+     "2026-08-23",
+     1409.46
+    ],
+    [
+     "2026-08-24",
+     1370.72
+    ],
+    [
+     "2026-08-25",
+     1331.92
+    ],
+    [
+     "2026-08-26",
+     1292.71
+    ],
+    [
+     "2026-08-27",
+     1256.17
+    ],
+    [
+     "2026-08-28",
+     1223.72
+    ],
+    [
+     "2026-08-29",
+     1192.82
+    ],
+    [
+     "2026-08-30",
+     1161.48
+    ],
+    [
+     "2026-08-31",
+     1131.15
+    ],
+    [
+     "2026-09-01",
+     1103.47
+    ],
+    [
+     "2026-09-02",
+     1078.78
+    ],
+    [
+     "2026-09-03",
+     1059.04
+    ],
+    [
+     "2026-09-04",
+     1046.1
+    ],
+    [
+     "2026-09-05",
+     1035.28
+    ],
+    [
+     "2026-09-06",
+     1022.84
+    ],
+    [
+     "2026-09-07",
+     1007.08
+    ],
+    [
+     "2026-09-08",
+     989.42
+    ],
+    [
+     "2026-09-09",
+     972.34
+    ],
+    [
+     "2026-09-10",
+     955.15
+    ],
+    [
+     "2026-09-11",
+     929.95
+    ],
+    [
+     "2026-09-12",
+     895.97
+    ],
+    [
+     "2026-09-13",
+     862.16
+    ],
+    [
+     "2026-09-14",
+     838.17
+    ],
+    [
+     "2026-09-15",
+     809.55
+    ],
+    [
+     "2026-09-16",
+     788.72
+    ],
+    [
+     "2026-09-17",
+     775.41
+    ],
+    [
+     "2026-09-18",
+     771.16
+    ],
+    [
+     "2026-09-19",
+     765.34
+    ],
+    [
+     "2026-09-20",
+     748.86
+    ],
+    [
+     "2026-09-21",
+     731.64
+    ],
+    [
+     "2026-09-22",
+     722.69
+    ],
+    [
+     "2026-09-23",
+     720.42
+    ],
+    [
+     "2026-09-24",
+     712.88
+    ],
+    [
+     "2026-09-25",
+     693.33
+    ],
+    [
+     "2026-09-26",
+     674.32
+    ],
+    [
+     "2026-09-27",
+     662.93
+    ],
+    [
+     "2026-09-28",
+     643.45
+    ],
+    [
+     "2026-09-29",
+     633.1
+    ],
+    [
+     "2026-09-30",
+     635.45
+    ]
+   ]
+  },
+  "burn": null
+ },
+ "context": {
+  "rain_daily": [],
+  "rain_source": null,
+  "inundation_daily": [
+   [
+    "2026-06-06",
+    0.5045
+   ],
+   [
+    "2026-06-07",
+    0.5179
+   ],
+   [
+    "2026-06-08",
+    0.4911
+   ],
+   [
+    "2026-06-09",
+    0.4866
+   ],
+   [
+    "2026-06-10",
+    0.5402
+   ],
+   [
+    "2026-06-11",
+    0.5536
+   ],
+   [
+    "2026-06-12",
+    0.5223
+   ],
+   [
+    "2026-06-17",
+    0.5536
+   ],
+   [
+    "2026-06-18",
+    0.5446
+   ],
+   [
+    "2026-06-19",
+    0.4911
+   ],
+   [
+    "2026-06-20",
+    0.5179
+   ],
+   [
+    "2026-06-21",
+    0.5223
+   ],
+   [
+    "2026-06-22",
+    0.5089
+   ],
+   [
+    "2026-06-23",
+    0.5
+   ],
+   [
+    "2026-06-24",
+    0.5357
+   ],
+   [
+    "2026-06-25",
+    0.4821
+   ],
+   [
+    "2026-06-26",
+    0.4866
+   ],
+   [
+    "2026-06-27",
+    0.4821
+   ],
+   [
+    "2026-06-28",
+    0.4732
+   ],
+   [
+    "2026-06-29",
+    0.4777
+   ],
+   [
+    "2026-06-30",
+    0.4688
+   ],
+   [
+    "2026-07-01",
+    0.4732
+   ],
+   [
+    "2026-07-02",
+    0.4732
+   ],
+   [
+    "2026-07-03",
+    0.4777
+   ],
+   [
+    "2026-07-04",
+    0.5
+   ],
+   [
+    "2026-07-05",
+    0.4911
+   ],
+   [
+    "2026-07-06",
+    0.4955
+   ],
+   [
+    "2026-07-07",
+    0.5446
+   ],
+   [
+    "2026-07-08",
+    0.5134
+   ],
+   [
+    "2026-07-09",
+    0.5179
+   ],
+   [
+    "2026-07-10",
+    0.5223
+   ],
+   [
+    "2026-07-11",
+    0.5134
+   ],
+   [
+    "2026-07-12",
+    0.5312
+   ],
+   [
+    "2026-07-13",
+    0.5268
+   ],
+   [
+    "2026-07-14",
+    0.5312
+   ],
+   [
+    "2026-07-15",
+    0.5268
+   ],
+   [
+    "2026-07-16",
+    0.5223
+   ],
+   [
+    "2026-07-17",
+    0.5045
+   ],
+   [
+    "2026-07-18",
+    0.5268
+   ],
+   [
+    "2026-07-19",
+    0.4866
+   ],
+   [
+    "2026-07-20",
+    0.5312
+   ],
+   [
+    "2026-07-21",
+    0.5134
+   ],
+   [
+    "2026-07-22",
+    0.5625
+   ],
+   [
+    "2026-07-23",
+    0.5759
+   ],
+   [
+    "2026-07-24",
+    0.6027
+   ],
+   [
+    "2026-07-25",
+    0.558
+   ],
+   [
+    "2026-07-26",
+    0.5223
+   ],
+   [
+    "2026-07-27",
+    0.5536
+   ],
+   [
+    "2026-07-28",
+    0.5089
+   ],
+   [
+    "2026-07-29",
+    0.4598
+   ],
+   [
+    "2026-07-30",
+    0.4688
+   ],
+   [
+    "2026-07-31",
+    0.4598
+   ],
+   [
+    "2026-08-01",
+    0.4464
+   ],
+   [
+    "2026-08-02",
+    0.3839
+   ],
+   [
+    "2026-08-03",
+    0.3973
+   ],
+   [
+    "2026-08-04",
+    0.4152
+   ],
+   [
+    "2026-08-05",
+    0.3973
+   ],
+   [
+    "2026-08-06",
+    0.3839
+   ],
+   [
+    "2026-08-07",
+    0.4018
+   ],
+   [
+    "2026-08-08",
+    0.3884
+   ],
+   [
+    "2026-08-09",
+    0.4018
+   ],
+   [
+    "2026-08-10",
+    0.3884
+   ],
+   [
+    "2026-08-11",
+    0.3973
+   ],
+   [
+    "2026-08-12",
+    0.4018
+   ],
+   [
+    "2026-08-13",
+    0.4062
+   ],
+   [
+    "2026-08-14",
+    0.3973
+   ],
+   [
+    "2026-08-15",
+    0.4018
+   ],
+   [
+    "2026-08-16",
+    0.3973
+   ],
+   [
+    "2026-08-17",
+    0.3795
+   ],
+   [
+    "2026-08-18",
+    0.4018
+   ],
+   [
+    "2026-08-19",
+    0.3973
+   ],
+   [
+    "2026-08-20",
+    0.4152
+   ],
+   [
+    "2026-08-21",
+    0.3973
+   ],
+   [
+    "2026-08-22",
+    0.3929
+   ],
+   [
+    "2026-08-23",
+    0.3973
+   ],
+   [
+    "2026-08-24",
+    0.3795
+   ],
+   [
+    "2026-08-25",
+    0.4107
+   ],
+   [
+    "2026-08-26",
+    0.4107
+   ],
+   [
+    "2026-08-27",
+    0.4152
+   ],
+   [
+    "2026-08-28",
+    0.4196
+   ],
+   [
+    "2026-08-29",
+    0.3973
+   ],
+   [
+    "2026-08-30",
+    0.4062
+   ],
+   [
+    "2026-08-31",
+    0.4018
+   ],
+   [
+    "2026-09-01",
+    0.4152
+   ],
+   [
+    "2026-09-02",
+    0.4107
+   ],
+   [
+    "2026-09-03",
+    0.3973
+   ],
+   [
+    "2026-09-04",
+    0.3973
+   ],
+   [
+    "2026-09-05",
+    0.3839
+   ],
+   [
+    "2026-09-06",
+    0.3839
+   ],
+   [
+    "2026-09-07",
+    0.3571
+   ],
+   [
+    "2026-09-08",
+    0.3839
+   ],
+   [
+    "2026-09-09",
+    0.3795
+   ],
+   [
+    "2026-09-10",
+    0.4152
+   ],
+   [
+    "2026-09-11",
+    0.3884
+   ],
+   [
+    "2026-09-12",
+    0.4241
+   ],
+   [
+    "2026-09-13",
+    0.3795
+   ],
+   [
+    "2026-09-14",
+    0.3705
+   ],
+   [
+    "2026-09-15",
+    0.4062
+   ],
+   [
+    "2026-09-16",
+    0.375
+   ],
+   [
+    "2026-09-17",
+    0.4062
+   ],
+   [
+    "2026-09-18",
+    0.4107
+   ],
+   [
+    "2026-09-19",
+    0.3705
+   ],
+   [
+    "2026-09-20",
+    0.3839
+   ],
+   [
+    "2026-09-21",
+    0.3929
+   ],
+   [
+    "2026-09-22",
+    0.4018
+   ],
+   [
+    "2026-09-23",
+    0.4062
+   ],
+   [
+    "2026-09-24",
+    0.433
+   ],
+   [
+    "2026-09-25",
+    0.4152
+   ],
+   [
+    "2026-09-26",
+    0.4107
+   ],
+   [
+    "2026-09-27",
+    0.4062
+   ],
+   [
+    "2026-09-28",
+    0.3973
+   ],
+   [
+    "2026-09-29",
+    0.3973
+   ],
+   [
+    "2026-09-30",
+    0.3795
+   ],
+   [
+    "2026-10-01",
+    0.3259
+   ],
+   [
+    "2026-10-02",
+    0.3438
+   ],
+   [
+    "2026-10-03",
+    0.3393
+   ]
+  ],
+  "inundation_source": "NASA CYGNSS UC Berkeley water mask v3.2 (daily, 0.01°)",
+  "soil_moisture": [
+   [
+    "2026-06-18",
+    0.3656
+   ],
+   [
+    "2026-06-30",
+    0.3851
+   ],
+   [
+    "2026-07-12",
+    0.3889
+   ],
+   [
+    "2026-07-24",
+    0.3755
+   ],
+   [
+    "2026-08-12",
+    0.3323
+   ],
+   [
+    "2026-08-17",
+    0.3825
+   ],
+   [
+    "2026-08-24",
+    0.3773
+   ],
+   [
+    "2026-08-29",
+    0.3795
+   ],
+   [
+    "2026-09-05",
+    0.3241
+   ],
+   [
+    "2026-09-05",
+    0.3241
+   ],
+   [
+    "2026-09-10",
+    0.381
+   ],
+   [
+    "2026-09-22",
+    0.3311
+   ],
+   [
+    "2026-09-29",
+    0.3283
+   ],
+   [
+    "2026-10-04",
+    0.3832
+   ]
+  ],
+  "soil_moisture_source": "NISAR L3 SME2 soil moisture",
+  "water_storage_monthly": [
+   [
+    "2024-01-16",
+    -42.61
+   ],
+   [
+    "2024-02-15",
+    -27.01
+   ],
+   [
+    "2024-03-16",
+    -48.89
+   ],
+   [
+    "2024-04-16",
+    -37.61
+   ],
+   [
+    "2024-05-16",
+    -31.09
+   ],
+   [
+    "2024-06-16",
+    -43.82
+   ],
+   [
+    "2024-07-16",
+    -38.23
+   ],
+   [
+    "2024-08-16",
+    -31.11
+   ],
+   [
+    "2024-09-16",
+    -28.54
+   ],
+   [
+    "2024-10-16",
+    -34.51
+   ],
+   [
+    "2024-11-16",
+    -24.11
+   ],
+   [
+    "2024-12-16",
+    -11.94
+   ],
+   [
+    "2025-01-16",
+    -8.4
+   ],
+   [
+    "2025-02-15",
+    -12.45
+   ],
+   [
+    "2025-03-16",
+    -9.82
+   ],
+   [
+    "2025-04-16",
+    -4.21
+   ],
+   [
+    "2025-05-16",
+    7.56
+   ],
+   [
+    "2025-06-16",
+    -5.47
+   ],
+   [
+    "2025-07-16",
+    0.46
+   ],
+   [
+    "2025-08-16",
+    -3.12
+   ],
+   [
+    "2025-09-16",
+    5.62
+   ],
+   [
+    "2025-10-16",
+    12.79
+   ],
+   [
+    "2025-11-16",
+    13.57
+   ],
+   [
+    "2025-12-16",
+    15.81
+   ],
+   [
+    "2026-01-16",
+    -7.09
+   ],
+   [
+    "2026-02-15",
+    3.49
+   ],
+   [
+    "2026-03-16",
+    -0.53
+   ],
+   [
+    "2026-04-16",
+    -6.86
+   ],
+   [
+    "2026-05-16",
+    -10.99
+   ],
+   [
+    "2026-06-16",
+    -3.27
+   ],
+   [
+    "2026-07-16",
+    2.26
+   ]
+  ],
+  "water_storage_source": "NASA/JPL GRACE and GRACE-FO mascons RL06.3 (monthly)"
+ },
+ "validation": {
+  "gauge": null,
+  "reference_map": {
+   "name": "LBA-ECO LC-07 Amazon wetland map (JERS-1 L-band, dual season)",
+   "reference_period": "high water, May–July 1996 (JERS-1)",
+   "compared_pass": "p01",
+   "agreement": 0.159,
+   "recall_water": 0.014,
+   "recall_flooded_veg": 0.006,
+   "n_px": 57600
+  },
+  "swot": [
+   {
+    "id": "SWOT-site",
+    "name": "SWOT water surface, Amazonas, Brazil (5.38°S, 63.12°W)",
+    "kind": "lake",
+    "series": [
+     {
+      "date": "2026-06-09",
+      "wse_m": 32.138
+     },
+     {
+      "date": "2026-06-13",
+      "wse_m": 31.907
+     },
+     {
+      "date": "2026-06-19",
+      "wse_m": 31.676
+     },
+     {
+      "date": "2026-06-29",
+      "wse_m": 31.765
+     },
+     {
+      "date": "2026-07-04",
+      "wse_m": 30.904
+     },
+     {
+      "date": "2026-07-20",
+      "wse_m": 29.48
+     },
+     {
+      "date": "2026-07-25",
+      "wse_m": 28.742
+     },
+     {
+      "date": "2026-07-30",
+      "wse_m": 27.884
+     },
+     {
+      "date": "2026-08-10",
+      "wse_m": 26.875
+     },
+     {
+      "date": "2026-08-15",
+      "wse_m": 25.986
+     },
+     {
+      "date": "2026-08-20",
+      "wse_m": 25.172
+     },
+     {
+      "date": "2026-08-31",
+      "wse_m": 24.105
+     },
+     {
+      "date": "2026-09-05",
+      "wse_m": 23.291
+     },
+     {
+      "date": "2026-09-10",
+      "wse_m": 22.294
+     },
+     {
+      "date": "2026-09-21",
+      "wse_m": 21.294
+     },
+     {
+      "date": "2026-09-25",
+      "wse_m": 20.789
+     },
+     {
+      "date": "2026-10-01",
+      "wse_m": 19.371
+     }
+    ],
+    "r": null,
+    "n": 4
+   }
+  ],
+  "icesat2": [
+   {
+    "id": "ICESat2-site",
+    "name": "ICESat-2 ATL13 water surface, Amazonas, Brazil (5.38°S, 63.12°W)",
+    "kind": "lidar",
+    "series": [
+     {
+      "date": "2026-06-15",
+      "wse_m": 29.041
+     }
+    ],
+    "r": null,
+    "n": 0
+   }
+  ],
+  "calibration": null
+ },
+ "exposure": null,
+ "downloads": [
+  {
+   "label_key": "download.areas_csv",
+   "path": "export/areas.csv"
+  },
+  {
+   "label_key": "download.flood_geojson",
+   "path": "export/flood_p01.geojson"
+  }
+ ],
+ "warnings": [
+  {
+   "code": "radiometry_outlier",
+   "detail": "2026-06-18: along-track streaks; rivers and lakes missing (D-112)"
+  },
+  {
+   "code": "radiometry_outlier",
+   "detail": "2026-06-30: smeared bright swaths; rivers and lakes missing (D-112)"
+  },
+  {
+   "code": "radiometry_outlier",
+   "detail": "2026-07-12: along-track streaks and a missing block; rivers and lakes missing (D-112)"
+  },
+  {
+   "code": "radiometry_outlier",
+   "detail": "2026-07-24: washed-out image with a bright diagonal band; rivers and lakes missing (D-112)"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p01 2026-08-17"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p03 2026-09-10"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p04 2026-10-04"
+  },
+  {
+   "code": "hidden_flood_uncalibrated",
+   "detail": "no local labels yet"
+  },
+  {
+   "code": "no_gauge",
+   "detail": ""
+  },
+  {
+   "code": "no_exposure",
+   "detail": ""
+  }
+ ],
+ "sources": [
+  {
+   "id": "nisar_gcov",
+   "name": "NISAR L2 GCOV (L-band, HH/HV)",
+   "provider": "NASA/ISRO via ASF DAAC",
+   "url": "https://nisar-docs.asf.alaska.edu/gcov/",
+   "role": "L-band backscatter for every pass"
+  },
+  {
+   "id": "esa_worldcover",
+   "name": "ESA WorldCover 10 m",
+   "provider": "ESA",
+   "url": "https://esa-worldcover.org/",
+   "role": "Where vegetation can hide water; built-up exclusion"
+  },
+  {
+   "id": "opera_dswx_s1",
+   "name": "OPERA DSWx-S1",
+   "provider": "NASA JPL OPERA (Copernicus Sentinel-1)",
+   "url": "https://www.jpl.nasa.gov/go/opera",
+   "role": "C-band water map for the comparison"
+  },
+  {
+   "id": "opera_dswx_hls",
+   "name": "OPERA DSWx-HLS",
+   "provider": "NASA JPL OPERA via PO.DAAC",
+   "url": "https://www.jpl.nasa.gov/go/opera",
+   "role": "What optical satellites saw as water (cloud-free pixels only)"
+  },
+  {
+   "id": "nasa_hls",
+   "name": "NASA HLS (Landsat 8/9 + Sentinel-2, 30 m)",
+   "provider": "NASA LP DAAC",
+   "url": "https://www.earthdata.nasa.gov/data/projects/hls",
+   "role": "The optical photo in the reveal"
+  },
+  {
+   "id": "nasa_gedi",
+   "name": "NASA GEDI canopy cover and height (gridded high-quality shots, 1 km)",
+   "provider": "NASA ORNL DAAC",
+   "url": "https://gedi.umd.edu/",
+   "role": "How dense and tall the canopy is where L-band sees water"
+  },
+  {
+   "id": "nasadem",
+   "name": "NASADEM 30 m",
+   "provider": "NASA LP DAAC",
+   "url": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-nasadem-hgt-001",
+   "role": "Terrain gate: no hidden-flood claim on high ground"
+  },
+  {
+   "id": "nisar_gunw",
+   "name": "NISAR L2 GUNW interferograms (HH)",
+   "provider": "NASA/ISRO via ASF DAAC",
+   "url": "https://nisar-docs.asf.alaska.edu/",
+   "role": "Water-level change under the canopy between passes"
+  },
+  {
+   "id": "cygnss",
+   "name": "NASA CYGNSS water mask (UC Berkeley v3.2, daily)",
+   "provider": "NASA PO.DAAC",
+   "url": "https://podaac.jpl.nasa.gov/CYGNSS",
+   "role": "Independent daily L-band (GNSS reflection) check of inundation"
+  },
+  {
+   "id": "nisar_sme2",
+   "name": "NISAR L3 SME2 soil moisture",
+   "provider": "NASA/ISRO via ASF DAAC",
+   "url": "https://nisar-docs.asf.alaska.edu/",
+   "role": "Was the ground already saturated?"
+  },
+  {
+   "id": "lba_eco_lc07",
+   "name": "LBA-ECO LC-07 Amazon wetland map (JERS-1 L-band, dual season)",
+   "provider": "NASA ORNL DAAC (Hess et al.)",
+   "url": "https://doi.org/10.3334/ORNLDAAC/1284",
+   "role": "Independent L-band reference for flooded forest at high water"
+  },
+  {
+   "id": "opera_rtc_s1",
+   "name": "OPERA RTC-S1 (C-band VV/VH backscatter)",
+   "provider": "NASA JPL OPERA via ASF DAAC",
+   "url": "https://www.jpl.nasa.gov/go/opera",
+   "role": "C-band's own numbers at each spot, for comparison with L-band"
+  },
+  {
+   "id": "sedac_grdi",
+   "name": "SEDAC Global Gridded Relative Deprivation Index v1",
+   "provider": "NASA SEDAC (CIESIN, Columbia University)",
+   "url": "https://search.earthdata.nasa.gov/search?q=CIESIN_SEDAC_PMP_GRDI_2010_2020",
+   "role": "How deprived the communities next to the hidden flood are"
+  },
+  {
+   "id": "icesat2",
+   "name": "ICESat-2 ATL13 inland water surface height",
+   "provider": "NASA NSIDC DAAC",
+   "role": "Independent lidar water heights, a second check after SWOT",
+   "url": "https://icesat-2.gsfc.nasa.gov/"
+  },
+  {
+   "id": "jrc",
+   "name": "JRC Global Surface Water occurrence 1984–2021 (v1.4)",
+   "provider": "European Commission JRC / Google (open data)",
+   "role": "Where water usually is, so the usual river is not counted as flood",
+   "url": "https://global-surface-water.appspot.com/"
+  },
+  {
+   "id": "hand",
+   "name": "GLO-30 HAND, height above nearest drainage (v1, 2021)",
+   "provider": "Alaska Satellite Facility (NASA DAAC) from the Copernicus GLO-30 DEM, CC0",
+   "role": "How far above the nearest stream or river each place is: floods reach low ground",
+   "url": "https://registry.opendata.aws/glo-30-hand/"
+  },
+  {
+   "id": "glwd",
+   "name": "GLWD v2.0 Global Lakes and Wetlands Database (2025)",
+   "provider": "WWF / McGill (Lehner et al. 2025), CC BY 4.0",
+   "role": "Where wetlands, and forested wetlands, are usually mapped: an independent check",
+   "url": "https://www.hydrosheds.org/products/glwd"
+  },
+  {
+   "id": "geoglows",
+   "name": "GEOGloWS ECMWF Streamflow (v2): retrospective and 15-day ensemble forecast",
+   "provider": "GEOGloWS / ECMWF, free API",
+   "role": "The main river's flow: the experimental two-week outlook of the hidden flood",
+   "url": "https://geoglows.ecmwf.int/"
+  },
+  {
+   "id": "grace",
+   "name": "GRACE/GRACE-FO JPL mascons RL06.3",
+   "provider": "NASA PO.DAAC",
+   "role": "Whole-basin water storage: is this a wet year?",
+   "url": "https://grace.jpl.nasa.gov/"
+  },
+  {
+   "id": "swot",
+   "name": "SWOT L2 HR Raster 100 m (version D)",
+   "provider": "NASA/CNES via PO.DAAC",
+   "url": "https://swot.jpl.nasa.gov/",
+   "role": "Independent satellite water surface elevation"
+  }
+ ]
+}

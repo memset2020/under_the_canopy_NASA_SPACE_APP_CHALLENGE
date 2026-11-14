@@ -1,0 +1,128 @@
+{
+  "_doc": "Glacier atlas (docs/16, D-086). bbox [w, s, e, n]; front: a point at or just beyond the 2014-2024 calving or melting front, from which the flowline is traced upstream through ITS_LIVE's mean flow; extend_km: how far the flowline runs on past that front, straight, so older and longer fronts show in the history. region: the ITS_LIVE v2.1 mosaic (RGI region, A = all of it). grace: key in grace_regions. published: speeds measured by others, checked against ITS_LIVE at the same place and year (where: front = fastest point of the lowest 5 km of the flowline; trunk = the fast part of the flowline). Values marked verify were not checked against the paper's own figure.",
+  "grace_regions": {
+    "alaska": {"name": "Alaska", "bbox": [-155.0, 57.0, -130.0, 64.0], "published": {"gt_yr": -72.5, "err": 8, "period": "2002-04/2019-09", "source": "Ciracì, Velicogna & Swenson 2020, GRL 47, e2019GL086926", "url": "https://doi.org/10.1029/2019GL086926"}},
+    "western_canada": {"name": "Western Canada and US", "bbox": [-128.0, 49.0, -114.0, 56.0], "published": null},
+    "greenland": {"name": "Greenland", "bbox": [-75.0, 59.0, -10.0, 84.0], "published": {"gt_yr": -260, "err": 20, "period": "2002-04/2019-09", "source": "Velicogna et al. 2020, Continuity of ice sheet mass loss in Greenland and Antarctica from the GRACE and GRACE Follow-On missions, GRL 47, e2020GL087291 (verify)", "url": "https://doi.org/10.1029/2020GL087291"}},
+    "iceland": {"name": "Iceland", "bbox": [-25.0, 63.0, -13.0, 67.0], "published": {"gt_yr": -15.9, "err": 4, "period": "2002-04/2019-09", "source": "Ciracì, Velicogna & Swenson 2020, GRL 47, e2019GL086926", "url": "https://doi.org/10.1029/2019GL086926"}},
+    "svalbard": {"name": "Svalbard", "bbox": [10.0, 76.0, 34.0, 81.0], "published": {"gt_yr": -12.1, "err": 4, "period": "2002-04/2019-09", "source": "Ciracì, Velicogna & Swenson 2020, GRL 47, e2019GL086926", "url": "https://doi.org/10.1029/2019GL086926"}},
+    "russian_arctic": {"name": "Russian Arctic", "bbox": [40.0, 75.0, 110.0, 82.0], "published": {"gt_yr": -20.2, "err": 6, "period": "2002-04/2019-09", "source": "Ciracì, Velicogna & Swenson 2020, GRL 47, e2019GL086926", "url": "https://doi.org/10.1029/2019GL086926"}},
+    "alps": {"name": "European Alps", "bbox": [5.0, 44.0, 15.0, 48.0], "published": null},
+    "hma": {"name": "High Mountain Asia", "bbox": [67.0, 27.0, 100.0, 45.0], "published": {"gt_yr": -28.8, "err": 11, "period": "2002-04/2019-09", "source": "Ciracì, Velicogna & Swenson 2020, GRL 47, e2019GL086926", "url": "https://doi.org/10.1029/2019GL086926"}},
+    "southern_andes": {"name": "Southern Andes (Patagonia)", "bbox": [-76.0, -56.0, -70.0, -45.0], "published": {"gt_yr": -30.4, "err": 13, "period": "2002-04/2019-09", "source": "Ciracì, Velicogna & Swenson 2020, GRL 47, e2019GL086926", "url": "https://doi.org/10.1029/2019GL086926"}},
+    "new_zealand": {"name": "New Zealand", "bbox": [166.0, -47.0, 175.0, -40.0], "published": null},
+    "antarctica": {"name": "Antarctica", "bbox": [-180.0, -90.0, 180.0, -60.0], "published": {"gt_yr": -118, "err": 24, "period": "2002-04/2019-09", "source": "Velicogna et al. 2020, GRL 47, e2020GL087291 (verify)", "url": "https://doi.org/10.1029/2020GL087291"}}
+  },
+  "sites": [
+    {"id": "jakobshavn", "name": "Sermeq Kujalleq (Jakobshavn Isbræ)", "country": "GL", "kind": "outlet", "region": "05A", "grace": "greenland", "nisar_test": true,
+     "bbox": [-50.30, 68.98, -48.70, 69.30], "front": [-49.95, 69.17], "extend_km": 6,
+     "published": [
+       {"what": "speed near the front", "year": 2003, "m_yr": 12600, "where": "front", "source": "Joughin, Abdalati & Fahnestock 2004, Nature 432, 608-610", "url": "https://doi.org/10.1038/nature03130"},
+       {"what": "slowed and thickened after ocean cooling", "year": 2017, "trend": "slower", "since": 2012, "where": "front", "source": "Khazendar et al. 2019, Nature Geoscience 12, 277-283", "url": "https://doi.org/10.1038/s41561-019-0329-3"}
+     ]},
+    {"id": "helheim", "name": "Helheim Glacier", "country": "GL", "kind": "outlet", "region": "05A", "grace": "greenland", "nisar_test": true,
+     "bbox": [-38.80, 66.25, -37.90, 66.60], "front": [-38.10, 66.37], "extend_km": 3,
+     "published": [
+       {"what": "speed-up of the lower glacier, 2001-2005", "year": 2005, "trend": "faster", "since": 2001, "where": "front", "source": "Howat, Joughin, Tulaczyk & Gogineni 2005, GRL 32, L22502", "url": "https://doi.org/10.1029/2005GL024737"}
+     ]},
+    {"id": "petermann", "name": "Petermann Glacier", "country": "GL", "kind": "outlet", "region": "05A", "grace": "greenland",
+     "bbox": [-62.80, 80.45, -58.80, 81.30], "front": [-61.90, 81.22], "extend_km": 3,
+     "published": [
+       {"what": "speed-up after the 2010 and 2012 calving events", "year": 2016, "trend": "faster", "since": 2011, "where": "front", "source": "Münchow, Padman, Washam & Nicholls 2016, Oceanography 29(4), 84-95 (verify)", "url": "https://doi.org/10.5670/oceanog.2016.101"}
+     ]},
+    {"id": "zachariae", "name": "Zachariae Isstrøm", "country": "GL", "kind": "outlet", "region": "05A", "grace": "greenland",
+     "bbox": [-23.00, 78.70, -19.50, 79.25], "front": [-20.30, 78.95], "extend_km": 8,
+     "published": [
+       {"what": "speed-up and retreat from 2012", "year": 2015, "trend": "faster", "since": 2010, "where": "front", "source": "Mouginot et al. 2015, Science 350, 1357-1361", "url": "https://doi.org/10.1126/science.aac7111"}
+     ]},
+    {"id": "columbia_ak", "name": "Columbia Glacier", "country": "US", "kind": "tidewater", "region": "01A", "grace": "alaska",
+     "bbox": [-147.35, 61.05, -146.75, 61.42], "front": [-147.07, 61.14], "extend_km": 12,
+     "published": [
+       {"what": "retreat of about 20 km since 1980, with the lower glacier far faster than before", "year": 2000, "trend": "faster", "since": 1985, "where": "front", "source": "Pfeffer 2007, JGR 112, F03S25; O'Neel et al. 2005, JGR 110, F03012 (verify)", "url": "https://doi.org/10.1029/2005JF000445"}
+     ]},
+    {"id": "hubbard", "name": "Hubbard Glacier", "country": "US", "kind": "tidewater", "region": "01A", "grace": "alaska",
+     "bbox": [-139.85, 59.95, -139.20, 60.32], "front": [-139.47, 60.03], "extend_km": 0,
+     "published": []},
+    {"id": "malaspina", "name": "Malaspina and Seward Glaciers", "country": "US", "kind": "piedmont", "region": "01A", "grace": "alaska",
+     "bbox": [-141.30, 59.75, -139.90, 60.35], "front": [-140.40, 59.92], "extend_km": 0,
+     "published": []},
+    {"id": "mendenhall", "name": "Mendenhall Glacier", "country": "US", "kind": "lake", "region": "01A", "grace": "alaska",
+     "bbox": [-134.72, 58.40, -134.38, 58.62], "front": [-134.55, 58.43], "extend_km": 1,
+     "published": []},
+    {"id": "athabasca", "name": "Columbia Icefield (Athabasca, Saskatchewan)", "country": "CA", "kind": "mountain", "region": "02A", "grace": "western_canada",
+     "bbox": [-117.55, 52.05, -117.05, 52.30], "front": [-117.245, 52.212], "extend_km": 1,
+     "published": [],
+     "links": {"ice": "columbia_icefield"}},
+    {"id": "breidamerkurjokull", "name": "Breiðamerkurjökull (Vatnajökull)", "country": "IS", "kind": "lake", "region": "06A", "grace": "iceland",
+     "bbox": [-16.65, 64.03, -16.05, 64.32], "front": [-16.32, 64.06], "extend_km": 2,
+     "published": []},
+    {"id": "kronebreen", "name": "Kronebreen", "country": "NO", "kind": "tidewater", "region": "07A", "grace": "svalbard",
+     "bbox": [12.30, 78.78, 13.70, 79.02], "front": [12.47, 78.88], "extend_km": 1,
+     "published": []},
+    {"id": "basin3", "name": "Austfonna Basin-3", "country": "NO", "kind": "surge", "region": "07A", "grace": "svalbard",
+     "bbox": [24.20, 79.20, 27.40, 79.85], "front": [25.32, 79.35], "extend_km": 2,
+     "published": [
+       {"what": "surge: the front sped up to about 20 m a day (7 km a year) in early 2013", "year": 2013, "m_yr": 7300, "where": "front", "source": "Dunse et al. 2015, The Cryosphere 9, 197-215", "url": "https://doi.org/10.5194/tc-9-197-2015"}
+     ]},
+    {"id": "vavilov", "name": "Vavilov Ice Cap", "country": "RU", "kind": "surge", "region": "09A", "grace": "russian_arctic",
+     "bbox": [94.20, 79.12, 96.40, 79.48], "front": [94.70, 79.28], "extend_km": 6,
+     "published": [
+       {"what": "an ice cap that collapsed into a fast surge, up to about 25 m a day in 2015-2016", "year": 2016, "m_yr": 9000, "where": "front", "source": "Willis et al. 2018, Earth and Planetary Science Letters 491, 227-234", "url": "https://doi.org/10.1016/j.epsl.2018.02.006"}
+     ]},
+    {"id": "aletsch", "name": "Great Aletsch Glacier", "country": "CH", "kind": "mountain", "region": "11A", "grace": "alps",
+     "bbox": [7.95, 46.38, 8.12, 46.56], "front": [8.02, 46.425], "extend_km": 1,
+     "published": [
+       {"what": "about 200 m a year at Konkordiaplatz", "year": 2010, "m_yr": 200, "where": "trunk", "source": "GLAMOS / VAW-ETH Aletsch measurements (verify)", "url": "https://www.glamos.ch"}
+     ]},
+    {"id": "baltoro", "name": "Baltoro Glacier", "country": "PK", "kind": "mountain", "region": "14A", "grace": "hma",
+     "bbox": [75.95, 35.62, 76.62, 35.86], "front": [76.133, 35.764], "trace_from": [76.24, 35.738], "extend_km": 0,
+     "published": []},
+    {"id": "shisper", "name": "Shishper Glacier (Hunza)", "country": "PK", "kind": "surge", "region": "14A", "grace": "hma",
+     "bbox": [74.54, 36.33, 74.80, 36.50], "front": [74.60, 36.355], "extend_km": 0,
+     "published": [
+       {"what": "surge peak in 2018-2019, damming a lake (verify the peak speed)", "year": 2019, "trend": "faster", "since": 2016, "where": "front", "source": "Bhambri et al. 2020, Scientific Reports 10, 4685", "url": "https://doi.org/10.1038/s41598-020-61277-8"}
+     ]},
+    {"id": "khumbu", "name": "Khumbu Glacier (Everest)", "country": "NP", "kind": "mountain", "region": "14A", "grace": "hma",
+     "bbox": [86.78, 27.92, 86.96, 28.04], "front": [86.815, 27.935], "extend_km": 0,
+     "published": []},
+    {"id": "gangotri", "name": "Gangotri Glacier", "country": "IN", "kind": "mountain", "region": "14A", "grace": "hma",
+     "bbox": [79.02, 30.70, 79.32, 30.97], "front": [79.086, 30.925], "trace_from": [79.125, 30.823], "extend_km": 0,
+     "published": []},
+    {"id": "inylchek", "name": "South Inylchek Glacier", "country": "KG", "kind": "mountain", "region": "14A", "grace": "hma",
+     "bbox": [79.40, 42.08, 80.25, 42.30], "front": [79.65, 42.205], "extend_km": 0,
+     "published": []},
+    {"id": "perito_moreno", "name": "Perito Moreno Glacier", "country": "AR", "kind": "lake", "region": "17A", "grace": "southern_andes",
+     "bbox": [-73.40, -50.65, -72.98, -50.40], "front": [-73.03, -50.48], "extend_km": 0,
+     "published": [
+       {"what": "about 2 m a day near the front (verify)", "year": 2015, "m_yr": 700, "where": "front", "source": "Minowa et al. 2015, Earth and Planetary Science Letters 412, 79-87 (verify)", "url": "https://doi.org/10.1016/j.epsl.2014.12.035"}
+     ]},
+    {"id": "upsala", "name": "Upsala Glacier", "country": "AR", "kind": "lake", "region": "17A", "grace": "southern_andes",
+     "bbox": [-73.45, -50.05, -73.05, -49.55], "front": [-73.28, -49.895], "extend_km": 4,
+     "published": []},
+    {"id": "pio_xi", "name": "Pío XI (Brüggen) Glacier", "country": "CL", "kind": "tidewater", "region": "17A", "grace": "southern_andes",
+     "bbox": [-74.20, -49.40, -73.60, -48.95], "front": [-74.03, -49.22], "extend_km": 0,
+     "published": []},
+    {"id": "jorge_montt", "name": "Jorge Montt Glacier", "country": "CL", "kind": "tidewater", "region": "17A", "grace": "southern_andes",
+     "bbox": [-73.75, -48.62, -73.28, -48.12], "front": [-73.50, -48.34], "extend_km": 12,
+     "published": []},
+    {"id": "san_rafael", "name": "San Rafael Glacier", "country": "CL", "kind": "tidewater", "region": "17A", "grace": "southern_andes",
+     "bbox": [-73.98, -46.78, -73.55, -46.55], "front": [-73.86, -46.68], "extend_km": 1,
+     "published": []},
+    {"id": "tasman", "name": "Tasman Glacier (Aoraki)", "country": "NZ", "kind": "lake", "region": "18A", "grace": "new_zealand",
+     "bbox": [170.10, -43.76, 170.36, -43.47], "front": [170.229, -43.662], "extend_km": 3,
+     "published": []},
+    {"id": "pine_island", "name": "Pine Island Glacier", "country": "AQ", "kind": "outlet", "region": "19A", "grace": "antarctica",
+     "bbox": [-102.50, -75.60, -96.50, -74.75], "front": [-101.60, -75.00], "extend_km": 0,
+     "published": [
+       {"what": "about 4 km a year near the grounding line, up from about 2.5 in the 1970s", "year": 2013, "m_yr": 4000, "where": "front", "source": "Mouginot, Rignot & Scheuchl 2014, GRL 41, 1576-1584", "url": "https://doi.org/10.1002/2013GL059069"}
+     ]},
+    {"id": "thwaites", "name": "Thwaites Glacier", "country": "AQ", "kind": "outlet", "region": "19A", "grace": "antarctica",
+     "bbox": [-110.00, -75.70, -104.00, -74.80], "front": [-106.80, -74.95], "extend_km": 0,
+     "published": []},
+    {"id": "crane", "name": "Crane Glacier", "country": "AQ", "kind": "outlet", "region": "19A", "grace": "antarctica",
+     "bbox": [-62.90, -65.45, -62.05, -65.15], "front": [-62.30, -65.33], "extend_km": 2,
+     "published": [
+       {"what": "sped up about threefold after the Larsen B ice shelf broke up in 2002", "year": 2003, "trend": "faster", "since": 2000, "where": "front", "source": "Rignot et al. 2004, GRL 31, L18401; Scambos et al. 2004, GRL 31, L18402", "url": "https://doi.org/10.1029/2004GL020697"}
+     ]}
+  ]
+}

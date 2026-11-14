@@ -1,0 +1,1 @@
+{"events": [{"id": "venezuela_2026", "name": "Venezuela earthquakes, 24 June 2026", "kind": "earthquake", "country": "VE", "bounds": [-69.0, 9.8, -66.3, 10.8], "path": "venezuela_2026/motion.json"}, {"id": "mexico_city", "name": "Mexico City, sinking ground", "kind": "subsidence", "country": "MX", "bounds": [-99.3, 19.15, -98.85, 19.65], "path": "mexico_city/motion.json"}]}

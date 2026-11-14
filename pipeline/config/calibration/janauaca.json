@@ -1,0 +1,56 @@
+{
+ "labels": {
+  "flooded_veg": 3546,
+  "open_water": 16383,
+  "dry_veg": 7131,
+  "dry_open": 7465
+ },
+ "held_out_share": 0.49,
+ "defaults": {
+  "ow_hh_db": -16.0,
+  "ow_hv_db": -22.0,
+  "fv_hh_db": -5.0,
+  "fv_ratio_db": 7.0,
+  "margin_db": 1.0,
+  "max_spread_db": 3.0
+ },
+ "tuned": {
+  "ow_hh_db": -11.25,
+  "ow_hv_db": -19.25,
+  "fv_hh_db": -4.75,
+  "fv_ratio_db": 4.0,
+  "margin_db": 1.0,
+  "max_spread_db": 3.0
+ },
+ "held_out_before": {
+  "flooded_veg": {
+   "balanced_accuracy": 0.523,
+   "recall": 0.232,
+   "specificity": 0.813
+  },
+  "open_water": {
+   "balanced_accuracy": 0.573,
+   "recall": 0.151,
+   "specificity": 0.996
+  }
+ },
+ "held_out_after": {
+  "flooded_veg": {
+   "balanced_accuracy": 0.56,
+   "recall": 0.493,
+   "specificity": 0.626
+  },
+  "open_water": {
+   "balanced_accuracy": 0.893,
+   "recall": 0.853,
+   "specificity": 0.933
+  }
+ },
+ "seasonal_signal": {
+  "wet_pass": "2026-07-17",
+  "dry_pass": "2026-09-27",
+  "median_change_flooded_db": 1.5,
+  "median_change_dry_db": 1.25,
+  "auc": 0.558
+ }
+}

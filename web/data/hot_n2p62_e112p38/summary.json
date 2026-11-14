@@ -1,0 +1,440 @@
+{
+ "schema_version": 14,
+ "synthetic": false,
+ "site": {
+  "id": "hot_n2p62_e112p38",
+  "name": "Selangau, Malaysia (2.62°N, 112.38°E)",
+  "country": "MY",
+  "center": [
+   112.375,
+   2.625
+  ],
+  "zoom": 12
+ },
+ "grid": {
+  "width": 256,
+  "height": 224,
+  "bounds": [
+   112.295,
+   2.555,
+   112.455,
+   2.695
+  ],
+  "crs": "EPSG:4326",
+  "pixel_size_m": 69.5
+ },
+ "track": {
+  "number": 126,
+  "direction": "ascending"
+ },
+ "thresholds": {
+  "ow_hh_db": -16.0,
+  "ow_hv_db": -22.0,
+  "fv_hh_db": -5.0,
+  "fv_ratio_db": 7.0,
+  "margin_db": 1.0,
+  "max_spread_db": 3.0
+ },
+ "passes": [
+  {
+   "usual_water_km2": null,
+   "rtc_date": null,
+   "id": "p01",
+   "date": "2026-06-22",
+   "acquired_utc": "2026-06-22T22:08:51Z",
+   "flooded_veg_km2": 28.917,
+   "open_water_km2": 0.401,
+   "flooded_km2": 29.318,
+   "low_conf_fraction": 0.326,
+   "hidden_from_cband_km2": 4.715,
+   "hidden_low_conf_km2": 18.462,
+   "cband_date": "2026-06-21",
+   "optical_date": "2026-06-24",
+   "optical_water_km2": 3.008,
+   "optical_clear_fraction": 0.51,
+   "class_png": "passes/p01_class.png",
+   "cband_png": "passes/p01_cband.png"
+  },
+  {
+   "usual_water_km2": null,
+   "rtc_date": null,
+   "id": "p02",
+   "date": "2026-07-04",
+   "acquired_utc": "2026-07-04T22:08:51Z",
+   "flooded_veg_km2": 28.912,
+   "open_water_km2": 0.585,
+   "flooded_km2": 29.497,
+   "low_conf_fraction": 0.3232,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-07-09",
+   "optical_water_km2": 2.142,
+   "optical_clear_fraction": 0.619,
+   "class_png": "passes/p02_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": null,
+   "rtc_date": null,
+   "id": "p03",
+   "date": "2026-07-16",
+   "acquired_utc": "2026-07-16T22:08:50Z",
+   "flooded_veg_km2": 23.196,
+   "open_water_km2": 0.561,
+   "flooded_km2": 23.757,
+   "low_conf_fraction": 0.3222,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-07-22",
+   "optical_water_km2": 7.152,
+   "optical_clear_fraction": 1.0,
+   "class_png": "passes/p03_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": null,
+   "rtc_date": null,
+   "id": "p04",
+   "date": "2026-08-21",
+   "acquired_utc": "2026-08-21T22:08:48Z",
+   "flooded_veg_km2": 17.727,
+   "open_water_km2": 0.609,
+   "flooded_km2": 18.337,
+   "low_conf_fraction": 0.3118,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-08-18",
+   "optical_water_km2": 2.437,
+   "optical_clear_fraction": 0.957,
+   "class_png": "passes/p04_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": null,
+   "rtc_date": null,
+   "id": "p05",
+   "date": "2026-09-02",
+   "acquired_utc": "2026-09-02T22:08:48Z",
+   "flooded_veg_km2": 13.709,
+   "open_water_km2": 0.638,
+   "flooded_km2": 14.347,
+   "low_conf_fraction": 0.2785,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-04",
+   "optical_water_km2": 0.024,
+   "optical_clear_fraction": 0.275,
+   "class_png": "passes/p05_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": null,
+   "rtc_date": null,
+   "id": "p06",
+   "date": "2026-09-14",
+   "acquired_utc": "2026-09-14T22:08:48Z",
+   "flooded_veg_km2": 21.799,
+   "open_water_km2": 0.658,
+   "flooded_km2": 22.457,
+   "low_conf_fraction": 0.3208,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-09",
+   "optical_water_km2": 0.0,
+   "optical_clear_fraction": 0.211,
+   "class_png": "passes/p06_class.png",
+   "cband_png": null
+  },
+  {
+   "usual_water_km2": null,
+   "rtc_date": null,
+   "id": "p07",
+   "date": "2026-09-26",
+   "acquired_utc": "2026-09-26T22:08:48Z",
+   "flooded_veg_km2": 25.392,
+   "open_water_km2": 0.59,
+   "flooded_km2": 25.982,
+   "low_conf_fraction": 0.3327,
+   "hidden_from_cband_km2": null,
+   "hidden_low_conf_km2": null,
+   "cband_date": null,
+   "optical_date": "2026-09-29",
+   "optical_water_km2": 2.128,
+   "optical_clear_fraction": 0.455,
+   "class_png": "passes/p07_class.png",
+   "cband_png": null
+  }
+ ],
+ "peak_pass": "p02",
+ "grid_stack": {
+  "stack_file": "stack.bin",
+  "static_file": "static.bin",
+  "order": "layer, pass, row, col",
+  "layers": [
+   {
+    "name": "hh",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "hv",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "hh_spread",
+    "scale": 0.25,
+    "offset": 0,
+    "nodata": null
+   },
+   {
+    "name": "cband",
+    "codes": {
+     "0": "no_data",
+     "1": "not_water",
+     "2": "water"
+    }
+   },
+   {
+    "name": "level_cm",
+    "scale": 2.0,
+    "offset": -256.0,
+    "nodata": 0
+   },
+   {
+    "name": "vv",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   },
+   {
+    "name": "vh",
+    "scale": 0.25,
+    "offset": -50,
+    "nodata": 0
+   }
+  ],
+  "static_layers": [
+   {
+    "name": "veg",
+    "codes": {
+     "0": "other",
+     "1": "vegetation",
+     "2": "built_up"
+    }
+   },
+   {
+    "name": "hydroperiod_days",
+    "scale": 1,
+    "offset": 0,
+    "nodata": null
+   },
+   {
+    "name": "canopy_cover_pct",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "canopy_height_m",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "terrain_gate",
+    "codes": {
+     "0": "floodable",
+     "1": "high_ground"
+    }
+   },
+   {
+    "name": "jrc_occurrence",
+    "scale": 1,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "hand_m",
+    "scale": 0.5,
+    "offset": 0,
+    "nodata": 255
+   },
+   {
+    "name": "glwd_class",
+    "nodata": 255,
+    "codes": {
+     "0": "dryland",
+     "1": "open_water",
+     "2": "open_water",
+     "3": "open_water",
+     "4": "open_water",
+     "5": "open_water",
+     "6": "open_water",
+     "7": "open_water",
+     "8": "forested_wetland",
+     "10": "forested_wetland",
+     "12": "forested_wetland",
+     "14": "forested_wetland",
+     "16": "forested_wetland",
+     "18": "forested_wetland",
+     "20": "forested_wetland",
+     "22": "forested_wetland",
+     "24": "forested_wetland",
+     "26": "forested_wetland",
+     "28": "forested_wetland",
+     "9": "wetland",
+     "11": "wetland",
+     "13": "wetland",
+     "15": "wetland",
+     "17": "wetland",
+     "19": "wetland",
+     "21": "wetland",
+     "23": "wetland",
+     "25": "wetland",
+     "27": "wetland",
+     "29": "wetland",
+     "30": "wetland",
+     "31": "wetland",
+     "32": "wetland",
+     "33": "rice"
+    }
+   }
+  ]
+ },
+ "products": {
+  "hydroperiod": {
+   "png": "hydroperiod.png",
+   "max_days": 108,
+   "season_days": 108,
+   "flooded_any_km2": 63.138
+  },
+  "optical": null,
+  "level_change": [],
+  "canopy": null,
+  "terrain": null,
+  "hand": null,
+  "glwd": null,
+  "outlook": null,
+  "burn": null
+ },
+ "context": {
+  "rain_daily": [],
+  "rain_source": null,
+  "inundation_daily": [],
+  "inundation_source": null,
+  "soil_moisture": [],
+  "soil_moisture_source": null,
+  "water_storage_monthly": [],
+  "water_storage_source": null
+ },
+ "validation": {
+  "gauge": null,
+  "reference_map": null,
+  "swot": [],
+  "icesat2": [],
+  "calibration": null
+ },
+ "exposure": null,
+ "downloads": [
+  {
+   "label_key": "download.areas_csv",
+   "path": "export/areas.csv"
+  },
+  {
+   "label_key": "download.flood_geojson",
+   "path": "export/flood_p02.geojson"
+  }
+ ],
+ "warnings": [
+  {
+   "code": "no_cband_match",
+   "detail": "p02 2026-07-04"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p03 2026-07-16"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p04 2026-08-21"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p05 2026-09-02"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p06 2026-09-14"
+  },
+  {
+   "code": "no_cband_match",
+   "detail": "p07 2026-09-26"
+  },
+  {
+   "code": "no_level_change",
+   "detail": ""
+  },
+  {
+   "code": "no_canopy",
+   "detail": ""
+  },
+  {
+   "code": "no_swot",
+   "detail": ""
+  },
+  {
+   "code": "hidden_flood_uncalibrated",
+   "detail": "no local labels yet"
+  },
+  {
+   "code": "no_optical",
+   "detail": ""
+  },
+  {
+   "code": "no_gauge",
+   "detail": ""
+  },
+  {
+   "code": "no_exposure",
+   "detail": ""
+  }
+ ],
+ "sources": [
+  {
+   "id": "nisar_gcov",
+   "name": "NISAR L2 GCOV (L-band, HH/HV)",
+   "provider": "NASA/ISRO via ASF DAAC",
+   "url": "https://nisar-docs.asf.alaska.edu/gcov/",
+   "role": "L-band backscatter for every pass"
+  },
+  {
+   "id": "esa_worldcover",
+   "name": "ESA WorldCover 10 m",
+   "provider": "ESA",
+   "url": "https://esa-worldcover.org/",
+   "role": "Where vegetation can hide water; built-up exclusion"
+  },
+  {
+   "id": "opera_dswx_s1",
+   "name": "OPERA DSWx-S1",
+   "provider": "NASA JPL OPERA (Copernicus Sentinel-1)",
+   "url": "https://www.jpl.nasa.gov/go/opera",
+   "role": "C-band water map for the comparison"
+  },
+  {
+   "id": "opera_dswx_hls",
+   "name": "OPERA DSWx-HLS",
+   "provider": "NASA JPL OPERA via PO.DAAC",
+   "url": "https://www.jpl.nasa.gov/go/opera",
+   "role": "What optical satellites saw as water (cloud-free pixels only)"
+  }
+ ]
+}

@@ -1,0 +1,779 @@
+{
+ "schema_version": 1,
+ "folder": "Under_The_Canopy_NASA_Space_App_Challenge_Notebooks",
+ "featured": {
+  "key": "water/sylhet",
+  "colab": "https://colab.research.google.com/drive/1lSSYUk26N6NFmsFQRZTQLYWFdfT2Kefy",
+  "download": "https://drive.usercontent.google.com/download?id=1lSSYUk26N6NFmsFQRZTQLYWFdfT2Kefy&export=download&confirm=t"
+ },
+ "notebooks": {
+  "fire/bald_range": {
+   "kind": "fire",
+   "id": "bald_range",
+   "name": "Bald Range fire, Okanagan, British Columbia",
+   "bytes": 3616567,
+   "data": {
+    "web/data/bald_range/summary.json": "3844a51cd5cbd0b829342e47828eb7aec62d257cf92ef80b4358846713d2d4ca",
+    "web/data/bald_range/stack.bin": "9f230f3b73404d1e427cbae02f82d7da83bad891f46edc60158d4516795140af",
+    "web/data/bald_range/static.bin": "aab804df19c7d0f553099549544eff385fc9381d35463de980464f15dd302730",
+    "web/data/bald_range/active_fire.json": "c030ccf71c5871e1c28579b9051cffce2e8e143dbca07e787ce7af414250ed3e",
+    "web/data/ice/columbia_icefield/ice.json": "f40b24cf8bd55e6ea36a47574c20db9f67e9dd4f14b34e2b6c76fdee4ff46a35"
+   },
+   "colab": "https://colab.research.google.com/drive/1qW2faiTSYckCbLWysap9W7R_ZYDq48o6",
+   "download": "https://drive.usercontent.google.com/download?id=1qW2faiTSYckCbLWysap9W7R_ZYDq48o6&export=download&confirm=t"
+  },
+  "fire/thunder_bay_36": {
+   "kind": "fire",
+   "id": "thunder_bay_36",
+   "name": "Thunder Bay 36 fire, Ontario",
+   "bytes": 16980987,
+   "data": {
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b",
+    "web/data/thunder_bay_36/stack.bin": "67849b8a26fda995ccee28e72852c6afee11f1752c2ab79d80b7c0d9f27b80c9",
+    "web/data/thunder_bay_36/static.bin": "3d77f8130f79e0c85434d62ad9fd54428bbad420c8029d0b9ba164f207336f8b",
+    "web/data/thunder_bay_36/active_fire.json": "35444209bc471c7bdb151f38279d248eb2e0107ccd2215fa47c13630e7b0f1e2"
+   },
+   "colab": "https://colab.research.google.com/drive/1IcBz4fN_NzycEHXkNdodleTNnJqBXJ3W",
+   "download": "https://drive.usercontent.google.com/download?id=1IcBz4fN_NzycEHXkNdodleTNnJqBXJ3W&export=download&confirm=t"
+  },
+  "ground/mexico_city": {
+   "kind": "ground",
+   "id": "mexico_city",
+   "name": "Mexico City, sinking ground",
+   "bytes": 22037588,
+   "data": {
+    "web/data/motion/mexico_city/motion.json": "663b48d74630cc38a4ed172f3977a8e54cd998ffad80a08fef6c15ca47f90280",
+    "web/data/motion/mexico_city/motion.bin.gz": "f96154d73201ecad8b2d26bc22f9ffaa5a855ae8e731b11f0efcc1d23f75a37e"
+   },
+   "colab": "https://colab.research.google.com/drive/12E13jC-KpY7rVpTvsCY1e_cr7mKIv8sE",
+   "download": "https://drive.usercontent.google.com/download?id=12E13jC-KpY7rVpTvsCY1e_cr7mKIv8sE&export=download&confirm=t"
+  },
+  "ground/venezuela_2026": {
+   "kind": "ground",
+   "id": "venezuela_2026",
+   "name": "Venezuela earthquakes, 24 June 2026",
+   "bytes": 11062801,
+   "data": {
+    "web/data/motion/venezuela_2026/motion.json": "221b0c416775a0e5fd09f686319a68254f897ca0bf9ca62763206dd740de3dad",
+    "web/data/motion/venezuela_2026/motion.bin.gz": "41ca923b8d75c4d8c715d6b94a3e17f0dcaca673e76acba652eaa707b3d601a7",
+    "web/data/motion/venezuela_2026/rupture.bin.gz": "76b90c84498c29b95b66a8e27d74f60a186dc7252624882b7b7c7ff7d1ede4dd"
+   },
+   "colab": "https://colab.research.google.com/drive/10GQs24K_X3P3MrQiDJSXJW4ZSBgdV3Wy",
+   "download": "https://drive.usercontent.google.com/download?id=10GQs24K_X3P3MrQiDJSXJW4ZSBgdV3Wy&export=download&confirm=t"
+  },
+  "ice/aletsch": {
+   "kind": "ice",
+   "id": "aletsch",
+   "name": "Great Aletsch Glacier",
+   "bytes": 3504941,
+   "data": {
+    "web/data/glaciers/aletsch/glacier.json": "ea59fd20ca56556dbecb1cfd5c8202fdbbb387e793e39a16bd147a5a5d08df47",
+    "web/data/glaciers/aletsch/glacier.bin.gz": "3957b7fdc4200d6eb8b18207888df4a865a9322c5c6e713151c24a55cf07ca95"
+   },
+   "colab": "https://colab.research.google.com/drive/1cdIebANU9oWnhk9Zu3_WfKEOx3yjljmG",
+   "download": "https://drive.usercontent.google.com/download?id=1cdIebANU9oWnhk9Zu3_WfKEOx3yjljmG&export=download&confirm=t"
+  },
+  "ice/athabasca": {
+   "kind": "ice",
+   "id": "athabasca",
+   "name": "Columbia Icefield (Athabasca, Saskatchewan)",
+   "bytes": 2991402,
+   "data": {
+    "web/data/glaciers/athabasca/glacier.json": "b4aba7f4913b4ee529b378e9dc68f4f529163d5c68f8dec35538f61ad8e138f3",
+    "web/data/glaciers/athabasca/glacier.bin.gz": "3b546d43e9dc16749d7d5e5618969b938e24ba5485d539feaa8a71151b1ef563"
+   },
+   "colab": "https://colab.research.google.com/drive/1WZaSQgLB8dgonOyy1apZUKhiNueyWK6n",
+   "download": "https://drive.usercontent.google.com/download?id=1WZaSQgLB8dgonOyy1apZUKhiNueyWK6n&export=download&confirm=t"
+  },
+  "ice/baltoro": {
+   "kind": "ice",
+   "id": "baltoro",
+   "name": "Baltoro Glacier",
+   "bytes": 3603376,
+   "data": {
+    "web/data/glaciers/baltoro/glacier.json": "369d8efeb44b89d6870f21df3e7fbc91159aa808e55e8f0af61277eca121fad0",
+    "web/data/glaciers/baltoro/glacier.bin.gz": "5acba279d854cf5c263cb57133009b9fc13916576d689177446e7a524c48cd12"
+   },
+   "colab": "https://colab.research.google.com/drive/1ybABRN6bVJcGQjRafSGmc2iZm_5yXBXb",
+   "download": "https://drive.usercontent.google.com/download?id=1ybABRN6bVJcGQjRafSGmc2iZm_5yXBXb&export=download&confirm=t"
+  },
+  "ice/basin3": {
+   "kind": "ice",
+   "id": "basin3",
+   "name": "Austfonna Basin-3",
+   "bytes": 2281495,
+   "data": {
+    "web/data/glaciers/basin3/glacier.json": "c795230d9b52fdc60e8d3428582c2dd754b21945e0c12d869c38482d25f7822f",
+    "web/data/glaciers/basin3/glacier.bin.gz": "79a5561ba461132fc60f0352823cf1c17a770540a9965250ccc386683c67b002"
+   },
+   "colab": "https://colab.research.google.com/drive/1IJQoo0wSWVz3FfPy8S0h8gYHmzlZpXrr",
+   "download": "https://drive.usercontent.google.com/download?id=1IJQoo0wSWVz3FfPy8S0h8gYHmzlZpXrr&export=download&confirm=t"
+  },
+  "ice/breidamerkurjokull": {
+   "kind": "ice",
+   "id": "breidamerkurjokull",
+   "name": "Breiðamerkurjökull (Vatnajökull)",
+   "bytes": 4834292,
+   "data": {
+    "web/data/glaciers/breidamerkurjokull/glacier.json": "4ed945937dd4a0cfbc611cc456e2ce67142d2c87ca8b1ef4b179c4acc65e7676",
+    "web/data/glaciers/breidamerkurjokull/glacier.bin.gz": "2adbca88c7628243cafe00b6f8c2277585dd57e13868bb9478a1ed7ad53d1742"
+   },
+   "colab": "https://colab.research.google.com/drive/1CgCEn_SzI_HyegEnZtZNTsb4LnBCnZf8",
+   "download": "https://drive.usercontent.google.com/download?id=1CgCEn_SzI_HyegEnZtZNTsb4LnBCnZf8&export=download&confirm=t"
+  },
+  "ice/columbia_ak": {
+   "kind": "ice",
+   "id": "columbia_ak",
+   "name": "Columbia Glacier",
+   "bytes": 5637982,
+   "data": {
+    "web/data/glaciers/columbia_ak/glacier.json": "e613550d45b0901cd49ec7207f50dcc29f794750b8fd0160d58d0a772773cf57",
+    "web/data/glaciers/columbia_ak/glacier.bin.gz": "8d5679c01c9f3764948286aaeb67ff65022262c6a82c261a3752efbdb4113a9a"
+   },
+   "colab": "https://colab.research.google.com/drive/1FD76I6_ZUCzEt54i12q0VyHaFBg55-zT",
+   "download": "https://drive.usercontent.google.com/download?id=1FD76I6_ZUCzEt54i12q0VyHaFBg55-zT&export=download&confirm=t"
+  },
+  "ice/crane": {
+   "kind": "ice",
+   "id": "crane",
+   "name": "Crane Glacier",
+   "bytes": 5560960,
+   "data": {
+    "web/data/glaciers/crane/glacier.json": "c3488da529ccfa642a9e190e74d2c313eb843770914c4e12e356a10d08b52ee8",
+    "web/data/glaciers/crane/glacier.bin.gz": "2a75b7f037abd301a5d73e5c6e8cef04991e0427927600bcf38a69ffa0eaa067"
+   },
+   "colab": "https://colab.research.google.com/drive/1ar-q_boyTLEkgbx1YtRJp8S4ZBMEr6YD",
+   "download": "https://drive.usercontent.google.com/download?id=1ar-q_boyTLEkgbx1YtRJp8S4ZBMEr6YD&export=download&confirm=t"
+  },
+  "ice/gangotri": {
+   "kind": "ice",
+   "id": "gangotri",
+   "name": "Gangotri Glacier",
+   "bytes": 5160644,
+   "data": {
+    "web/data/glaciers/gangotri/glacier.json": "3170f467e909ec8dbd7abd32d72a78c8a31b8df492cf5ef191ff9b408b9b2d03",
+    "web/data/glaciers/gangotri/glacier.bin.gz": "19dbd3a8da804c0a650bddb4f678ae01369ec0e6cff001271f5bf8beb958449c"
+   },
+   "colab": "https://colab.research.google.com/drive/1ct6W2u6MF3e3Kuxj7baJqNYDhmqopBuk",
+   "download": "https://drive.usercontent.google.com/download?id=1ct6W2u6MF3e3Kuxj7baJqNYDhmqopBuk&export=download&confirm=t"
+  },
+  "ice/helheim": {
+   "kind": "ice",
+   "id": "helheim",
+   "name": "Helheim Glacier",
+   "bytes": 6654033,
+   "data": {
+    "web/data/glaciers/helheim/glacier.json": "b31862034990935ced6c7c0989d2b4d16ff4b68b158c8cba1f626398d7c98e28",
+    "web/data/glaciers/helheim/glacier.bin.gz": "bac7c3a9275a6a1d9af47277c1298cf71fa6ce226de55530c38faed88e281516"
+   },
+   "colab": "https://colab.research.google.com/drive/1kkSut7GF5eBlGxcyArqG5CDQGAcF-SFU",
+   "download": "https://drive.usercontent.google.com/download?id=1kkSut7GF5eBlGxcyArqG5CDQGAcF-SFU&export=download&confirm=t"
+  },
+  "ice/hubbard": {
+   "kind": "ice",
+   "id": "hubbard",
+   "name": "Hubbard Glacier",
+   "bytes": 8655894,
+   "data": {
+    "web/data/glaciers/hubbard/glacier.json": "04e0fdf47bc6686b6f2b4ec10a74fe983356c57a383f83af14db3fe3917f593b",
+    "web/data/glaciers/hubbard/glacier.bin.gz": "1b9dc3f3039d5bcabee063058628221988007cb7ef7b2b7c1fd08aedf429f3d5"
+   },
+   "colab": "https://colab.research.google.com/drive/1mYmLvIoMn4xILs-GbLZIMnbELcEJvEVE",
+   "download": "https://drive.usercontent.google.com/download?id=1mYmLvIoMn4xILs-GbLZIMnbELcEJvEVE&export=download&confirm=t"
+  },
+  "ice/inylchek": {
+   "kind": "ice",
+   "id": "inylchek",
+   "name": "South Inylchek Glacier",
+   "bytes": 2608322,
+   "data": {
+    "web/data/glaciers/inylchek/glacier.json": "f1c67d408a65b44628c7607175748aa59f21e24b49a15864ef43b897a0cdd403",
+    "web/data/glaciers/inylchek/glacier.bin.gz": "0fae78ee85661f5053476dac8fd64ff888f1eeb7e3ea1beb3579afe9de160a51"
+   },
+   "colab": "https://colab.research.google.com/drive/17Sy4q9fWAZWQQZEPSvI_ajIQGMc1_fhC",
+   "download": "https://drive.usercontent.google.com/download?id=17Sy4q9fWAZWQQZEPSvI_ajIQGMc1_fhC&export=download&confirm=t"
+  },
+  "ice/jakobshavn": {
+   "kind": "ice",
+   "id": "jakobshavn",
+   "name": "Sermeq Kujalleq (Jakobshavn Isbræ)",
+   "bytes": 4091505,
+   "data": {
+    "web/data/glaciers/jakobshavn/glacier.json": "dd33c0b200de1ea9cf906d9acc7d6efecd5e366c5107d4a454745da4f745bc1d",
+    "web/data/glaciers/jakobshavn/glacier.bin.gz": "0d371a4f760a19b4fbf75341678e2beb36d1d3f52c20e6bdb389d3e5136d2048"
+   },
+   "colab": "https://colab.research.google.com/drive/1dwxd-OLH8_DwBLiYW55rv_vgLxXgcrap",
+   "download": "https://drive.usercontent.google.com/download?id=1dwxd-OLH8_DwBLiYW55rv_vgLxXgcrap&export=download&confirm=t"
+  },
+  "ice/jorge_montt": {
+   "kind": "ice",
+   "id": "jorge_montt",
+   "name": "Jorge Montt Glacier",
+   "bytes": 3840439,
+   "data": {
+    "web/data/glaciers/jorge_montt/glacier.json": "8230b58c84ea32169afa22b9cc4722acb610e6bc81560644a4a3003edc9a9ba8",
+    "web/data/glaciers/jorge_montt/glacier.bin.gz": "1bd8439b5d03aab0620b34de64d690ec9a3613e3cd6709e852980000fcc6f755"
+   },
+   "colab": "https://colab.research.google.com/drive/1EbBJ8G2YteiwhRMnjbj3PY4-vyHPTjpY",
+   "download": "https://drive.usercontent.google.com/download?id=1EbBJ8G2YteiwhRMnjbj3PY4-vyHPTjpY&export=download&confirm=t"
+  },
+  "ice/khumbu": {
+   "kind": "ice",
+   "id": "khumbu",
+   "name": "Khumbu Glacier (Everest)",
+   "bytes": 3191530,
+   "data": {
+    "web/data/glaciers/khumbu/glacier.json": "b6a20c923215e0c95bd56f9dece92936e05130e8482d396e94e567ff17cdbb73",
+    "web/data/glaciers/khumbu/glacier.bin.gz": "71c11ca32dcad8b5ec5a1d241ccdbfc59c13e44d5aeca30b9739989c206adbea"
+   },
+   "colab": "https://colab.research.google.com/drive/18YUAULxiTme7LiYz9EH4qnovLYZv3Xla",
+   "download": "https://drive.usercontent.google.com/download?id=18YUAULxiTme7LiYz9EH4qnovLYZv3Xla&export=download&confirm=t"
+  },
+  "ice/kronebreen": {
+   "kind": "ice",
+   "id": "kronebreen",
+   "name": "Kronebreen",
+   "bytes": 3693013,
+   "data": {
+    "web/data/glaciers/kronebreen/glacier.json": "1ef96c9192f284ab156d89b9b26bcd2c80a1a3a629b34d5f2ad170361aff906b",
+    "web/data/glaciers/kronebreen/glacier.bin.gz": "1c5a59610e3200eae1d3c40f8860f407bf38df7380dd8cfa95fb5597a1c9f245"
+   },
+   "colab": "https://colab.research.google.com/drive/1UQYSE4-HenMeZOqXIIPSHMqt3lb2ra7_",
+   "download": "https://drive.usercontent.google.com/download?id=1UQYSE4-HenMeZOqXIIPSHMqt3lb2ra7_&export=download&confirm=t"
+  },
+  "ice/malaspina": {
+   "kind": "ice",
+   "id": "malaspina",
+   "name": "Malaspina and Seward Glaciers",
+   "bytes": 6547184,
+   "data": {
+    "web/data/glaciers/malaspina/glacier.json": "6038d9adfef657736f7a7a6867d54102dc03bdb190ae81addaa1b5884d88163c",
+    "web/data/glaciers/malaspina/glacier.bin.gz": "286c41a07811b8a0d90089326ae4f6200bb6d9160429f04a4ab935ed37686070"
+   },
+   "colab": "https://colab.research.google.com/drive/1rcRz8RgQM-HUe1abmTO-YCUXRLXek_U_",
+   "download": "https://drive.usercontent.google.com/download?id=1rcRz8RgQM-HUe1abmTO-YCUXRLXek_U_&export=download&confirm=t"
+  },
+  "ice/mendenhall": {
+   "kind": "ice",
+   "id": "mendenhall",
+   "name": "Mendenhall Glacier",
+   "bytes": 4456674,
+   "data": {
+    "web/data/glaciers/mendenhall/glacier.json": "c04575a658c29f79ef50ffd31f2e1d11ed9be537c57c8905941cb699ed212bad",
+    "web/data/glaciers/mendenhall/glacier.bin.gz": "355e998d33debc7fba85d331d129a520c95b9fcb5692e2916f4b8575ef6bc8f8"
+   },
+   "colab": "https://colab.research.google.com/drive/1Ntqf152ZLiFpc50LyCJFfzXdFtCyFi5j",
+   "download": "https://drive.usercontent.google.com/download?id=1Ntqf152ZLiFpc50LyCJFfzXdFtCyFi5j&export=download&confirm=t"
+  },
+  "ice/perito_moreno": {
+   "kind": "ice",
+   "id": "perito_moreno",
+   "name": "Perito Moreno Glacier",
+   "bytes": 4732563,
+   "data": {
+    "web/data/glaciers/perito_moreno/glacier.json": "ba25c57eed5989b5e6cf91b301e8904f10c0a2dfc5027a77c79384bcf24c554a",
+    "web/data/glaciers/perito_moreno/glacier.bin.gz": "40c5c47b6c69ea1003eb67d6dcde47f4d6efc7201af42ebb02e6abfbb63e9465"
+   },
+   "colab": "https://colab.research.google.com/drive/1tHpvfhs29KnlagD-SitnhosY8jCU7yLA",
+   "download": "https://drive.usercontent.google.com/download?id=1tHpvfhs29KnlagD-SitnhosY8jCU7yLA&export=download&confirm=t"
+  },
+  "ice/petermann": {
+   "kind": "ice",
+   "id": "petermann",
+   "name": "Petermann Glacier",
+   "bytes": 4491109,
+   "data": {
+    "web/data/glaciers/petermann/glacier.json": "0bd8b6cee45ab7055added620fc4cf67a8420711f63d746da4c38c91674081ce",
+    "web/data/glaciers/petermann/glacier.bin.gz": "322db757e37b28b69bc1408ea320dbf82d4a4c4258a3fa43c38d3e4e0b8b765d"
+   },
+   "colab": "https://colab.research.google.com/drive/1tAYMIrKyZ861HmglDzKUF5xWbxoyelyf",
+   "download": "https://drive.usercontent.google.com/download?id=1tAYMIrKyZ861HmglDzKUF5xWbxoyelyf&export=download&confirm=t"
+  },
+  "ice/pine_island": {
+   "kind": "ice",
+   "id": "pine_island",
+   "name": "Pine Island Glacier",
+   "bytes": 3315426,
+   "data": {
+    "web/data/glaciers/pine_island/glacier.json": "5d66b4563167e9cff16b34971d787f30de36c4ae8b56710b0145ba454892e10b",
+    "web/data/glaciers/pine_island/glacier.bin.gz": "e257f7d6b9e2a4f617f2e7e17816dba30c7530da3e3fc18f33448a6de8e3f5aa"
+   },
+   "colab": "https://colab.research.google.com/drive/1GMBZPT0t_XV7eIFhGuoNAIXuuqHn5oHW",
+   "download": "https://drive.usercontent.google.com/download?id=1GMBZPT0t_XV7eIFhGuoNAIXuuqHn5oHW&export=download&confirm=t"
+  },
+  "ice/pio_xi": {
+   "kind": "ice",
+   "id": "pio_xi",
+   "name": "Pío XI (Brüggen) Glacier",
+   "bytes": 3463215,
+   "data": {
+    "web/data/glaciers/pio_xi/glacier.json": "54cfc05d43e03a854eb00a4a4c5e8fe7fd054912d89e6c14e4036ea891382f62",
+    "web/data/glaciers/pio_xi/glacier.bin.gz": "2d37402bdaf8aee137731fc4a1e82dc707de8ac9ea8e0e5732b7fb1a6febd2a8"
+   },
+   "colab": "https://colab.research.google.com/drive/12VrqOhxUPb69b2VGpRw801XO0mVIrraq",
+   "download": "https://drive.usercontent.google.com/download?id=12VrqOhxUPb69b2VGpRw801XO0mVIrraq&export=download&confirm=t"
+  },
+  "ice/san_rafael": {
+   "kind": "ice",
+   "id": "san_rafael",
+   "name": "San Rafael Glacier",
+   "bytes": 2816719,
+   "data": {
+    "web/data/glaciers/san_rafael/glacier.json": "32f0351ee984e23e07046451d099f75fa202406c0f84bae8b14b0478ab1d18c9",
+    "web/data/glaciers/san_rafael/glacier.bin.gz": "eaf442b1e8e3dfd0add4fcabf775a00fa517d290de4127bd0582446cb143f8c6"
+   },
+   "colab": "https://colab.research.google.com/drive/1ElakRkCIqQORX-k30VzfnJa_HsxMBBNy",
+   "download": "https://drive.usercontent.google.com/download?id=1ElakRkCIqQORX-k30VzfnJa_HsxMBBNy&export=download&confirm=t"
+  },
+  "ice/shisper": {
+   "kind": "ice",
+   "id": "shisper",
+   "name": "Shishper Glacier (Hunza)",
+   "bytes": 4461656,
+   "data": {
+    "web/data/glaciers/shisper/glacier.json": "a81021eaaa27d8dba95a26b54d3447fe792800de5b4ea8389fb8df9bb70e46ce",
+    "web/data/glaciers/shisper/glacier.bin.gz": "5b6a1cdbaec14bd5d8a347a7203c6dadb3bba517cb49a4fa773419ca78516aab"
+   },
+   "colab": "https://colab.research.google.com/drive/13br05XcRZpjInClN6fT2vzQCejAdINg0",
+   "download": "https://drive.usercontent.google.com/download?id=13br05XcRZpjInClN6fT2vzQCejAdINg0&export=download&confirm=t"
+  },
+  "ice/tasman": {
+   "kind": "ice",
+   "id": "tasman",
+   "name": "Tasman Glacier (Aoraki)",
+   "bytes": 3380642,
+   "data": {
+    "web/data/glaciers/tasman/glacier.json": "f7bbf382c28858cf5c346991dcb2a0405e3e1d4efb2d3b3337ff30386169bfff",
+    "web/data/glaciers/tasman/glacier.bin.gz": "2fed3006821ac9565ad7daf2df0839fc7d2a22f65ab4bbbc6d3dc3933d22e426"
+   },
+   "colab": "https://colab.research.google.com/drive/1Ur2_-Psi_iL_7iqMlfaBEBcVNKrkY3Z_",
+   "download": "https://drive.usercontent.google.com/download?id=1Ur2_-Psi_iL_7iqMlfaBEBcVNKrkY3Z_&export=download&confirm=t"
+  },
+  "ice/thwaites": {
+   "kind": "ice",
+   "id": "thwaites",
+   "name": "Thwaites Glacier",
+   "bytes": 3952752,
+   "data": {
+    "web/data/glaciers/thwaites/glacier.json": "ec279bc2b308eefc6cec91bf8bc49f1d1fd5efa229e1e23b3076798b2e8f354d",
+    "web/data/glaciers/thwaites/glacier.bin.gz": "8dd2e47f29027bbfdd610e311d398f26332e4bfbcbd704bb6681df3b4076e5c1"
+   },
+   "colab": "https://colab.research.google.com/drive/1G_uenRRAh0LPGAOIZ8VFLQZF_lZ9N927",
+   "download": "https://drive.usercontent.google.com/download?id=1G_uenRRAh0LPGAOIZ8VFLQZF_lZ9N927&export=download&confirm=t"
+  },
+  "ice/upsala": {
+   "kind": "ice",
+   "id": "upsala",
+   "name": "Upsala Glacier",
+   "bytes": 3835472,
+   "data": {
+    "web/data/glaciers/upsala/glacier.json": "f015ab2c5230bd8a0346cf34dfe2d320fe45a0ed9a502ed8b0fdf4b5bdf08548",
+    "web/data/glaciers/upsala/glacier.bin.gz": "7351a4e85122e8e3cc7c18e1f71f369e826dcac91d6327c812b7e286b0734698"
+   },
+   "colab": "https://colab.research.google.com/drive/1uqdewcGhSzqxFjecF17EOilLtuvqgfQw",
+   "download": "https://drive.usercontent.google.com/download?id=1uqdewcGhSzqxFjecF17EOilLtuvqgfQw&export=download&confirm=t"
+  },
+  "ice/vavilov": {
+   "kind": "ice",
+   "id": "vavilov",
+   "name": "Vavilov Ice Cap",
+   "bytes": 3559106,
+   "data": {
+    "web/data/glaciers/vavilov/glacier.json": "57fc381d0e3200a7ba207763d6e11acbcbef06c099e5359474163fca7e6f62d5",
+    "web/data/glaciers/vavilov/glacier.bin.gz": "d2eb0b74d311fa5afe86b1ef502e32a7e17ef3126d45acc49f7efcddba1ed6a8"
+   },
+   "colab": "https://colab.research.google.com/drive/1cc1yPvGXNu3gk9bNm-f5JrPvOutXh7lV",
+   "download": "https://drive.usercontent.google.com/download?id=1cc1yPvGXNu3gk9bNm-f5JrPvOutXh7lV&export=download&confirm=t"
+  },
+  "ice/zachariae": {
+   "kind": "ice",
+   "id": "zachariae",
+   "name": "Zachariae Isstrøm",
+   "bytes": 6072235,
+   "data": {
+    "web/data/glaciers/zachariae/glacier.json": "5dca7be11d4de251e2f680365e6109291571a0ae46e71367105f63dc6f1b0372",
+    "web/data/glaciers/zachariae/glacier.bin.gz": "aaa73f171be188e917a32ba12499296e699cd5ec8120bbcfad632e0251d22025"
+   },
+   "colab": "https://colab.research.google.com/drive/1ppu_vWkZN5pbu7_edZtpSpTS24-Z3xeC",
+   "download": "https://drive.usercontent.google.com/download?id=1ppu_vWkZN5pbu7_edZtpSpTS24-Z3xeC&export=download&confirm=t"
+  },
+  "water/atchafalaya": {
+   "kind": "water",
+   "id": "atchafalaya",
+   "name": "Atchafalaya Basin",
+   "bytes": 4455979,
+   "data": {
+    "web/data/atchafalaya/summary.json": "50f8dd7455e270f89836770199fbd3272b1d46eb5c6d2498e26375e3a80d9be8",
+    "web/data/atchafalaya/stack.bin": "78614a7d1374a40ba21ed03711205e10c632d298d6f7f68cb30f0fa621104bef",
+    "web/data/atchafalaya/static.bin": "b04c03df81fdc04c963542d8c99e6c4ef813131376388b8bb01ccd038c711e13",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1_66TvWFk0_eI5bTk2Miur4VdMb4-mG5W",
+   "download": "https://drive.usercontent.google.com/download?id=1_66TvWFk0_eI5bTk2Miur4VdMb4-mG5W&export=download&confirm=t"
+  },
+  "water/cuvette_centrale": {
+   "kind": "water",
+   "id": "cuvette_centrale",
+   "name": "Likouala swamp forest, Cuvette Centrale",
+   "bytes": 4508886,
+   "data": {
+    "web/data/cuvette_centrale/summary.json": "8f63fafbcc78a74aa8af21e8737073caad5fbe7710a4100dc1773ca70eff5b8d",
+    "web/data/cuvette_centrale/stack.bin": "cfeff2ed32e717e170495c05898999afa1b80a3fa6de6300197629b997e7f035",
+    "web/data/cuvette_centrale/static.bin": "c1d11e29815cb38c6797370b4df060f212bcab205e36fccd7620a44ca277a06b",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1svNQkOWo1WtSYjb4GgpfZbYkRPplMZ5b",
+   "download": "https://drive.usercontent.google.com/download?id=1svNQkOWo1WtSYjb4GgpfZbYkRPplMZ5b&export=download&confirm=t"
+  },
+  "water/everglades": {
+   "kind": "water",
+   "id": "everglades",
+   "name": "Big Cypress swamp, Everglades",
+   "bytes": 5277408,
+   "data": {
+    "web/data/everglades/summary.json": "ca0261321b1f426384ec1a41ba10921e882ec7688950efae9518e29adc79ba51",
+    "web/data/everglades/stack.bin": "ebd02a7a58d0cc2c1a0281ffce43753265f628a304d49a3a43c4fb66c3dbd1c3",
+    "web/data/everglades/static.bin": "56e4f57f8f1c21a7a7cfa76eeb5e916c4c8fdd6a5489a59e96e2618ea29c6f98",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/14mJVjdi1459h6R-SEjAXQBqnWFvSl2Wd",
+   "download": "https://drive.usercontent.google.com/download?id=14mJVjdi1459h6R-SEjAXQBqnWFvSl2Wd&export=download&confirm=t"
+  },
+  "water/here_n13p20_e99p78": {
+   "kind": "water",
+   "id": "here_n13p20_e99p78",
+   "name": "Analysed here: 13.20°N, 99.78°E",
+   "bytes": 4219043,
+   "data": {
+    "web/data/here_n13p20_e99p78/summary.json": "2105696ee76ae8590b82469fd2643ce3b80559a2480c37781a3eb55b8112fe02",
+    "web/data/here_n13p20_e99p78/stack.bin": "40924d586aae27b598699369cf57b6032028578718bbe6e7675acacf317b9074",
+    "web/data/here_n13p20_e99p78/static.bin": "b919ef9d4203ef21aa5115290db387e01928a2398f8da4d404bbcd1945cbe5f1",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1vdvzfq-SGCKmh2hvUqYNJNNjimGuo_jG",
+   "download": "https://drive.usercontent.google.com/download?id=1vdvzfq-SGCKmh2hvUqYNJNNjimGuo_jG&export=download&confirm=t"
+  },
+  "water/here_n44p92_w79p72": {
+   "kind": "water",
+   "id": "here_n44p92_w79p72",
+   "name": "Analysed here: 44.92°N, 79.72°W",
+   "bytes": 6025632,
+   "data": {
+    "web/data/here_n44p92_w79p72/summary.json": "08a846bed361f73d8294233bba28a1c77014e93d25aa86d4e429877a4ea1ce69",
+    "web/data/here_n44p92_w79p72/stack.bin": "3b184f4d0517c8c81e850bc1ee9222f873a1fc1a696fdc7ddee0c8402c4fff4e",
+    "web/data/here_n44p92_w79p72/static.bin": "1b673ff042012c2fd6d98beb4361ceae191768de5d858b8fdd9c38cfcfadf7cb",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1qJ98M16SSmhjnbhAJHj4EifPRdmW5NOv",
+   "download": "https://drive.usercontent.google.com/download?id=1qJ98M16SSmhjnbhAJHj4EifPRdmW5NOv&export=download&confirm=t"
+  },
+  "water/here_n46p48_w92p13": {
+   "kind": "water",
+   "id": "here_n46p48_w92p13",
+   "name": "Analysed here: 46.48°N, 92.13°W",
+   "bytes": 5788005,
+   "data": {
+    "web/data/here_n46p48_w92p13/summary.json": "6a3db5768ab645683f81e4cda58715a612b8a38fad4f099d2f6913568e7a4a16",
+    "web/data/here_n46p48_w92p13/stack.bin": "53683cc74dd20578cfd7fbf17715505c7cb5bc3ffbb23fe8d85ed18aaa713988",
+    "web/data/here_n46p48_w92p13/static.bin": "ad8e51c167923b2b48c2812778102c719c48cd27415abb942f268cea9f3edd59",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1jdr2BTcdCMTkY9ruTTT-ox5hiaR81vGe",
+   "download": "https://drive.usercontent.google.com/download?id=1jdr2BTcdCMTkY9ruTTT-ox5hiaR81vGe&export=download&confirm=t"
+  },
+  "water/here_s2p89_w64p80": {
+   "kind": "water",
+   "id": "here_s2p89_w64p80",
+   "name": "Analysed here: 2.89°S, 64.80°W",
+   "bytes": 4044817,
+   "data": {
+    "web/data/here_s2p89_w64p80/summary.json": "498d888d68cc8978e6f03b33a18eff4fd68ca338bd77a048e6cb6b5cfcc642e9",
+    "web/data/here_s2p89_w64p80/stack.bin": "02049c861cf437de35a21a3812fc6d7250052b4d357d023994dd3fda9a0bc6e9",
+    "web/data/here_s2p89_w64p80/static.bin": "20ca26cf6d07a0d5f655412e4f47087d88835fe078f62acd00beacebfcec8c21",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1tv5HQ3bLs7b34SHTI-S6eafVf-T73OZX",
+   "download": "https://drive.usercontent.google.com/download?id=1tv5HQ3bLs7b34SHTI-S6eafVf-T73OZX&export=download&confirm=t"
+  },
+  "water/here_s5p42_w62p74": {
+   "kind": "water",
+   "id": "here_s5p42_w62p74",
+   "name": "Analysed here: 5.42°S, 62.74°W",
+   "bytes": 2555597,
+   "data": {
+    "web/data/here_s5p42_w62p74/summary.json": "a8c30a2bba51c12ba055e64eca19bf8622dfebbc9516c5b4f6b8d693341a18a9",
+    "web/data/here_s5p42_w62p74/stack.bin": "737fce2f2cc222ab13007738c6221f606f2a23f52bbbbb6e22aca4342f765b1e",
+    "web/data/here_s5p42_w62p74/static.bin": "bd54fbf9e1b0f59c9cf0d70275f84fe13ad707f8ab574977ebd8baa0da2640c6",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1qKJUTlMaMsX0pG6Tp8tmo-9mY2XCRn7l",
+   "download": "https://drive.usercontent.google.com/download?id=1qKJUTlMaMsX0pG6Tp8tmo-9mY2XCRn7l&export=download&confirm=t"
+  },
+  "water/hot_n1p12_w61p62": {
+   "kind": "water",
+   "id": "hot_n1p12_w61p62",
+   "name": "Roraima, Brazil (1.12°N, 61.62°W)",
+   "bytes": 4667312,
+   "data": {
+    "web/data/hot_n1p12_w61p62/summary.json": "9093bc6282af9be26a8b2f0002203088811f7134ab5befa2cb0dd9c932e0bfec",
+    "web/data/hot_n1p12_w61p62/stack.bin": "154c754425bae5ab2fe8af1e4c8bd22cfc342863a97f5db5ffccfac05f969b11",
+    "web/data/hot_n1p12_w61p62/static.bin": "6b1a9c0391c0151ce8e0de430d980308cd912a3a54ebb251aebd6499a0320647",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1CjBNUxp5sEK6qRloc2fxDySH4p6i-k5m",
+   "download": "https://drive.usercontent.google.com/download?id=1CjBNUxp5sEK6qRloc2fxDySH4p6i-k5m&export=download&confirm=t"
+  },
+  "water/hot_n2p62_e112p38": {
+   "kind": "water",
+   "id": "hot_n2p62_e112p38",
+   "name": "Selangau, Malaysia (2.62°N, 112.38°E)",
+   "bytes": 3717025,
+   "data": {
+    "web/data/hot_n2p62_e112p38/summary.json": "1c240ade512fdbb7ead4a4760137616ce11f2311786a036ebba0f521b12c7792",
+    "web/data/hot_n2p62_e112p38/stack.bin": "6441e868145a178d3b11c17f1e956850b7635172507e7a8e6b9c8e4fe86205cf",
+    "web/data/hot_n2p62_e112p38/static.bin": "a775d09e0832cc4e6b47ea12c281cc4e670399279b8be5440838c8d2d18dfc1b",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1krB2c8iooge3M9EB1tYP5-n6YAmmZE9R",
+   "download": "https://drive.usercontent.google.com/download?id=1krB2c8iooge3M9EB1tYP5-n6YAmmZE9R&export=download&confirm=t"
+  },
+  "water/hot_s0p62_e109p62": {
+   "kind": "water",
+   "id": "hot_s0p62_e109p62",
+   "name": "Kubu Raya, Indonesia (0.62°S, 109.62°E)",
+   "bytes": 3797297,
+   "data": {
+    "web/data/hot_s0p62_e109p62/summary.json": "d190b6159a99c4143a14c67baa0035185612b8f1e72808c327f1b81669651ce5",
+    "web/data/hot_s0p62_e109p62/stack.bin": "fc0aa807effbe4066540344dc72c625e211d5e9a88f7f2045e802eca489ca308",
+    "web/data/hot_s0p62_e109p62/static.bin": "7ac5d80e227318e7982d927ce9b31c1bed66bcec037b9d3c469554a60d27a55b",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1QVrarpYNKuQQkZ_-9l1FmYUvfhDOFK7K",
+   "download": "https://drive.usercontent.google.com/download?id=1QVrarpYNKuQQkZ_-9l1FmYUvfhDOFK7K&export=download&confirm=t"
+  },
+  "water/hot_s0p62_w50p62": {
+   "kind": "water",
+   "id": "hot_s0p62_w50p62",
+   "name": "Pará, Brazil (0.62°S, 50.62°W)",
+   "bytes": 4043186,
+   "data": {
+    "web/data/hot_s0p62_w50p62/summary.json": "e0558b7f8a1d5b9d93b21806531fc56776ec44ac92f3a33c2873b3dace5b6542",
+    "web/data/hot_s0p62_w50p62/stack.bin": "0a6007ef56bba0306ef629e8eb45f565e32f456d5561d31f289cf6c1d41b073f",
+    "web/data/hot_s0p62_w50p62/static.bin": "6615f8e19878dc84fe51710d2c4b1f245cac1a1e3622445d7bc263ef284e1272",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1JLoXz7gQ8Td5NsZHUJLl4uVPPuIDkJp8",
+   "download": "https://drive.usercontent.google.com/download?id=1JLoXz7gQ8Td5NsZHUJLl4uVPPuIDkJp8&export=download&confirm=t"
+  },
+  "water/hot_s12p88_w62p62": {
+   "kind": "water",
+   "id": "hot_s12p88_w62p62",
+   "name": "Rondônia, Brazil (12.88°S, 62.62°W)",
+   "bytes": 3865508,
+   "data": {
+    "web/data/hot_s12p88_w62p62/summary.json": "49e54476be85077e1ac0bb6d64c9672754a52148f44895af520701be8cfcd0f2",
+    "web/data/hot_s12p88_w62p62/stack.bin": "5410037a9f7a507da656f68a133d6eefd7b8efa21d81fa42f24885ef5309c65d",
+    "web/data/hot_s12p88_w62p62/static.bin": "42400757b4670093b4cf9a5ec0c4d5f2f213725189a868c3e6dd39a17dc8a564",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1ASSGik0Tt5J3NB1k7lokKHvqNL1hBitX",
+   "download": "https://drive.usercontent.google.com/download?id=1ASSGik0Tt5J3NB1k7lokKHvqNL1hBitX&export=download&confirm=t"
+  },
+  "water/hot_s4p12_w70p12": {
+   "kind": "water",
+   "id": "hot_s4p12_w70p12",
+   "name": "Loreto, Peru (4.12°S, 70.12°W)",
+   "bytes": 4185972,
+   "data": {
+    "web/data/hot_s4p12_w70p12/summary.json": "679b642e1eaeb83342d277b9a092d81315be7992c28a1d091f98a64ed302da8b",
+    "web/data/hot_s4p12_w70p12/stack.bin": "e017e08cde6df854dff96c1a0774f84781f41211138cd88f2e39daefc1d6145c",
+    "web/data/hot_s4p12_w70p12/static.bin": "6e903dc909bcbf13eae0e61039befae1685136f3cb836315c342fac022d59bc2",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1JimhvwbSYqAOvtcS_n69nc54jyQH_-kX",
+   "download": "https://drive.usercontent.google.com/download?id=1JimhvwbSYqAOvtcS_n69nc54jyQH_-kX&export=download&confirm=t"
+  },
+  "water/hot_s5p38_w63p12": {
+   "kind": "water",
+   "id": "hot_s5p38_w63p12",
+   "name": "Amazonas, Brazil (5.38°S, 63.12°W)",
+   "bytes": 3098554,
+   "data": {
+    "web/data/hot_s5p38_w63p12/summary.json": "e52e13b525a02cbf1cac6844edd6e8e0de6d279d619404467e06ce8aac656630",
+    "web/data/hot_s5p38_w63p12/stack.bin": "1693ea5375e85fe9de637f9d2aa388113bf82e2c6259d5e4585c00cf6f307692",
+    "web/data/hot_s5p38_w63p12/static.bin": "83f629e3a51bcb8d9ee00b7bc16f1aa57d920b19524636ace38d441659178744",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1Pp46fri_LU8owsykzanMg1PZQnsJhk32",
+   "download": "https://drive.usercontent.google.com/download?id=1Pp46fri_LU8owsykzanMg1PZQnsJhk32&export=download&confirm=t"
+  },
+  "water/hot_s6p62_e139p38": {
+   "kind": "water",
+   "id": "hot_s6p62_e139p38",
+   "name": "Mappi, Indonesia (6.62°S, 139.38°E)",
+   "bytes": 3862313,
+   "data": {
+    "web/data/hot_s6p62_e139p38/summary.json": "7d347df0ac72fd3a171a147a66f344b812875e889149607795b095d7f2d86c82",
+    "web/data/hot_s6p62_e139p38/stack.bin": "805be596edb03914f50ea65ccf89a6161f8a9227bab1343c1a5525d2284379b5",
+    "web/data/hot_s6p62_e139p38/static.bin": "2039f3d9f8207040ebc9ff6f7cc688425e4664cdc34e5e538e1b2589937de47e",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1dy6Kq9-2JSpLkHQM9H3ojmUXCmmJ5dtk",
+   "download": "https://drive.usercontent.google.com/download?id=1dy6Kq9-2JSpLkHQM9H3ojmUXCmmJ5dtk&export=download&confirm=t"
+  },
+  "water/hot_s8p38_w74p38": {
+   "kind": "water",
+   "id": "hot_s8p38_w74p38",
+   "name": "Ucayali, Peru (8.38°S, 74.38°W)",
+   "bytes": 4491692,
+   "data": {
+    "web/data/hot_s8p38_w74p38/summary.json": "fc9bd912fbe3eb5b21e78c9980e42b1289b7d1423e45220c8d3bc16a25aa3d8d",
+    "web/data/hot_s8p38_w74p38/stack.bin": "6df1c172e0887fa31b36b19d14a44d33922d19932e150e314aa84a1e801bbacc",
+    "web/data/hot_s8p38_w74p38/static.bin": "d39ad61d512e97ab0a2ee0009c144784a962e43b7a111ae3c0bd6bcb2525bab7",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1InXgukHxXNUtXwJkqRz_2Otuk46DTrPX",
+   "download": "https://drive.usercontent.google.com/download?id=1InXgukHxXNUtXwJkqRz_2Otuk46DTrPX&export=download&confirm=t"
+  },
+  "water/hot_s9p62_w50p12": {
+   "kind": "water",
+   "id": "hot_s9p62_w50p12",
+   "name": "Tocantins, Brazil (9.62°S, 50.12°W)",
+   "bytes": 4942898,
+   "data": {
+    "web/data/hot_s9p62_w50p12/summary.json": "06483c500ff24bde7710a7c40b84d9cd6ce31c5b921891168b60c6802ef4eb92",
+    "web/data/hot_s9p62_w50p12/stack.bin": "33c157bcb60e17119262233eb7e735e9ab4518c769a3af0d4a0d3d125a72aff3",
+    "web/data/hot_s9p62_w50p12/static.bin": "ff656dc78695020ffc00b7408461d6a7f28594d05e2798d57a8709edf813d374",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1aOKOvyXf3eE6UhUWkaYKiYzdYleRZ2xz",
+   "download": "https://drive.usercontent.google.com/download?id=1aOKOvyXf3eE6UhUWkaYKiYzdYleRZ2xz&export=download&confirm=t"
+  },
+  "water/janauaca": {
+   "kind": "water",
+   "id": "janauaca",
+   "name": "Lago Janauacá várzea",
+   "bytes": 5657331,
+   "data": {
+    "web/data/janauaca/summary.json": "0d61a453d51d961b0219710cfb5b07118dcc21f4b069c989d2a39eb1fc06d148",
+    "web/data/janauaca/stack.bin": "5144d1749fefe61002e1aeae3f50e909f0845f78c0300ad76b573e2530b3924a",
+    "web/data/janauaca/static.bin": "2d597e9a2a516be52347351ab37476eff25e82d94b3cf444f2be163afb300060",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1DLzFgeDlgRIfXgEhoEIaB0jnJwECZ69t",
+   "download": "https://drive.usercontent.google.com/download?id=1DLzFgeDlgRIfXgEhoEIaB0jnJwECZ69t&export=download&confirm=t"
+  },
+  "water/limpopo_2026": {
+   "kind": "water",
+   "id": "limpopo_2026",
+   "name": "Limpopo flood at Chókwè, Mozambique",
+   "bytes": 4345020,
+   "data": {
+    "web/data/limpopo_2026/summary.json": "8a9915c099694c9e97635a970ca558489ce0e72459bd5b99688e98efc6bbba32",
+    "web/data/limpopo_2026/stack.bin": "537358a64022b665b037f5438d4573f04fa092fe0875cdda466a6169352a1c7b",
+    "web/data/limpopo_2026/static.bin": "df7737859b3486f448438d3305344c454cfc792ddcd70da969f8269f7a0e400b",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1hfE3wSVNKqe-a-BsVLA6dhQrcRslBkHa",
+   "download": "https://drive.usercontent.google.com/download?id=1hfE3wSVNKqe-a-BsVLA6dhQrcRslBkHa&export=download&confirm=t"
+  },
+  "water/mamiraua": {
+   "kind": "water",
+   "id": "mamiraua",
+   "name": "Mamirauá várzea",
+   "bytes": 4062898,
+   "data": {
+    "web/data/mamiraua/summary.json": "4a5095a853f975e2faac36b54a15688716f8df5b8fad8dade454aa01a549b47b",
+    "web/data/mamiraua/stack.bin": "3a82d15d54d77ce5c8d7b5c2dc893a3a5046410a7e29d1d8e944b9f23f33281f",
+    "web/data/mamiraua/static.bin": "7d83cca34716a02cbe628ef189596eb2f0b58e3f980e21ff5e924862005c6274",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1suF0OKVpI-nVWeNS9l_hqtZulznbrX3K",
+   "download": "https://drive.usercontent.google.com/download?id=1suF0OKVpI-nVWeNS9l_hqtZulznbrX3K&export=download&confirm=t"
+  },
+  "water/okavango": {
+   "kind": "water",
+   "id": "okavango",
+   "name": "Okavango Delta permanent swamp",
+   "bytes": 5543358,
+   "data": {
+    "web/data/okavango/summary.json": "d8cb6f781e9ddbaaf134af3f1522232bd8c3d0fc362b2619f3d27e880c5b89c0",
+    "web/data/okavango/stack.bin": "bf155305b4d65f8a56924d0f3d1dfc9d487196455cc2b1afa9d883b0e6349536",
+    "web/data/okavango/static.bin": "6b15c0c24494ee742c30092438c6dad08492bcda2ade078dde54c1d81e9728ad",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1yVG5ByLAN_tYx7qHbJgfNpfiVOenCu2l",
+   "download": "https://drive.usercontent.google.com/download?id=1yVG5ByLAN_tYx7qHbJgfNpfiVOenCu2l&export=download&confirm=t"
+  },
+  "water/pacaya_samiria": {
+   "kind": "water",
+   "id": "pacaya_samiria",
+   "name": "Pacaya-Samiria flooded forest",
+   "bytes": 4414524,
+   "data": {
+    "web/data/pacaya_samiria/summary.json": "54e363cc83b3698620e0884c7466f5b6b50f3a1ddd457c0cdc386b856b99c342",
+    "web/data/pacaya_samiria/stack.bin": "548901e79e51337ad533bc913d659f9bdd06e49668cd80a682126c0855bf8d0b",
+    "web/data/pacaya_samiria/static.bin": "9e6b8288bd8ab08106050f3580d9827740b02ace02d1e2d6f58b8949d3be5fa3",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1hcE3dUZDOy2NCfQxGgpXRgKUxA_4GLqi",
+   "download": "https://drive.usercontent.google.com/download?id=1hcE3dUZDOy2NCfQxGgpXRgKUxA_4GLqi&export=download&confirm=t"
+  },
+  "water/pantanal": {
+   "kind": "water",
+   "id": "pantanal",
+   "name": "Rio Paraguai floodplain, Pantanal",
+   "bytes": 3116961,
+   "data": {
+    "web/data/pantanal/summary.json": "325d98bffb97082c4f8d61fe7850dac6f644b6f2aa04358dd9868cef8f8bb39b",
+    "web/data/pantanal/stack.bin": "8798054e276bd7ba23e42348e22bb726985ae30741bc31a164dd5684064b9f44",
+    "web/data/pantanal/static.bin": "4669182879d67d77e4b7da5591255b95b88192931c4b9f3c45ff3bdf9d6cf1ab",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1hCsXA7ruZZ6C21kM9k2KRuydLTa0zi45",
+   "download": "https://drive.usercontent.google.com/download?id=1hCsXA7ruZZ6C21kM9k2KRuydLTa0zi45&export=download&confirm=t"
+  },
+  "water/sundarbans": {
+   "kind": "water",
+   "id": "sundarbans",
+   "name": "Sundarbans mangrove forest",
+   "bytes": 4431034,
+   "data": {
+    "web/data/sundarbans/summary.json": "0aeb90bef1c9d68d75c98dde2a9b64f6c4c0dbf87d8a09ee23f64583ab44663e",
+    "web/data/sundarbans/stack.bin": "b96f7afd28fb5ae703f5f387fa21a14c1017450d37c3f222e8cacd5eefd11708",
+    "web/data/sundarbans/static.bin": "913d81ed3207d3543b05998947a5eaca20881226a31a0b92a31be8eb31dfa8b1",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1H7nEP88XY0x4ue_GQ3_7lv72KNEdvbdM",
+   "download": "https://drive.usercontent.google.com/download?id=1H7nEP88XY0x4ue_GQ3_7lv72KNEdvbdM&export=download&confirm=t"
+  },
+  "water/sylhet": {
+   "kind": "water",
+   "id": "sylhet",
+   "name": "Sylhet haor and Ratargul swamp forest",
+   "bytes": 5127811,
+   "data": {
+    "web/data/sylhet/summary.json": "14ca0a0c2f38242107d1bb6a608ed32fb3915990b29bdd3066ee0fabdc0fbee9",
+    "web/data/sylhet/stack.bin": "bd353b4d5f6045b350362a54c04a1057378cbe0b97ebb0994ea3c9b238c83a63",
+    "web/data/sylhet/static.bin": "0acffe86b768903496e8ff564a04d644be35ed51d58818e2d0b95825ce482885",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1S0F74H1t5vhba940xgoTQBmCOm5NeJJ3",
+   "download": "https://drive.usercontent.google.com/download?id=1S0F74H1t5vhba940xgoTQBmCOm5NeJJ3&export=download&confirm=t"
+  },
+  "water/tonle_sap": {
+   "kind": "water",
+   "id": "tonle_sap",
+   "name": "Tonlé Sap flooded forest (Prek Toal)",
+   "bytes": 5008344,
+   "data": {
+    "web/data/tonle_sap/summary.json": "01ed7edf0b16bb705f065f5129006c74342e7687c9d21ca48c74223c7447ca8f",
+    "web/data/tonle_sap/stack.bin": "a87000eec19de96919799e6d629b9923fd643ce7e57688c2465a7596c69b8b69",
+    "web/data/tonle_sap/static.bin": "06373362e82bfd965327576e50f0f0398a08cf4e96e4d4be0d2b21d8ad015dd2",
+    "web/data/thunder_bay_36/summary.json": "085168247d710575ac56c5272cabf82b9f2b4b16416d4455eeb263bc6b71901b"
+   },
+   "colab": "https://colab.research.google.com/drive/1isiOjXna_qkR5q8mP4guQeA6G61lHkCe",
+   "download": "https://drive.usercontent.google.com/download?id=1isiOjXna_qkR5q8mP4guQeA6G61lHkCe&export=download&confirm=t"
+  }
+ }
+}
