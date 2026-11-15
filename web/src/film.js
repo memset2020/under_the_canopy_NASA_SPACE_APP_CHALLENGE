@@ -26,29 +26,32 @@ const SVGNS = "http://www.w3.org/2000/svg";
 // The arc (docs/film/SCRIPT.md): what is (a 2022 flood the maps could not see under the trees),
 // but (NISAR), therefore (the reveal, its people, its season), then the other changes, the
 // checks and limits, who uses it, everything in it, and where it can go.
+// The 30-second cut (v3, D-116) is a feature sweep: every change the app maps (water, its people,
+// its season, the village card, places worldwide, fire, ground, ice), the checks, all six
+// audiences and the index wall, at the 1.4 s floor where a scene carries one number or picture.
 export const SCENES = [
-  ["cold", 7.0, 4.4],
+  ["cold", 7.0, 1.8],
   ["toll", 6.0, 0],
-  ["blind", 7.5, 3.2],
-  ["hook", 6.0, 2.2],
+  ["blind", 7.5, 1.8],
+  ["hook", 6.0, 1.5],
   ["zoom", 2.6, 1.4],
-  ["camera", 3.6, 1.6],
-  ["cband", 3.6, 1.6],
-  ["nisar", 6.0, 3.8],
+  ["camera", 3.6, 1.4],
+  ["cband", 3.6, 1.4],
+  ["nisar", 6.0, 2.2],
   ["physics", 6.5, 0],
-  ["people", 5.0, 2.4],
-  ["season", 5.5, 0],
-  ["card", 5.5, 0],
-  ["places", 7.0, 0],
-  ["fire", 6.0, 2.4],
-  ["ground", 6.5, 2.4],
-  ["ice", 6.5, 0],
-  ["proof", 6.0, 0],
+  ["people", 5.0, 1.4],
+  ["season", 5.5, 1.4],
+  ["card", 5.5, 1.4],
+  ["places", 7.0, 1.6],
+  ["fire", 6.0, 1.5],
+  ["ground", 6.5, 1.6],
+  ["ice", 6.5, 1.5],
+  ["proof", 6.0, 1.4],
   ["limits", 5.5, 0],
-  ["audience", 27.6, 0],
-  ["index", 6.0, 0],
+  ["audience", 27.6, 2.8],
+  ["index", 6.0, 1.6],
   ["next", 7.5, 0],
-  ["title", 6.0, 2.4],
+  ["title", 6.0, 2.0],
 ];
 // The audience scene steps through the landing page's six audiences (landing.aud_*).
 export const AUDIENCES = ["resp", "local", "sci", "climate", "edu", "plan"];
@@ -1026,6 +1029,18 @@ function buildFilm(stage, data) {
     img.src = data.shots[i].src;
     return { panel, copy, q, fs, fr, img };
   });
+  // The 30-second cut has no time for six beats: all six screens at once, each with its audience.
+  const auGrid = el("div", "proof-wrap aud-grid-wrap", aud);
+  const auGH = words(auGrid, "h1", t("film.aud_title"));
+  const auGrid6 = el("div", "aud-grid", auGrid);
+  const auTiles = AUDIENCES.map((a, i) => {
+    const tile = el("div", "aud-tile", auGrid6);
+    const fr = el("div", "frame shot", tile);
+    el("img", "", fr).src = data.shots[i].src;
+    el("p", "aud-who", tile, t(`landing.aud_${a}`));
+    return tile;
+  });
+  if (!SHORT) auGrid.remove();
 
   // Everything in it: the index wall, readable on a paused frame (docs/film/FEATURE_MAP.md §3) --
   const idx = add("index");
@@ -1391,7 +1406,16 @@ function buildFilm(stage, data) {
     const au = M.audience;
     const auA = au.d ? shown(x, au.a - XF, au.b + XF, 0.4 + XF, 0.4 + XF) : 0;
     setOpacity(aud, auA);
-    if (auA > 0) {
+    if (auA > 0 && SHORT) {
+      const lt = x - au.a;
+      auPanels.forEach((p) => setOpacity(p.panel, 0));
+      showWords(auGH, lt - 0.1);
+      auTiles.forEach((tile, i) => {
+        const f = easeOut(seg(lt, 0.15 + i * 0.12, 0.6 + i * 0.12));
+        setOpacity(tile, f);
+        tile.style.transform = `translateY(${((1 - f) * 30).toFixed(1)}px) scale(${lerp(0.96, 1, f).toFixed(4)})`;
+      });
+    } else if (auA > 0) {
       const beat = au.d / AUDIENCES.length;
       auPanels.forEach((p, i) => {
         const a = au.a + i * beat;
@@ -1416,7 +1440,8 @@ function buildFilm(stage, data) {
       const lt = x - ix.a;
       setOpacity(ixWrap, shown(x, ix.a, ix.b, 0.3, 0.3));
       showWords(ixH, lt - 0.15);
-      ixCols.forEach((c, i) => setOpacity(c, easeOut(seg(lt, 0.5 + i * 0.22, 0.9 + i * 0.22))));
+      const [ix0, ixStep] = SHORT ? [0.2, 0.08] : [0.5, 0.22];
+      ixCols.forEach((c, i) => setOpacity(c, easeOut(seg(lt, ix0 + i * ixStep, ix0 + 0.35 + i * ixStep))));
     }
 
     // Where it can go next.

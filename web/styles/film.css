@@ -185,6 +185,12 @@ body { font-synthesis: none; -webkit-font-smoothing: antialiased; }
 .aud-chips { display: flex; flex-wrap: wrap; gap: 14px; }
 .aud-chip { padding: 12px 20px; border-radius: 999px; font-size: 27px; color: var(--ink); background: rgba(232, 238, 234, 0.08); box-shadow: 0 0 0 1px var(--rule); }
 .shot { width: 100%; aspect-ratio: 16 / 10; }
+/* 30-second cut: the six audiences at once (D-116) */
+.aud-grid-wrap { gap: 40px; }
+.aud-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 40px; align-content: start; }
+.aud-tile { display: grid; gap: 22px; opacity: 0; }
+.aud-tile .aud-who { margin: 0; font-size: 34px; }
+[data-aspect="portrait"] .aud-grid { grid-template-columns: repeat(2, 1fr); }
 .shot img { object-fit: cover; object-position: top left; transform-origin: 30% 30%; }
 
 /* Index wall */

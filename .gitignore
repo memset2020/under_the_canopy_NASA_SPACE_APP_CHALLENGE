@@ -44,3 +44,6 @@ docs/film/voice-sample.*
 
 # Earlier voice-over versions live only on the film-voiceover branch, not on main.
 videoArchive/
+
+# Local files kept out of the repository (team photos, unused render outputs)
+_stored_/
