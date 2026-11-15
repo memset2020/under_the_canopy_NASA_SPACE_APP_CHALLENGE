@@ -21,7 +21,7 @@ mapped from real NASA-ISRO NISAR data, with every number checked against an inde
 ![NASA Space Apps 2026](https://img.shields.io/badge/NASA%20Space%20Apps-2026-0B3D91)
 
 [**Open the live app**](https://underthecanopynasaspaceappchallenge.vercel.app/landing.html) ·
-[**Watch the 30-second film**](web/media/pitch30-en-vo-clone-subtitled.mp4) ·
+[**Watch the 30-second film**](https://youtu.be/DP_JM6m7gPg) ·
 [**Run it locally**](#quick-start) ·
 [**Data credits**](CREDITS.md)
 
@@ -292,7 +292,7 @@ Preview in the browser: `film.html?cut=short`, `?lang=bn`, `?aspect=portrait`. N
 
 | File in [`web/media/`](web/media/) | What it is |
 |---|---|
-| `pitch30-en-vo-clone-subtitled.mp4` | the 30-second Space Apps demo (29.8 s): narrated, English subtitles burned in |
+| `pitch30-en-vo-clone-subtitled.mp4` | the 30-second Space Apps demo (29.8 s): narrated, English subtitles burned in ([on YouTube](https://youtu.be/DP_JM6m7gPg)) |
 | `pitch30-en-vo-clone.mp4` + `.vtt` | the same, with captions as a separate file |
 | `intro-en-vo-clone.mp4` + `.vtt` | the 2 min 29 s opening film on the landing page, narrated |
 | `intro-{bn,pt}.mp4`, `*-portrait.mp4` | Bengali and Portuguese films, and phone versions |
